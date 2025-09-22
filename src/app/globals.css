@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #F6F6F6;   /* Light neutral background */
+  --foreground: #171717;   /* Text */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-mono: var(--font-geist-mono);
+  --primary: #FFC7C7;      /* Pink CTA/accent */
+  --secondary: #FFE2E2;    /* Nav/section background */
+  --tertiary: #8785A2;     /* Lavender-gray accent */
+  --quaternary: #FFC7C7;   /* Optional (same as primary) */
+}
+
+
+.dark {
+  --background: #222831;   /* Dark charcoal background */
+  --foreground: #EEEEEE;   /* Light gray text */
+  --primary: #00ADB5;      /* Teal accent */
+  --secondary: #393E46;    /* Dark gray/nav */
+  --tertiary: #222831;     /* Same as background for consistency */
+  --quaternary: #00ADB5;   /* Same teal accent for highlights */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+h2 {
+  font-size: 1.75rem; /* larger size */
+  font-weight: 700;   /* bold */
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+@keyframes point {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+
+.animate-point {
+  animation: point 1s infinite;
+}
+
+/* 🎨 Roles of the 4 Colors
+	1.	Primary → your brand’s strongest color.
+	•	Used for highlights, call-to-action buttons, links, and key accents.
+	•	Think of it as the “identity” color.
+	2.	Secondary → supporting brand color.
+	•	Complements the primary.
+	•	Often used for secondary buttons, hover states, or section accents.
+	3.	Tertiary → background/neutral support color.
+	•	Fills cards, subtle blocks, dividers.
+	•	Helps create hierarchy without overwhelming.
+	4.	Quaternary → accent or warning/alert color.
+	•	Used sparingly (badges, highlights, small UI elements).
+	•	Keeps things lively without clutter. */

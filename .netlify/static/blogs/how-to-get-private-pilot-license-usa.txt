@@ -1,0 +1,68 @@
+1:"$Sreact.fragment"
+2:I[9243,["711","static/chunks/8e1d74a4-098f92b6c0629530.js","456","static/chunks/081ca426-34d4dc7509f94d5b.js","479","static/chunks/795d4814-c126d9906856df5e.js","512","static/chunks/9c4e2130-e69a5bc21b4b9a22.js","520","static/chunks/e34aaff9-63a5237a6c7379fe.js","874","static/chunks/874-8997ddace5e45003.js","177","static/chunks/app/layout-dec301e7527c5606.js"],""]
+3:I[7049,["711","static/chunks/8e1d74a4-098f92b6c0629530.js","456","static/chunks/081ca426-34d4dc7509f94d5b.js","479","static/chunks/795d4814-c126d9906856df5e.js","512","static/chunks/9c4e2130-e69a5bc21b4b9a22.js","520","static/chunks/e34aaff9-63a5237a6c7379fe.js","874","static/chunks/874-8997ddace5e45003.js","177","static/chunks/app/layout-dec301e7527c5606.js"],"ThemeProvider"]
+4:I[2836,["711","static/chunks/8e1d74a4-098f92b6c0629530.js","456","static/chunks/081ca426-34d4dc7509f94d5b.js","479","static/chunks/795d4814-c126d9906856df5e.js","512","static/chunks/9c4e2130-e69a5bc21b4b9a22.js","520","static/chunks/e34aaff9-63a5237a6c7379fe.js","874","static/chunks/874-8997ddace5e45003.js","177","static/chunks/app/layout-dec301e7527c5606.js"],"default"]
+5:I[7555,[],""]
+6:I[1295,[],""]
+8:I[9665,[],"OutletBoundary"]
+b:I[9665,[],"ViewportBoundary"]
+d:I[9665,[],"MetadataBoundary"]
+f:I[6614,[],""]
+:HL["/_next/static/media/4cf2300e9c8272f7-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/7802ae9b5c956b34.css","style"]
+0:{"P":null,"b":"7oozZAok8_7LkYrXuXB9T","p":"","c":["","blogs","how-to-get-private-pilot-license-usa"],"i":false,"f":[[["",{"children":["blogs",{"children":[["slug","how-to-get-private-pilot-license-usa","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/7802ae9b5c956b34.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","$L2",null,{"id":"gtm-init","strategy":"afterInteractive","children":"\n            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n            })(window,document,'script','dataLayer','GTM-PWM3QWPW');\n          "}]}],["$","body",null,{"className":"__variable_188709 __variable_9a8899 antialiased","children":[["$","noscript",null,{"children":["$","iframe",null,{"src":"https://www.googletagmanager.com/ns.html?id=GTM-PWM3QWPW","height":"0","width":"0","style":{"display":"none","visibility":"hidden"}}]}],["$","$L3",null,{"children":["$","$L4",null,{"children":[" ",["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]}]]}]]}]]}],{"children":["blogs",["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","how-to-get-private-pilot-license-usa","d"],["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L7","$undefined",null,["$","$L8",null,{"children":["$L9","$La",null]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","M6Feqf_Cls_KGGy4NBDfV",{"children":[["$","$Lb",null,{"children":"$Lc"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],["$","$Ld",null,{"children":"$Le"}]]}],false]],"m":"$undefined","G":["$f","$undefined"],"s":false,"S":true}
+10:I[6874,["874","static/chunks/874-8997ddace5e45003.js","744","static/chunks/app/blogs/%5Bslug%5D/page-1df4472a41a756b5.js"],""]
+11:Tfa7,<p><em>My simple guide to becoming a pilot in the U.S.</em></p>
+<p>I trained as a pilot in the U.S. and earned my Private Pilot License (PPL). I’ve been through the whole process… from getting my visa to flying solo across different states. If you’re thinking about becoming a pilot, here’s how it works in the simplest way I can explain it.</p>
+<h3><strong>Step 1: Apply for an M1 Visa</strong></h3>
+<p>If you’re a foreign student like me, the first step is getting into a flight school in the U.S. that can sponsor your <strong>M1 visa</strong>.</p>
+<p><strong>M1 vs. F1 Visa:</strong><br>
+An <strong>F1</strong> is for academic programs like universities or language schools.<br>
+An <strong>M1</strong> is for <strong>vocational programs</strong>, like flight training. You can’t work with an M1 visa, but it allows you to train as a pilot full-time.</p>
+<p>Once you’re accepted by a flight school, they’ll send you the necessary documents (like an I-20 form), which you’ll use to apply for your M1 visa at the U.S. embassy in your country.</p>
+<h3><strong>Step 2: Get a Medical Certificate</strong></h3>
+<p>When you arrive in the U.S., the first official step is to get your <strong>FAA Medical Certificate</strong> from an aviation medical examiner.</p>
+<p>For a Private Pilot License, you’ll need at least a <strong>Third-Class Medical Certificate</strong>, which checks your vision, hearing, mental and physical health. It proves you’re fit to fly.</p>
+<p>You can’t fly solo without this so get it early.</p>
+<h3><strong>Step 3: Pass the FAA Written Exam</strong></h3>
+<p>Before you start flight training, you’ll need to pass a <strong>written knowledge test</strong> from the FAA (Federal Aviation Administration).</p>
+<p>This exam covers:</p>
+<ul>
+<li>Basic aerodynamics</li>
+<li>Weather and airspace</li>
+<li>Navigation</li>
+<li>Flight rules</li>
+<li>Emergency procedures</li>
+</ul>
+<p>It’s multiple choice and done on a computer. You’ll usually study through ground school (either in-person or online) before taking the exam.</p>
+<h3><strong>Step 4: Start Flight Training</strong></h3>
+<p>Once you’re cleared medically and have passed the written test, you can begin your actual flight lessons.</p>
+<p>You’ll fly with a certified flight instructor and learn everything from takeoffs, landings, maneuvers, emergency procedures, to cross-country flights. You’ll log your hours and progress in a flight logbook.</p>
+<h3><strong>Step 5: Meet the Requirements for a Private Pilot License (PPL)</strong></h3>
+<p>To qualify for a PPL, you must complete the following:</p>
+<ul>
+<li>Minimum 40 hours of flight time</li>
+<li>10 hours solo flight time</li>
+<li>5 hours solo cross-country flights</li>
+<li>At least one cross-country flight over 150 nautical miles with full stops at three airports</li>
+<li>Pass a checkride (practical flight exam) with an FAA examiner</li>
+</ul>
+<p>The <strong>checkride</strong> is the final test. It includes both an oral exam and a flight exam where you demonstrate everything you’ve learned.</p>
+<p>Once you pass? You’re officially a <strong>licensed private pilot</strong>. ✈️</p>
+<h3></h3>
+<h3><strong>What’s Next After Getting Your PPL?</strong></h3>
+<p>If you want to become an <strong>airline pilot</strong>, here’s the general path:</p>
+<ul>
+<li><strong>Instrument Rating</strong> – Allows you to fly in low visibility using only instruments.</li>
+<li><strong>Commercial Pilot License (CPL)</strong> – Lets you get paid to fly.</li>
+<li><strong>Build 1,500 flight hours</strong> – Most airlines require this minimum for hiring.</li>
+<li><strong>Airline Transport Pilot License (ATPL)</strong> – The highest license level. This is what airline captains have.</li>
+</ul>
+<h3><strong>Final Thoughts</strong></h3>
+<p>Flight training is one of the most challenging and rewarding things I’ve ever done. It’s not just about flying: it’s about discipline, decision-making, and staying calm under pressure.</p>
+7:["$","div",null,{"className":"min-h-screen bg-[var(--background)] text-[var(--foreground)] px-4 py-12","children":["$","div",null,{"className":"max-w-3xl mx-auto","children":[["$","$L10",null,{"href":"/blogs","className":"mb-6 inline-block border border-[var(--foreground)]/40 px-4 py-1 rounded hover:bg-[var(--secondary)]/30","children":"Back"}],["$","h1",null,{"className":"text-4xl font-bold leading-tight mb-2","children":"How to Get a Private Pilot License (PPL)"}],["$","p",null,{"className":"text-sm text-[var(--foreground)]/70 mb-6","children":"September 21, 2025"}],["$","article",null,{"className":"space-y-6 text-base leading-relaxed","dangerouslySetInnerHTML":{"__html":"$11"}}]]}]}]
+c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+9:null
+a:null
+e:[["$","title","0",{"children":"Emma Nagano"}],["$","meta","1",{"name":"description","content":"Front-end Web Development"}],["$","link","2",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}]]
