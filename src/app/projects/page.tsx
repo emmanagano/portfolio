@@ -8,7 +8,7 @@ export default function ProjectsPage() {
         <div className="overflow-hidden p-6 flex flex-col items-center">
           <h2 className="text-3xl font-extrabold text-[var(--foreground)] mb-2 text-center">
             <a
-              href="https://philippinestrategies.com/"
+              href="https://philstrats.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-extrabold text-[var(--primary)] underline hover:opacity-90 hover:underline"
@@ -43,16 +43,16 @@ export default function ProjectsPage() {
               👉
             </span>
             <a
-              href="https://philippinestrategies.com/"
+              href="https://philstrats.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--foreground)] underline hover:text-[var(--primary)] hover:underline"
             >
-              Visit the site: philippinestrategies.com
+              Visit the site: philstrats.com
             </a>
           </div>
           <a
-            href="https://philippinestrategies.com/"
+            href="https://philstrats.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full"

@@ -63,6 +63,16 @@ const skills: Skill[] = [
     size: "sm",
   },
   { name: "Slack", icon: "/images/tech-stack-icons/slack.png", size: "sm" },
+  {
+    name: "Jira",
+    icon: "/images/tech-stack-icons/jira.png",
+    size: "sm",
+  },
+  {
+    name: "Monday",
+    icon: "/images/tech-stack-icons/monday.png",
+    size: "sm",
+  },
 ];
 
 const sizeToHeight: Record<Skill["size"], string> = {

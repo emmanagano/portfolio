@@ -2,7 +2,6 @@
 import React from "react";
 import Link from "next/link";
 import { FaLinkedin, FaInstagram, FaGithub, FaDownload } from "react-icons/fa";
-import { SiGooglephotos } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
 import { useTheme } from "@/context/ThemeContext";
 
@@ -54,15 +53,6 @@ export default function Home() {
               <FaGithub size={20} />
             </a>
             <a
-              href="https://photos.google.com/share/AF1QipNSoUUysFPFkovg80Zrucmb7WZ9UNxku8YCF4ko9i-PnzAAD6aqCehVDH9zVNxm-A?key=NDBzN0Nza3dQNUdEOVRKdGNVSzJsRnNzSFVreUVB"
-              aria-label="Google Photos"
-              className="hover:text-[var(--primary)]"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <SiGooglephotos size={20} />
-            </a>
-            <a
               href="https://x.com/emsnagano"
               aria-label="Twitter/X"
               className="hover:text-[var(--primary)]"
@@ -74,7 +64,7 @@ export default function Home() {
           </div>
           <div className="mt-6">
             <a
-              href="/emma-nagano-resume.pdf"
+              href="/Emma Nagano's Resume.pdf"
               download
               className="inline-flex items-center px-4 py-2 bg-[var(--primary)] text-[var(--foreground)] rounded-md hover:opacity-90 transition"
             >

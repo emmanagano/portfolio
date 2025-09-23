@@ -1,6 +1,17 @@
 export default function AboutPage() {
   return (
     <main className="max-w-3xl mx-auto px-6 py-16 text-[var(--foreground)] space-y-12">
+      <div className="w-full max-w-3xl mx-auto mb-8 aspect-video">
+        <iframe
+          src="https://www.youtube.com/embed/JYvZPA22zwE"
+          title="Emma Nagano's Intro"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          className="w-full h-full rounded-lg shadow-md object-cover"
+        ></iframe>
+      </div>
       <section className="space-y-4">
         <h1 className="text-4xl font-bold">Introduction</h1>
         <p>
