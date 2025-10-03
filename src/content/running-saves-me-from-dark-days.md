@@ -21,6 +21,8 @@ keywords:
   - benefits of running for anxiety
   - emotional healing through fitness
   - building discipline with running
+
+readingTime: "6 min read"
 ---
 
 ## The weight of coming home to the Philippines

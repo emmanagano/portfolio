@@ -21,6 +21,8 @@ keywords:
   - personal success story
   - reaching money goals
   - first million pesos tips
+
+readingTime: "1 min read"
 ---
 
 HAHAHHAHAHA IT'S A PRANK!

@@ -21,6 +21,8 @@ keywords:
   - steps to become a pilot
   - M1 visa for flight school
   - checkride preparation
+
+readingTime: "5 min read"
 ---
 
 _My simple guide to becoming a pilot in the U.S._

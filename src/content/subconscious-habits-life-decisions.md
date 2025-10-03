@@ -21,6 +21,7 @@ keywords:
   - making life-changing decisions
   - how to listen to your gut
   - starting over after failure
+readingTime: "6 min read"
 ---
 
 ## Why Do We Do Things a Certain Way?

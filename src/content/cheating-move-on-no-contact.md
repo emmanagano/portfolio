@@ -20,6 +20,7 @@ keywords:
   - signs it's time to walk away
   - toxic love cycles
   - letting go after infidelity
+readingTime: "4 min read"
 ---
 
 _“My ex cheated on me. Should I take them back?”_

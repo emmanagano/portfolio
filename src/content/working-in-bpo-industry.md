@@ -21,6 +21,8 @@ keywords:
   - mental health in customer service
   - call center as a stepping stone
   - life after BPO work
+
+readingTime: "7 min read"
 ---
 
 ## Before I Found the Job I Loved…
