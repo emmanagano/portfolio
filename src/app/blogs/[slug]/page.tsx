@@ -11,6 +11,54 @@ export function generateStaticParams() {
   }));
 }
 
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const blog = await getBlogBySlug(params.slug);
+  if (!blog) return {};
+
+  return {
+    title: `${blog.title} | Emma Nagano Blog`,
+    description:
+      blog.description ||
+      "Emma Nagano's blog about growth, healing, and coding.",
+    authors: [{ name: "Emma Nagano" }],
+    keywords: blog.keywords || [
+      "Emma Nagano",
+      "personal blog",
+      "healing",
+      "relationships",
+      "tech",
+    ],
+    openGraph: {
+      title: blog.title,
+      description: blog.description || "",
+      type: "article",
+      url: `https://emmanagano.com/blogs/${blog.slug}`,
+      images: [
+        {
+          url: `https://emmanagano.com/images/blog-thumbnails/${blog.slug}.jpg`,
+          width: 1200,
+          height: 630,
+          alt: blog.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description: blog.description || "",
+      images: [
+        `https://emmanagano.com/images/blog-thumbnails/${blog.slug}.jpg`,
+      ],
+    },
+  };
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function BlogPost({ params }: any) {
   const blog = await getBlogBySlug(params.slug);

@@ -1,9 +1,26 @@
 ---
 id: 3
 title: "How to Get a Private Pilot License (PPL)"
-description:
+description: "Step-by-step guide to getting your Private Pilot License (PPL) in the U.S. as a foreign student. Covers M1 visa, FAA medical certificate, flight training, and checkride prep."
 date: "September 21, 2025"
 slug: "how-to-get-private-pilot-license-usa"
+tags:
+  - flight training
+  - private pilot license
+  - M1 visa
+  - aviation school
+  - student pilot
+  - FAA requirements
+  - pilot checkride
+  - U.S. flight schools
+
+keywords:
+  - how to get private pilot license in USA
+  - pilot training for foreign students
+  - FAA medical certificate
+  - steps to become a pilot
+  - M1 visa for flight school
+  - checkride preparation
 ---
 
 _My simple guide to becoming a pilot in the U.S._

@@ -4,6 +4,23 @@ title: "Running Saves Me from Dark Days"
 description: "A personal story on how running helped me overcome weight gain, stress, and dark mental health days after moving back to the Philippines."
 date: "September 21, 2025"
 slug: "running-saves-me-from-dark-days"
+tags:
+  - running
+  - fitness journey
+  - mental health
+  - quitting nicotine
+  - weight loss
+  - discipline
+  - self-esteem
+  - healing
+
+keywords:
+  - how running helps with mental health
+  - using fitness to quit nicotine
+  - personal story weight loss
+  - benefits of running for anxiety
+  - emotional healing through fitness
+  - building discipline with running
 ---
 
 ## The weight of coming home to the Philippines

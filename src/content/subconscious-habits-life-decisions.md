@@ -4,6 +4,23 @@ title: "How Your Subconscious and Habits Shape Life-Changing Decisions"
 description: "Your subconscious and habits quietly guide your biggest life decisions. Here's how I learned to listen, build better habits, and change the direction of my life."
 date: "September 21, 2025"
 slug: "subconscious-habits-life-decisions"
+tags:
+  - subconscious mind
+  - habits
+  - decision-making
+  - personal growth
+  - life transitions
+  - coding journey
+  - pilot to developer
+  - self-discovery
+
+keywords:
+  - how subconscious affects decision making
+  - building better habits
+  - from pilot to web developer
+  - making life-changing decisions
+  - how to listen to your gut
+  - starting over after failure
 ---
 
 ## Why Do We Do Things a Certain Way?

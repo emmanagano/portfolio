@@ -1,9 +1,26 @@
 ---
 id: 4
 title: "Working in the BPO Industry"
-description:
+description: "A raw and honest reflection on working in the BPO industry—exploring the emotional toll, hidden struggles, and why being a call center agent should be seen as a stepping stone, not a dead end."
 date: "September 21, 2025"
 slug: "working-in-bpo-industry"
+tags:
+  - BPO industry
+  - call center life
+  - toxic work culture
+  - mental health
+  - career transitions
+  - emotional labor
+  - survival jobs
+  - Filipino workforce
+
+keywords:
+  - working in a call center in the Philippines
+  - emotional toll of BPO jobs
+  - quitting BPO industry
+  - mental health in customer service
+  - call center as a stepping stone
+  - life after BPO work
 ---
 
 ## Before I Found the Job I Loved…
