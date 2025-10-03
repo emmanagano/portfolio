@@ -13,11 +13,8 @@ export function generateStaticParams() {
 
 import { Metadata } from "next";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function generateMetadata({ params }: any): Promise<Metadata> {
   const blog = await getBlogBySlug(params.slug);
   if (!blog) return {};
 
