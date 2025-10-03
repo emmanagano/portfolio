@@ -1,7 +1,12 @@
 ---
 id:
-title:
-description:
-date: "September 21, 2025"
+title: ""
+description: ""
+date: ""
 slug: ""
+tags:
+  -
+keywords:
+  -
+readingTime: ""
 ---

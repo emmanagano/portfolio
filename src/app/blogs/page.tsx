@@ -21,7 +21,12 @@ export default function BlogsPage() {
               href={`/blogs/${blog.slug}`}
               className="flex justify-between border-b border-dashed border-[var(--foreground)]/40 py-2 text-sm hover:underline"
             >
-              <span>{blog.title}</span>
+              <span className="flex justify-between w-full">
+                <span>{blog.title}</span>
+                <span className="text-[var(--foreground)]/50">
+                  {blog.readingTime}
+                </span>
+              </span>
             </Link>
           ))}
         </div>

@@ -22,7 +22,8 @@ export function getAllBlogs() {
                 date: data.date,
                 slug: data.slug,
                 tags: data.tags,
-                keywords: data.keywords
+                keywords: data.keywords,
+                readingTime: data.readingTime
             };
         })
         .sort((a, b) => b.id - a.id); // Sort in descending order
@@ -46,6 +47,7 @@ export function getBlogBySlug(slug: string) {
         slug: data.slug,
         tags: data.tags,
         keywords: data.keywords,
+        readingTime: data.readingTime,
         content,
     };
 }
