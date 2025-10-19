@@ -20,42 +20,47 @@ keywords:
 readingTime: "6 min read"
 ---
 
-I am deluded to think that somehow I deserve better things in life. That I actually put in the hard work all these years that I deserve to be rewarded.
+**Delusional Enough to Hope**
 
-But the sad part is, that’s not how life works. People suffer only to suffer more. Some don’t even know what struggling means. Too busy shopping for designer shoes and bags. Too weak to carry all those wads of cash they never had to work for.
+Maybe I’m deluded to think I deserve better things in life. That after everything I’ve done, all the hours I’ve spent working and learning, I somehow deserve to be rewarded.
 
-For the sake of my sanity, I hope that karma is real. And if it is, where do I stand in that spectrum? Am I paying for all the good karma I’ve gotten? So I’m currently faced with bad karma? Or is this good karma in disguise? That I just have too much time in my hands to realize?
+But that’s not how life works. People suffer only to suffer more. Some don’t even know what struggling means. Too busy shopping for designer shoes, too weak to carry all those wads of cash they never had to work for.
 
-I can’t tell the difference because I’m comfortable on my bed. Rainy night and cold, well-lit room. Just re-watching a show on Netflix. Neither going forward nor backward in life.
+For the sake of my sanity, I hope karma is real. Because if it is, where do I stand in that spectrum? Am I paying off old good karma now? Facing my share of bad luck? Or is this good karma in disguise, just too mundane for me to notice?
 
-So what karma is this? Good or bad? Neutral? I hate not knowing. Not appreciating the present only to realize how good I had it later on.
+I can’t tell the difference. I’m lying comfortably in bed, rain tapping on the window, my room lit softly while a Netflix show plays in the background. I’m neither moving forward nor backward.
 
-I want to be delusional enough to believe that I’m a good person who deserves a well-established future. But I’m not good. I neglect people who actually care about me. I think so highly of myself. I blame other people or my upbringing, anyone but me, when things don’t go my way.
+So what kind of karma is this? good, bad, or neutral? I hate not knowing. I hate realizing too late how good I had it.
 
-Maybe I really am spoiled. It doesn’t matter how hard I studied or honed my skills. Whether I worked so hard to be good at speaking or writing in English. I spent so many hours coding and learning. Even the fact that I used to fucking fly planes. Maybe none of that really matters. I just got lucky until I didn’t.
+I want to be delusional enough to believe I’m a good person who deserves a well-established future. But I’m not. I neglect the people who genuinely care about me. I think too highly of myself. I blame others, my upbringing, my parents, my circumstances when things don’t go my way.
 
-_“I grew up poor that my parents had to give me away so I could go to nice schools”_
+Maybe I really am spoiled. Maybe it doesn’t matter how hard I studied, or how much time I’ve spent coding and learning. It doesn’t matter that I became fluent in English or that I once flew planes. Maybe I just got lucky until I didn’t.
 
-_“I haven’t talked to my real father for more than a decade. That’s why I have all this daddy issues”_
+_“I grew up poor that my parents had to give me away so I could go to nice schools.”_
+_“I haven’t talked to my real father for more than a decade. That’s why I have all these daddy issues.”_
 
-I make it sound like I’ve only struggled in life. But that’s not true, is it? I stopped struggling a long time ago, when I got adopted. All of a sudden, I was enrolled in expensive private schools. I lived in the states for 5 years with an allowance and I got to fly planes. I went to LA (twice), NY (twice), I crashed out on my birthday and secretly flew to Vegas. I solo traveled in Mexico. Been to Vietnam and Mauritius, Africa recently. I’ve gone to lots of places and did so many things.
+I make it sound like I’ve struggled all my life, but that’s not true, is it? I stopped struggling the moment I got adopted. Suddenly I was enrolled in expensive private schools. I lived in the States for five years. I had an allowance, flew planes, went to L.A. and New York, crashed out on my birthday and secretly flew to Vegas. I solo-traveled in Mexico. I’ve been to Vietnam and Mauritius.
 
-I lived life. A life some people would never get to experience. And here I am thinking that life hasn’t been fair to me. Why? Because I don’t get to have what I want. That after the indulgence of life, all of sudden, I want to be a career driven woman. That it was immediately gonna happen just because I wanted it? Just because I’m delusional enough to think I deserve it?
+I’ve lived a life some people would never get to experience. And yet here I am, thinking life hasn’t been fair. Why? Because I don’t get what I want? Because after all the indulgence, I suddenly want to be career-driven and expected it to just happen?
 
-Why do I deserve it? After everything I’ve been through? and those were??......
+Why do I even think I deserve that? What exactly have I been through to earn it?
 
-This is it, huh? This is the lesson I need to learn right now. Just because I finally set my heart to focusing on my career and taking life seriously, doesn’t mean a cushy well-paying job is gonna be handed to me on a silver platter. That if I want something so bad, I actually have to work hard for it.
+Maybe this is the lesson I need to learn right now. That deciding to take life seriously doesn’t mean the universe owes me an easy path. That wanting something badly doesn’t mean I get it. I actually have to work for it.
 
-Don’t get me wrong, it wasn’t all indulgence I went through, I’ve had a share of pain and desperation to get out of a bad situation. I did my due diligence of grit and dedication to be delusional enough to think I need to be rewarded. This isn’t just coming from pure ignorance. I have made sacrifices. But still, none of it matters.
+Don’t get me wrong, it wasn’t all indulgence. I’ve had my share of pain and desperation. I’ve made sacrifices, shown grit, done the work. But still, none of it guarantees anything.
 
-Life is random. You get lucky sometimes but sometimes you get really… really fucked. It doesn’t mean that I should just give up. What am I gonna do? Kill myself? That is just an insult. To the people I love and to me. I end it now so future Emma doesn’t get to suffer, because there won’t be an Emma. That’s just pathetic. Weighing all the good and bad cards I’ve been dealt with, it won’t be heavy enough to actually end it all. It's just plain stupid and ridiculous.
+Life is random. Sometimes you get lucky, sometimes you get really, really fucked. That doesn’t mean you stop. What am I gonna do? Lose hope? That would be an insult to everyone who loves me, and to the parts of me that still want to live passionately. Living a hopeless life just so _“future Emma”_ doesn’t suffer would be pathetic.
 
-So what now? What do I get out of realizing this? That the universe doesn’t owe me and I need to stop blaming anyone aside from myself. I did this to myself. No one held me at gun point to make all the decisions I made. I made my bed, I have to lie in it. Even realizing this doesn’t mean that it's a lesson learned. I have to keep learning the lesson.
+Weighing all the good and bad cards I’ve been dealt, they’re not heavy enough to justify that. It’s stupid. It’s not worth it.
 
-Nothing I’ve done so far is enough. Even if I live my life working so hard, there’ll be no guarantee that I will actually get what I want. Maybe as long as I can eat, sleep, and breathe that’s good enough. I don’t need more. Even if I get more, I’ll want more. You get what I mean? There will always be a “more”. Nothing will ever be good enough. It’s just plain evolution.
+So what now? What do I get from realizing all this? That the universe doesn’t owe me anything, and that I’m the one responsible for where I am? No one held a gun to my head. Every decision was mine.
 
-I should just shut the fuck up and live my fucking life day by day without worrying too much. One thing I know is I always look back in the past and realize that I’ve had it good. But during that time I was ungrateful and in over my head. Like right now, I’m overthinking again because I can’t sit still.
+And even realizing that doesn’t mean I’ve learned the lesson. It means I have to keep learning it... again and again.
 
-Life is gonna happen whether I want it to or not. So I just have to ride it out.
+Nothing I’ve done so far is enough. Even if I work hard all my life, there’s no guarantee I’ll get what I want. Maybe the fact that I can eat, sleep, and breathe is already enough. Because even if I get more, I’ll still want more. There will always be a “more.” That’s just how we’re built.
+
+So maybe I should just shut the fuck up and live my life, day by day, without worrying too much. Every time I look back, I realize I had it good, even when I couldn’t see it. Like right now, I’m overthinking again, just because I can’t sit still.
+
+Life is going to happen whether I want it to or not. All I can do is ride it out.
 
 That’s all.

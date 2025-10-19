@@ -285,18 +285,8 @@ export default function AboutPage() {
         <p>But I wouldn’t trade it for anything else.</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
           <img
-            src="/images/about/philippine-strats-insta-post.png"
-            alt="Philippine Strategies Insta Post"
-            className="rounded-lg shadow-md w-full h-auto mx-auto"
-          />
-          <img
             src="/images/about/meeting-at-work.png"
             alt="Emma attending a meeting at work"
-            className="rounded-lg shadow-md w-full h-auto mx-auto"
-          />
-          <img
-            src="/images/about/big-meeting-at-work.png"
-            alt="Emma in a large work meeting environment"
             className="rounded-lg shadow-md w-full h-auto mx-auto"
           />
           <img
