@@ -1381,8 +1381,8 @@ var LRUCache = class _LRUCache {
 // src/run/handlers/use-cache-handler.ts
 import { getLogger } from "./request-context.cjs";
 import {
-  getMostRecentTagRevalidationTimestamp,
-  isAnyTagStale,
+  getMostRecentTagExpirationTimestamp,
+  isAnyTagStaleOrExpired,
   markTagsAsStaleAndPurgeEdgeCache
 } from "./tags-handler.cjs";
 import { getTracer } from "./tracer.cjs";
@@ -1444,7 +1444,8 @@ var NetlifyDefaultUseCacheHandler = {
           });
           return void 0;
         }
-        if (await isAnyTagStale(entry.tags, entry.timestamp)) {
+        const { stale } = await isAnyTagStaleOrExpired(entry.tags, entry.timestamp);
+        if (stale) {
           getLogger().withFields({ cacheKey, ttl, status: "STALE BY TAG" }).debug(`[NetlifyDefaultUseCacheHandler] get result`);
           span.setAttributes({
             cacheStatus: "stale tag, discarded",
@@ -1520,7 +1521,7 @@ var NetlifyDefaultUseCacheHandler = {
         span.setAttributes({
           tags
         });
-        const expiration = await getMostRecentTagRevalidationTimestamp(tags);
+        const expiration = await getMostRecentTagExpirationTimestamp(tags);
         getLogger().withFields({ tags, expiration }).debug(`[NetlifyDefaultUseCacheHandler] getExpiration`);
         span.setAttributes({
           expiration

@@ -26,6 +26,7 @@ import { clearStaleEdgeHandlers, createEdgeHandlers } from "./build/functions/ed
 import { clearStaleServerHandlers, createServerHandler } from "./build/functions/server.js";
 import { setImageConfig } from "./build/image-cdn.js";
 import { PluginContext } from "./build/plugin-context.js";
+import { setSkewProtection } from "./build/skew-protection.js";
 import {
   verifyAdvancedAPIRoutes,
   verifyNetlifyFormsWorkaround,
@@ -49,7 +50,7 @@ var onPreBuild = async (options) => {
     console.warn(skipText);
     return;
   }
-  await tracer.withActiveSpan("onPreBuild", async () => {
+  await tracer.withActiveSpan("onPreBuild", async (span) => {
     process.env.NEXT_PRIVATE_STANDALONE = "true";
     const ctx = new PluginContext(options);
     if (options.constants.IS_LOCAL) {
@@ -58,6 +59,7 @@ var onPreBuild = async (options) => {
     } else {
       await restoreBuildCache(ctx);
     }
+    await setSkewProtection(ctx, span);
   });
 };
 var onBuild = async (options) => {

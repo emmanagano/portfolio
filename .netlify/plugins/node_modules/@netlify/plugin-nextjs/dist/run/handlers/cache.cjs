@@ -204,16 +204,20 @@ var NetlifyCacheHandler = class {
         );
         return null;
       }
-      const staleByTags = await this.checkCacheEntryStaleByTags(
+      const { stale: staleByTags, expired: expiredByTags } = await this.checkCacheEntryStaleByTags(
         blob,
         context.tags,
         context.softTags
       );
-      if (staleByTags) {
-        span.addEvent("Stale", { staleByTags, key, ttl });
+      if (expiredByTags) {
+        span.addEvent("Expired", { expiredByTags, key, ttl });
         return null;
       }
       this.captureResponseCacheLastModified(blob, key, span);
+      if (staleByTags) {
+        span.addEvent("Stale", { staleByTags, key, ttl });
+        blob.lastModified = -1;
+      }
       const isDataRequest = Boolean(context.fetchUrl);
       if (!isDataRequest) {
         this.captureCacheTags(blob.value, key);
@@ -350,8 +354,8 @@ var NetlifyCacheHandler = class {
       }
     });
   }
-  async revalidateTag(tagOrTags) {
-    return (0, import_tags_handler.markTagsAsStaleAndPurgeEdgeCache)(tagOrTags);
+  async revalidateTag(tagOrTags, durations) {
+    return (0, import_tags_handler.markTagsAsStaleAndPurgeEdgeCache)(tagOrTags, durations);
   }
   resetRequestCache() {
   }
@@ -365,16 +369,22 @@ var NetlifyCacheHandler = class {
     } else if (cacheEntry.value?.kind === "PAGE" || cacheEntry.value?.kind === "PAGES" || cacheEntry.value?.kind === "APP_PAGE" || cacheEntry.value?.kind === "ROUTE" || cacheEntry.value?.kind === "APP_ROUTE") {
       cacheTags = cacheEntry.value.headers?.[import_constants.NEXT_CACHE_TAGS_HEADER]?.split(/,|%2c/gi) || [];
     } else {
-      return false;
+      return {
+        stale: false,
+        expired: false
+      };
     }
     if (this.revalidatedTags && this.revalidatedTags.length !== 0) {
       for (const tag of this.revalidatedTags) {
         if (cacheTags.includes(tag)) {
-          return true;
+          return {
+            stale: true,
+            expired: true
+          };
         }
       }
     }
-    return (0, import_tags_handler.isAnyTagStale)(cacheTags, cacheEntry.lastModified);
+    return (0, import_tags_handler.isAnyTagStaleOrExpired)(cacheTags, cacheEntry.lastModified);
   }
 };
 var cache_default = NetlifyCacheHandler;

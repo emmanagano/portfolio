@@ -20,8 +20,8 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/run/handlers/tags-handler.cts
 var tags_handler_exports = {};
 __export(tags_handler_exports, {
-  getMostRecentTagRevalidationTimestamp: () => getMostRecentTagRevalidationTimestamp,
-  isAnyTagStale: () => isAnyTagStale,
+  getMostRecentTagExpirationTimestamp: () => getMostRecentTagExpirationTimestamp,
+  isAnyTagStaleOrExpired: () => isAnyTagStaleOrExpired,
   markTagsAsStaleAndPurgeEdgeCache: () => markTagsAsStaleAndPurgeEdgeCache,
   purgeEdgeCache: () => purgeEdgeCache
 });
@@ -86,58 +86,86 @@ var pipeline = (0, import_util.promisify)(import_stream.pipeline);
 
 // package.json
 var name = "@netlify/plugin-nextjs";
-var version = "5.13.5";
+var version = "5.14.0";
 
 // src/run/handlers/tags-handler.cts
 var import_storage = require("../storage/storage.cjs");
 var import_request_context = require("./request-context.cjs");
 var purgeCacheUserAgent = `${name}@${version}`;
-async function getTagRevalidatedAt(tag, cacheStore) {
+async function getTagManifest(tag, cacheStore) {
   const tagManifest = await cacheStore.get(tag, "tagManifest.get");
   if (!tagManifest) {
     return null;
   }
-  return tagManifest.revalidatedAt;
+  return tagManifest;
 }
-async function getMostRecentTagRevalidationTimestamp(tags) {
+async function getMostRecentTagExpirationTimestamp(tags) {
   if (tags.length === 0) {
     return 0;
   }
   const cacheStore = (0, import_storage.getMemoizedKeyValueStoreBackedByRegionalBlobStore)({ consistency: "strong" });
-  const timestampsOrNulls = await Promise.all(
-    tags.map((tag) => getTagRevalidatedAt(tag, cacheStore))
-  );
-  const timestamps = timestampsOrNulls.filter((timestamp) => timestamp !== null);
-  if (timestamps.length === 0) {
+  const manifestsOrNulls = await Promise.all(tags.map((tag) => getTagManifest(tag, cacheStore)));
+  const expirationTimestamps = manifestsOrNulls.filter((manifest) => manifest !== null).map((manifest) => manifest.expireAt);
+  if (expirationTimestamps.length === 0) {
     return 0;
   }
-  return Math.max(...timestamps);
+  return Math.max(...expirationTimestamps);
 }
-function isAnyTagStale(tags, timestamp) {
+function isAnyTagStaleOrExpired(tags, timestamp) {
   if (tags.length === 0 || !timestamp) {
-    return Promise.resolve(false);
+    return Promise.resolve({ stale: false, expired: false });
   }
   const cacheStore = (0, import_storage.getMemoizedKeyValueStoreBackedByRegionalBlobStore)({ consistency: "strong" });
   return new Promise((resolve, reject) => {
     const tagManifestPromises = [];
     for (const tag of tags) {
-      const lastRevalidationTimestampPromise = getTagRevalidatedAt(tag, cacheStore);
+      const tagManifestPromise = getTagManifest(tag, cacheStore);
       tagManifestPromises.push(
-        lastRevalidationTimestampPromise.then((lastRevalidationTimestamp) => {
-          if (!lastRevalidationTimestamp) {
-            return false;
+        tagManifestPromise.then((tagManifest) => {
+          if (!tagManifest) {
+            return { stale: false, expired: false };
           }
-          const isStale = lastRevalidationTimestamp >= timestamp;
-          if (isStale) {
-            resolve(true);
-            return true;
+          const stale = tagManifest.staleAt >= timestamp;
+          const expired = tagManifest.expireAt >= timestamp && tagManifest.expireAt <= Date.now();
+          if (expired && stale) {
+            const expiredResult = {
+              stale,
+              expired
+            };
+            resolve(expiredResult);
+            return expiredResult;
           }
-          return false;
+          if (stale) {
+            const staleResult = {
+              stale,
+              expired,
+              expireAt: tagManifest.expireAt
+            };
+            return staleResult;
+          }
+          return { stale: false, expired: false };
         })
       );
     }
-    Promise.all(tagManifestPromises).then((tagManifestAreStale) => {
-      resolve(tagManifestAreStale.some((tagIsStale) => tagIsStale));
+    Promise.all(tagManifestPromises).then((tagManifestsAreStaleOrExpired) => {
+      let result = { stale: false, expired: false };
+      for (const tagResult of tagManifestsAreStaleOrExpired) {
+        if (tagResult.expired) {
+          result = tagResult;
+          break;
+        }
+        if (tagResult.stale) {
+          result = {
+            stale: true,
+            expired: false,
+            expireAt: (
+              // make sure to use expireAt that is lowest of all tags
+              result.stale && !result.expired && typeof result.expireAt === "number" ? Math.min(result.expireAt, tagResult.expireAt) : tagResult.expireAt
+            )
+          };
+        }
+      }
+      resolve(result);
     }).catch(reject);
   });
 }
@@ -154,13 +182,15 @@ function purgeEdgeCache(tagOrTags) {
     (0, import_request_context.getLogger)().withError(error).error(`[NextRuntime] Purging the cache for tags [${tags.join(",")}] failed`);
   });
 }
-async function doRevalidateTagAndPurgeEdgeCache(tags) {
-  (0, import_request_context.getLogger)().withFields({ tags }).debug("doRevalidateTagAndPurgeEdgeCache");
+async function doRevalidateTagAndPurgeEdgeCache(tags, durations) {
+  (0, import_request_context.getLogger)().withFields({ tags, durations }).debug("doRevalidateTagAndPurgeEdgeCache");
   if (tags.length === 0) {
     return;
   }
+  const now = Date.now();
   const tagManifest = {
-    revalidatedAt: Date.now()
+    staleAt: now,
+    expireAt: now + (durations?.expire ? durations.expire * 1e3 : 0)
   };
   const cacheStore = (0, import_storage.getMemoizedKeyValueStoreBackedByRegionalBlobStore)({ consistency: "strong" });
   await Promise.all(
@@ -174,9 +204,9 @@ async function doRevalidateTagAndPurgeEdgeCache(tags) {
   );
   await purgeEdgeCache(tags);
 }
-function markTagsAsStaleAndPurgeEdgeCache(tagOrTags) {
+function markTagsAsStaleAndPurgeEdgeCache(tagOrTags, durations) {
   const tags = getCacheTagsFromTagOrTags(tagOrTags);
-  const revalidateTagPromise = doRevalidateTagAndPurgeEdgeCache(tags);
+  const revalidateTagPromise = doRevalidateTagAndPurgeEdgeCache(tags, durations);
   const requestContext = (0, import_request_context.getRequestContext)();
   if (requestContext) {
     requestContext.trackBackgroundWork(revalidateTagPromise);
@@ -185,8 +215,8 @@ function markTagsAsStaleAndPurgeEdgeCache(tagOrTags) {
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  getMostRecentTagRevalidationTimestamp,
-  isAnyTagStale,
+  getMostRecentTagExpirationTimestamp,
+  isAnyTagStaleOrExpired,
   markTagsAsStaleAndPurgeEdgeCache,
   purgeEdgeCache
 });

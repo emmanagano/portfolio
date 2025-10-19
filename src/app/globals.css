@@ -4,11 +4,11 @@
 :root {
   --background: #F6F6F6;   /* Light neutral background */
   --foreground: #171717;   /* Text */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-mono: var(--font-geist-mono);
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+	--font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+	--font-mono: var(--font-geist-mono);
   --primary: #FFC7C7;      /* Pink CTA/accent */
   --secondary: #FFE2E2;    /* Nav/section background */
   --tertiary: #8785A2;     /* Lavender-gray accent */

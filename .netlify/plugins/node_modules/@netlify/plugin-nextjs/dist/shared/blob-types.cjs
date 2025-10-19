@@ -25,7 +25,7 @@ __export(blob_types_exports, {
 });
 module.exports = __toCommonJS(blob_types_exports);
 var isTagManifest = (value) => {
-  return typeof value === "object" && value !== null && "revalidatedAt" in value && typeof value.revalidatedAt === "number" && Object.keys(value).length === 1;
+  return typeof value === "object" && value !== null && "staleAt" in value && typeof value.staleAt === "number" && "expiredAt" in value && typeof value.expiredAt === "number" && Object.keys(value).length === 2;
 };
 var isHtmlBlob = (value) => {
   return typeof value === "object" && value !== null && "html" in value && "isFullyStaticPage" in value && typeof value.html === "string" && typeof value.isFullyStaticPage === "boolean" && Object.keys(value).length === 2;

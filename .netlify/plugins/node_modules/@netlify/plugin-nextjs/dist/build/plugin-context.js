@@ -6,7 +6,7 @@
     
 import {
   require_semver
-} from "../esm-chunks/chunk-TLQCAGE2.js";
+} from "../esm-chunks/chunk-TVEBGDAB.js";
 import {
   __toESM
 } from "../esm-chunks/chunk-6BT4RYQJ.js";
@@ -149,6 +149,10 @@ var PluginContext = class {
   /** Absolute path of the edge handler */
   get edgeHandlerDir() {
     return join(this.edgeFunctionsDir, EDGE_HANDLER_NAME);
+  }
+  /** Absolute path to the skew protection config */
+  get skewProtectionConfigPath() {
+    return this.resolveFromPackagePath(".netlify/v1/skew-protection.json");
   }
   constructor(options) {
     this.constants = options.constants;
