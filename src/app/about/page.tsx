@@ -175,7 +175,7 @@ export default function AboutPage() {
 					<img
 						src="/images/about/vicious-cycle.png"
 						alt="Visual diagram showing the cycle of study, code, build, find opportunities, feel inadequate, and improve"
-						className="rounded-lg shadow-md w-full h-auto mx-auto"
+						className="rounded-lg shadow-md w-2/3 sm:w-1/2 h-auto mx-auto"
 					/>
 				</div>
 				<p>
@@ -221,97 +221,32 @@ export default function AboutPage() {
 					Philippines to start over.
 				</p>
 			</section>
-
-			<section className="space-y-4">
-				<h2 className="text-2xl sm:text-3xl font-semibold">
-					The Break I Needed
-				</h2>
-				<p>
-					When I returned, I didn’t go straight into tech. I took a
-					break from coding. I needed to improve my work ethic,
-					re-learn how to be around Filipinos, and reconnect with my
-					family.
-				</p>
-				<p>But it was tough.</p>
-				<div className="pl-6">
-					<p>
-						<em>What am I gonna be now?</em>
-					</p>
-				</div>
-				<div className="pl-6">
-					<p>
-						<em>What am I gonna do here in the Philippines?</em>
-					</p>
-				</div>
-				<div className="pl-6">
-					<p>
-						<em>Am I back for good?</em>
-					</p>
-				</div>
-				<p>
-					I was swarmed with questions not just from them, but from
-					myself.
-				</p>
-			</section>
-
-			<section className="space-y-4">
-				<h2 className="text-2xl sm:text-3xl font-semibold">
-					I worked as a Call Center Agent
-				</h2>
-				<p>
-					While I was figuring things out, I worked in customer
-					service. It exposed me to a different field and taught me
-					soft skills I still use today. I worked as a call center
-					agent for a Telco company, grinding through the night and
-					sleeping during the day.
-				</p>
-				<p>
-					It wasn’t easy. But it made me stronger. I have so much
-					respect for people in that line of work.
-				</p>
-				<p>But I knew it wasn’t the life I wanted.</p>
-			</section>
 			<section className="space-y-4">
 				<h2 className="text-2xl sm:text-3xl font-semibold">
 					Finally Breaking Into Tech
 				</h2>
 				<p>After everything, I finally landed two jobs in tech.</p>
 				<p>
-					My first was as a <strong>Junior Web Support</strong> at{" "}
-					<strong>Olly Olly</strong>, a digital marketing company in
-					the U.S. It was my entry point into the industry, a solid
-					first job in my field. I learned a lot about maintaining
-					websites, troubleshooting technical issues, and working with
-					a team. It gave me the validation I needed and motivated me
-					to keep going.
+					My first was as a <strong>Web Support Specialist</strong> at
+					a digital marketing company in the U.S. It was my entry
+					point into the industry, a solid first job in my field. I
+					learned a lot about maintaining websites, troubleshooting
+					technical issues, and working with a team. It gave me the
+					validation I needed and motivated me to keep going.
 				</p>
 				<p>
 					Later, I worked as a{" "}
-					<strong>Freelance Web Developer</strong>. A client, through
-					a personal connection, hired me to build a platform to
-					showcase his articles and promote his consulting services. I
-					had full control over the layout and design. It was the
-					first time I built a real website for a real client. From
-					start to finish, I got to bring something to life. It was
-					both challenging and deeply rewarding.
+					<strong>Freelance Web Developer</strong>. A client, hired me
+					to build a blog site. I had full control over the layout and
+					design. It was the first time I built a real website for a
+					real client. From start to finish, I got to bring something
+					to life. It was both challenging and deeply rewarding.
 				</p>
 				<p>
 					I’m still building, still growing. The journey hasn’t been
 					easy: frustrating, exhausting, and full of uncertainty.
 				</p>
 				<p>But I wouldn’t trade it for anything else.</p>
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-					<img
-						src="/images/about/meeting-at-work.png"
-						alt="Emma attending a meeting at work"
-						className="rounded-lg shadow-md w-full h-auto mx-auto"
-					/>
-					<img
-						src="/images/about/i-got-the-job-olly.png"
-						alt="Emma holding up a sign that says 'I got the job!'"
-						className="rounded-lg shadow-md w-full h-auto mx-auto"
-					/>
-				</div>
 			</section>
 		</main>
 	);

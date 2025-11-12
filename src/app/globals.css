@@ -2,53 +2,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F6F6F6;   /* Light neutral background */
-  --foreground: #171717;   /* Text */
+	--background: #F9F7F7;   /* Light neutral background */
+	--foreground: #112D4E;   /* Text */
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
 	--font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 	--font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
 	--font-mono: var(--font-geist-mono);
-  --primary: #FFC7C7;      /* Pink CTA/accent */
-  --secondary: #FFE2E2;    /* Nav/section background */
-  --tertiary: #8785A2;     /* Lavender-gray accent */
-  --quaternary: #FFC7C7;   /* Optional (same as primary) */
+	--primary: #3F72AF;      /* Blue CTA/accent */
+	--secondary: #DBE2EF;    /* Nav/section background */
+	--tertiary: #112D4E;     /* Navy accent */
+	--quaternary: #3F72AF;   /* Optional (same as primary) */
 }
 
 
 .dark {
-  --background: #222831;   /* Dark charcoal background */
-  --foreground: #EEEEEE;   /* Light gray text */
-  --primary: #00ADB5;      /* Teal accent */
-  --secondary: #393E46;    /* Dark gray/nav */
-  --tertiary: #222831;     /* Same as background for consistency */
-  --quaternary: #00ADB5;   /* Same teal accent for highlights */
+	--background: #222831;   /* Dark charcoal background */
+	--foreground: #EEEEEE;   /* Light gray text */
+	--primary: #00ADB5;      /* Teal accent */
+	--secondary: #393E46;    /* Dark gray/nav */
+	--tertiary: #222831;     /* Same as background for consistency */
+	--quaternary: #00ADB5;   /* Same teal accent for highlights */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
+	background: var(--background);
+	color: var(--foreground);
+	font-family: var(--font-sans);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
+	font-family: var(--font-serif);
 }
 
 h2 {
-  font-size: 1.75rem; /* larger size */
-  font-weight: 700;   /* bold */
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
+	font-size: 1.75rem; /* larger size */
+	font-weight: 700;   /* bold */
+	margin-top: 1.5rem;
+	margin-bottom: 0.75rem;
 }
 
 @keyframes point {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(6px); }
+	0%, 100% { transform: translateX(0); }
+	50% { transform: translateX(6px); }
 }
 
 .animate-point {
-  animation: point 1s infinite;
+	animation: point 1s infinite;
 }
 
 /* Roles of the 4 Colors

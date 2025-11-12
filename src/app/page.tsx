@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { FaLinkedin, FaInstagram, FaGithub, FaDownload } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaLinkedin, FaGithub, FaDownload } from "react-icons/fa";
 import { useTheme } from "@/context/ThemeContext";
 
 export default function Home() {
@@ -37,15 +36,6 @@ export default function Home() {
 							<FaLinkedin size={20} />
 						</a>
 						<a
-							href="https://www.instagram.com/xxo.emmy/"
-							aria-label="Instagram"
-							className="hover:text-[var(--primary)]"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FaInstagram size={20} />
-						</a>
-						<a
 							href="https://github.com/emmanagano"
 							aria-label="GitHub"
 							className="hover:text-[var(--primary)]"
@@ -54,19 +44,10 @@ export default function Home() {
 						>
 							<FaGithub size={20} />
 						</a>
-						<a
-							href="https://x.com/emsnagano"
-							aria-label="Twitter/X"
-							className="hover:text-[var(--primary)]"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FaXTwitter size={20} />
-						</a>
 					</div>
 					<div className="mt-6">
 						<a
-							href="/Emma Nagano's Resume.pdf"
+							href="/emma-nagano-resume.pdf"
 							download
 							className="inline-flex items-center px-4 py-2 bg-[var(--primary)] text-[var(--foreground)] rounded-md hover:opacity-90 transition"
 						>
