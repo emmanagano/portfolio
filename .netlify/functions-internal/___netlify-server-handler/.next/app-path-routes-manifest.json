@@ -2,8 +2,9 @@
   "/api/messages/route": "/api/messages",
   "/favicon.ico/route": "/favicon.ico",
   "/_not-found/page": "/_not-found",
-  "/about/page": "/about",
-  "/page": "/",
   "/blogs/page": "/blogs",
+  "/page": "/",
+  "/gallery/page": "/gallery",
+  "/about/page": "/about",
   "/blogs/[slug]/page": "/blogs/[slug]"
 }
