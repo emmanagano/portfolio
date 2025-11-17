@@ -48,7 +48,7 @@ export default function Message() {
 	}
 
 	return (
-		<div className="p-4 rounded-lg bg-[var(--card)] flex flex-col h-full">
+		<div className="p-4 rounded-lg bg-[var(--card)] flex flex-col h-full max-h-[60vh] md:max-h-full">
 			{/* messages */}
 			<div className="flex-1 overflow-y-auto flex flex-col gap-2 pr-1">
 				{messages.map((m) => (
