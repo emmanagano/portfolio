@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { IoMdSend } from "react-icons/io";
 
 interface MessageItem {
@@ -12,6 +12,14 @@ export default function Message() {
 
 	const [messages, setMessages] = useState<MessageItem[]>([]);
 
+	const messageEndRef = useRef<HTMLDivElement | null>(null);
+
+	function scrollToBottom() {
+		if (messageEndRef.current) {
+			messageEndRef.current.scrollIntoView({ behavior: "smooth" });
+		}
+	}
+
 	async function fetchMessages() {
 		const res = await fetch("/api/messages");
 		const data = await res.json();
@@ -21,6 +29,10 @@ export default function Message() {
 	useEffect(() => {
 		fetchMessages();
 	}, []);
+
+	useEffect(() => {
+		scrollToBottom();
+	}, [messages]);
 
 	async function sendMessage() {
 		if (!text.trim()) return;
@@ -42,11 +54,12 @@ export default function Message() {
 				{messages.map((m) => (
 					<div
 						key={m.id}
-						className="px-3 py-2 rounded-md bg-[var(--input)]"
+						className="px-4 py-2 max-w-[80%] rounded-xl rounded-bl-none shadow-sm bg-[color:color-mix(in_srgb,var(--primary)_10%,transparent)]"
 					>
 						{m.message}
 					</div>
 				))}
+				<div ref={messageEndRef} />
 			</div>
 
 			{/* input and button */}

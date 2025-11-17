@@ -22,7 +22,7 @@ export default function AboutPage() {
 				</p>
 				<div className="pt-4">
 					<img
-						src="/images/about/coding-bootcamp-certificate.png"
+						src="/images/coding-bootcamp-certificate.png"
 						alt="University of North Florida Coding Bootcamp Certificate"
 						className="rounded-lg shadow-md w-full h-auto mx-auto"
 					/>

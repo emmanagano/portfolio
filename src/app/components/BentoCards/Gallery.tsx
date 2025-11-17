@@ -3,27 +3,23 @@
 import { useState, useEffect } from "react";
 
 const images = [
-	"/images/emma-nagano/emma-nagano-black-tank-top.png",
-	"/images/emma-nagano/emma-nagano-blue-dress-hanoi-night.png",
-	"/images/emma-nagano/emma-nagano-blurry-motion-portrait.jpg",
-	"/images/emma-nagano/emma-nagano-car-selfie.jpg",
-	"/images/emma-nagano/emma-nagano-car-sunglasses-blue-top.jpg",
-	"/images/emma-nagano/emma-nagano-cinematic-gaze.jpg",
-	"/images/emma-nagano/emma-nagano-city-night-view.jpg",
-	"/images/emma-nagano/emma-nagano-dark-eyeshadow.jpg",
-	"/images/emma-nagano/emma-nagano-floral-top-portrait.jpg",
-	"/images/emma-nagano/emma-nagano-hand-on-chin-glasses.jpg",
-	"/images/emma-nagano/emma-nagano-headphones-natural-look.jpg",
-	"/images/emma-nagano/emma-nagano-marina-walkway-night.jpg",
-	"/images/emma-nagano/emma-nagano-mirror-gym-selfie.jpg",
-	"/images/emma-nagano/emma-nagano-mirror-portrait-bathroom.jpg",
-	"/images/emma-nagano/emma-nagano-rainbow-road-photo.jpg",
-	"/images/emma-nagano/emma-nagano-rooftop-photo-night.jpg",
-	"/images/emma-nagano/emma-nagano-serious-look-glasses.jpg",
-	"/images/emma-nagano/emma-nagano-smiling-glasses.jpg",
-	"/images/emma-nagano/emma-nagano-badass.jpg",
-	"/images/emma-nagano/emma-nagano-sunglasses-outdoor.jpg",
-	"/images/emma-nagano/emma-nagano-talking-expression.jpg",
+	"/images/amia/amia-bedtime-cuddle-pose.jpg",
+	"/images/amia/amia-big-yawn-moment.jpg",
+	"/images/amia/amia-blue-light-night-photo.jpg",
+	"/images/amia/amia-cozy-couch-lounge.jpg",
+	"/images/amia/amia-curious-couch-tilt.jpg",
+	"/images/amia/amia-green-filter-confused-look.jpg",
+	"/images/amia/amia-green-light-side-profile.jpg",
+	"/images/amia/amia-happy-chair-sit.jpg",
+	"/images/amia/amia-pink-room-portrait.jpg",
+	"/images/amia/amia-playing-with-red-toy.jpg",
+	"/images/amia/amia-red-filter-goofy-face.jpg",
+	"/images/amia/amia-red-room-sitting-pose.jpg",
+	"/images/amia/amia-regal-side-profile.jpg",
+	"/images/amia/amia-relaxed-couch-side-eye.jpg",
+	"/images/amia/amia-sleepy-couch-closeup.jpg",
+	"/images/amia/amia-soft-gaze-pink-room.jpg",
+	"/images/amia/amia-sweet-face-front-camera.jpg",
 ];
 
 export default function Gallery() {
@@ -51,7 +47,7 @@ export default function Gallery() {
 
 	return (
 		<div
-			className="relative w-full h-full rounded-3xl overflow-hidden cursor-pointer"
+			className="relative rounded-3xl overflow-hidden cursor-pointer aspect-square w-full h-full"
 			onMouseEnter={() => setHovering(true)}
 			onMouseLeave={() => setHovering(false)}
 			onClick={() => {
@@ -62,7 +58,7 @@ export default function Gallery() {
 			<img
 				src={images[index]}
 				alt="Emma Nagano"
-				className="object-contain w-full h-full transition-all duration-500"
+				className="w-full h-full object-cover transition-all duration-500"
 			/>
 		</div>
 	);

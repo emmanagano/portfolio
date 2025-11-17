@@ -68,9 +68,9 @@ export default function Home() {
 						row-start-9
 						row-span-2
 						md:col-start-1
-						md:col-span-6
+						md:col-span-3
 						md:row-start-1
-						md:row-span-3
+						md:row-span-1
 						lg:col-start-1
 						lg:col-span-3
 						lg:row-start-1
@@ -84,14 +84,16 @@ export default function Home() {
 				<div
 					className="
 						bg-[var(--secondary)]
-						rounded-3xl
+						rounded-3xl						
+						flex
+						items-center
 						col-start-1
 						col-span-6
 						row-start-6
 						row-span-3
-						md:col-start-1
+						md:col-start-4
 						md:col-span-3
-						md:row-start-4
+						md:row-start-1
 						md:row-span-2
 						lg:col-start-1
 						lg:col-span-3
@@ -115,9 +117,9 @@ export default function Home() {
 						col-span-6
 						row-start-5
 						row-span-1
-						md:col-start-1
+						md:col-start-4
 						md:col-span-3
-						md:row-start-6
+						md:row-start-3
 						md:row-span-1
 						lg:col-start-1
 						lg:col-span-3
@@ -235,10 +237,10 @@ export default function Home() {
 						col-span-6
 						row-start-9
 						row-span-3
-						md:col-start-4
+						md:col-start-1
 						md:col-span-3
-						md:row-start-4
-						md:row-span-3
+						md:row-start-2
+						md:row-span-2
 						lg:col-start-10
 						lg:col-span-3
 						lg:row-start-1
@@ -252,7 +254,14 @@ export default function Home() {
 					className="
 						bg-[var(--secondary)]
 						rounded-3xl
-						p-6
+						col-start-1
+						col-span-12
+						row-start-12
+						row-span-4
+						md:col-start-1
+						md:col-span-6
+						md:row-start-4
+						md:row-span-3
 						lg:col-start-10
 						lg:col-span-3
 						lg:row-start-4
