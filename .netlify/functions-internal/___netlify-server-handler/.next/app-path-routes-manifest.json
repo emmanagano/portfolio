@@ -3,8 +3,8 @@
   "/favicon.ico/route": "/favicon.ico",
   "/_not-found/page": "/_not-found",
   "/blogs/page": "/blogs",
-  "/page": "/",
   "/gallery/page": "/gallery",
   "/about/page": "/about",
+  "/page": "/",
   "/blogs/[slug]/page": "/blogs/[slug]"
 }

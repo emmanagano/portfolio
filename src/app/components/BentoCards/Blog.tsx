@@ -5,10 +5,10 @@ export function Blog() {
 	return (
 		<Link
 			href="/blogs"
-			className="flex items-center justify-between text-lg font-semibold hover:underline"
+			className="flex items-center justify-between text-md font-semibold hover:underline"
 		>
 			<p>Blog</p>
-			<SiLibreofficewriter size={42} />
+			<SiLibreofficewriter size={32} />
 		</Link>
 	);
 }
