@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 // GET all messages
 export async function GET() {
-	const result = await pool.query("SELECT * FROM messages ORDER BY created_at DESC");
+	const result = await pool.query("SELECT * FROM messages ORDER BY id ASC");
 	return NextResponse.json(result.rows);
 }
 
