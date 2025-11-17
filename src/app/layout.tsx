@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css"; // Ensure styles are loaded
-import Layout from "./components/Layout";
 import { ThemeProvider } from "@/context/ThemeContext";
 import Script from "next/script";
 
@@ -50,11 +49,9 @@ export default function RootLayout({
 					></iframe>
 				</noscript>
 				<ThemeProvider>
-					<Layout>
-						{" "}
-						{/* ✅ This ensures the Navbar & Footer are on all pages */}
-						{children}
-					</Layout>
+					{" "}
+					{/* ✅ This ensures the Navbar & Footer are on all pages */}
+					{children}
 				</ThemeProvider>
 			</body>
 		</html>

@@ -10,9 +10,9 @@
 	--font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
 	--font-mono: var(--font-geist-mono);
 	--primary: #3F72AF;      /* Blue CTA/accent */
-	--secondary: #DBE2EF;    /* Nav/section background */
-	--tertiary: #112D4E;     /* Navy accent */
-	--quaternary: #3F72AF;   /* Optional (same as primary) */
+	--secondary: #FFFFFF;    /* Bento Box bg-color */
+	/* --tertiary: #112D4E;     
+	--quaternary: #3F72AF;   */
 }
 
 
@@ -20,9 +20,9 @@
 	--background: #222831;   /* Dark charcoal background */
 	--foreground: #EEEEEE;   /* Light gray text */
 	--primary: #00ADB5;      /* Teal accent */
-	--secondary: #393E46;    /* Dark gray/nav */
-	--tertiary: #222831;     /* Same as background for consistency */
-	--quaternary: #00ADB5;   /* Same teal accent for highlights */
+	--secondary: #222831;    /* Bento Box bg-color */
+	/* --tertiary: #222831;   
+	--quaternary: #00ADB5;   */
 }
 
 body {
@@ -51,16 +51,13 @@ h2 {
 	animation: point 1s infinite;
 }
 
-/* Roles of the 4 Colors
-	1.	Primary → your brand’s strongest color.
-	•	Used for highlights, call-to-action buttons, links, and key accents.
-	•	Think of it as the “identity” color.
-	2.	Secondary → supporting brand color.
-	•	Complements the primary.
-	•	Often used for secondary buttons, hover states, or section accents.
-	3.	Tertiary → background/neutral support color.
-	•	Fills cards, subtle blocks, dividers.
-	•	Helps create hierarchy without overwhelming.
-	4.	Quaternary → accent or warning/alert color.
-	•	Used sparingly (badges, highlights, small UI elements).
-	•	Keeps things lively without clutter. */
+/* Dark mode border */
+.dark .bento-box {
+	border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Hover effects */
+.bento-box:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}

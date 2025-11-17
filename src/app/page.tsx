@@ -1,130 +1,267 @@
 "use client";
 import React from "react";
-import Link from "next/link";
-import { FaLinkedin, FaGithub, FaDownload } from "react-icons/fa";
-import { useTheme } from "@/context/ThemeContext";
+import Skills from "./components/Skills";
+import ThemeToggle from "./components/ThemeToggle";
+import Hero from "./components/BentoCards/Hero";
+import { Certification } from "./components/BentoCards/Certification";
+import Gallery from "./components/BentoCards/Gallery";
+import FunAnimation from "./components/BentoCards/FunAnimation";
+import IntroVideo from "./components/BentoCards/IntroVideo";
+import { Blog } from "./components/BentoCards/Blog";
+import { ProjectDemo } from "./components/BentoCards/ProjectDemo";
+import Message from "./components/BentoCards/Message";
+// import Link from "next/link";
+// import { FaLinkedin, FaGithub, FaDownload } from "react-icons/fa";
+// import { useTheme } from "@/context/ThemeContext";
 
 export default function Home() {
-	const { theme } = useTheme();
+	// const { theme } = useTheme();
 	return (
-		<main className="min-h-screen bg-[var(--background)] p-8 flex items-center justify-center">
-			<div className="w-full">
-				<header className="mb-10 text-center">
-					<img
-						src={
-							theme === "dark"
-								? "/images/profile-picture-dark.png"
-								: "/images/profile-picture.png"
-						}
-						alt="Profile picture"
-						className="mx-auto mb-4 h-24 w-24 rounded-full object-cover"
-					/>
-					<h1 className="text-4xl font-bold text-[var(--foreground)]">
-						Emma Nagano
-					</h1>
-					<p className="mt-3 text-[var(--foreground)]">
-						Web Developer
-					</p>
-					<div className="mt-4 flex justify-center space-x-4 text-[var(--foreground)]">
-						<a
-							href="https://www.linkedin.com/in/emma-nagano-4a0483246/"
-							aria-label="LinkedIn"
-							className="hover:text-[var(--primary)]"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FaLinkedin size={20} />
-						</a>
-						<a
-							href="https://github.com/emmanagano"
-							aria-label="GitHub"
-							className="hover:text-[var(--primary)]"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FaGithub size={20} />
-						</a>
-					</div>
-					<div className="mt-6">
-						<a
-							href="/emma-nagano-resume.pdf"
-							download
-							className="inline-flex items-center px-4 py-2 bg-[var(--primary)] text-[var(--foreground)] rounded-md hover:opacity-90 transition"
-						>
-							<FaDownload className="mr-2" /> Download Resume
-						</a>
-					</div>
-				</header>
-
-				{/* Quick Nav – Pinterest-style image cards */}
-				<nav className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-					<Link
-						href="/projects"
-						className="relative rounded-md overflow-hidden group"
-					>
-						<div className="relative">
-							<img
-								src="/images/project-hero-image.png"
-								alt="Projects"
-								className="h-48 w-full object-cover rounded-lg"
-							/>
-							<div className="absolute inset-0 bg-[var(--secondary)] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-lg"></div>
-						</div>
-						<p className="mt-2 text-left text-lg font-bold text-[var(--foreground)]">
-							projects
-						</p>
-					</Link>
-					<Link
-						href="/blogs"
-						className="relative rounded-md overflow-hidden group"
-					>
-						<div className="relative">
-							<img
-								src="/images/blogs-hero-image.png"
-								alt="Blogs"
-								className="h-48 w-full object-cover rounded-lg"
-							/>
-							<div className="absolute inset-0 bg-[var(--secondary)] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-lg"></div>
-						</div>
-						<p className="mt-2 text-left text-lg font-bold text-[var(--foreground)]">
-							blogs
-						</p>
-					</Link>
-					<Link
-						href="/about"
-						className="relative rounded-md overflow-hidden group"
-					>
-						<div className="relative">
-							<img
-								src="/images/about-hero-image.png"
-								alt="About"
-								className="h-48 w-full object-cover rounded-lg"
-							/>
-							<div className="absolute inset-0 bg-[var(--secondary)] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-lg"></div>
-						</div>
-						<p className="mt-2 text-left text-lg font-bold text-[var(--foreground)]">
-							about
-						</p>
-					</Link>
-					<Link
-						href="/skills"
-						className="relative rounded-md overflow-hidden group"
-					>
-						<div className="relative">
-							<img
-								src="/images/skills-hero-image.png"
-								alt="Skills"
-								className="h-48 w-full object-cover rounded-lg"
-							/>
-							<div className="absolute inset-0 bg-[var(--secondary)] opacity-0 group-hover:opacity-40 transition-opacity duration-300 rounded-lg"></div>
-						</div>
-						<p className="mt-2 text-left text-lg font-bold text-[var(--foreground)]">
-							skills
-						</p>
-					</Link>
-				</nav>
-
-				{/* TODO: Replace with your real hero, latest posts, and any sections you want. */}
+		<main
+			className="
+				md:h-screen
+				p-6
+			"
+		>
+			<div
+				className="
+					grid
+					md:h-full
+					md:w-full
+					[grid-template-columns:repeat(12,1fr)] 
+					md:[grid-template-rows:repeat(6,1fr)] 
+					gap-4 
+					box-border
+				"
+			>
+				{/* Hero */}
+				<div
+					className="
+						bg-[var(--secondary)]
+						rounded-3xl
+						p-6
+						col-start-1
+						col-span-12
+						row-start-1
+						row-span-4
+						md:col-start-7
+						md:col-span-6
+						md:row-start-1
+						md:row-span-4
+						lg:col-start-4
+						lg:col-span-6
+						lg:row-start-1
+						lg:row-span-4
+						bento-box
+					"
+				>
+					<Hero />
+				</div>
+				{/* Certification --> About Replacement */}
+				<div
+					className="
+						bg-[var(--secondary)]
+						rounded-3xl
+						p-6
+						col-start-1
+						col-span-6
+						row-start-9
+						row-span-2
+						md:col-start-1
+						md:col-span-6
+						md:row-start-1
+						md:row-span-3
+						lg:col-start-1
+						lg:col-span-3
+						lg:row-start-1
+						lg:row-span-2
+						bento-box
+					"
+				>
+					<Certification />
+				</div>
+				{/* Gallery */}
+				<div
+					className="
+						bg-[var(--secondary)]
+						rounded-3xl
+						col-start-1
+						col-span-6
+						row-start-6
+						row-span-3
+						md:col-start-1
+						md:col-span-3
+						md:row-start-4
+						md:row-span-2
+						lg:col-start-1
+						lg:col-span-3
+						lg:row-start-3
+						lg:row-span-3
+						bento-box
+					"
+				>
+					<Gallery />
+				</div>
+				{/* Dark/Light Mode */}
+				<div
+					className="
+						bg-[var(--secondary)]
+						rounded-3xl
+						p-6
+						flex
+						justify-center
+						items-center
+						col-start-4
+						col-span-6
+						row-start-5
+						row-span-1
+						md:col-start-1
+						md:col-span-3
+						md:row-start-6
+						md:row-span-1
+						lg:col-start-1
+						lg:col-span-3
+						lg:row-start-6
+						lg:row-span-1
+						bento-box
+					"
+				>
+					<ThemeToggle />
+				</div>
+				{/* Blog */}
+				<div
+					className="
+						bg-[var(--secondary)]
+						rounded-3xl
+						p-6
+						flex
+						flex-col
+						justify-center
+						col-start-7
+						col-span-6
+						row-start-6
+						row-span-1
+						md:col-start-7
+						md:col-span-3
+						md:row-start-5
+						md:row-span-1
+						lg:col-start-4
+						lg:col-span-3
+						lg:row-start-5
+						lg:row-span-1
+						bento-box
+					"
+				>
+					<Blog />
+				</div>
+				{/* Introduction Video */}
+				<div
+					className="
+						bg-[var(--secondary)]
+						rounded-3xl
+						p-6
+						col-start-7
+						col-span-6
+						row-start-8
+						row-span-1
+						md:col-start-10
+						md:col-span-3
+						md:row-start-5
+						md:row-span-1
+						lg:col-start-7
+						lg:col-span-3
+						lg:row-start-5
+						lg:row-span-1
+						bento-box
+					"
+				>
+					<IntroVideo />
+				</div>
+				{/* Fun Animation */}
+				<div
+					className="
+						bg-[var(--secondary)]
+						rounded-3xl
+						col-start-1
+						col-span-6
+						row-start-11
+						row-span-1
+						md:col-start-7
+						md:col-span-3
+						md:row-start-6
+						md:row-span-1
+						lg:col-start-4
+						lg:col-span-3
+						lg:row-start-6
+						lg:row-span-1
+						bento-box
+					"
+				>
+					<FunAnimation />
+				</div>
+				{/* Project Demo */}
+				<div
+					className="
+						bg-[var(--secondary)]
+						rounded-3xl
+						p-6
+						flex
+						flex-col
+						justify-center
+						col-start-7
+						col-span-6
+						row-start-7
+						row-span-1
+						md:col-start-10
+						md:col-span-3
+						md:row-start-6
+						md:row-span-1
+						lg:col-start-7
+						lg:col-span-3
+						lg:row-start-6
+						lg:row-span-1
+						bento-box
+					"
+				>
+					<ProjectDemo />
+				</div>
+				{/* Skills */}
+				<div
+					className="
+						bg-[var(--secondary)]
+						rounded-3xl
+						p-6
+						col-start-7
+						col-span-6
+						row-start-9
+						row-span-3
+						md:col-start-4
+						md:col-span-3
+						md:row-start-4
+						md:row-span-3
+						lg:col-start-10
+						lg:col-span-3
+						lg:row-start-1
+						lg:row-span-3
+						bento-box
+					"
+				>
+					<Skills />
+				</div>
+				<div
+					className="
+						bg-[var(--secondary)]
+						rounded-3xl
+						p-6
+						lg:col-start-10
+						lg:col-span-3
+						lg:row-start-4
+						lg:row-span-3
+						bento-box
+					"
+				>
+					<Message />
+				</div>
 			</div>
 		</main>
 	);
