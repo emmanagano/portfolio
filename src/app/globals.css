@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-	--background: #F9F7F7;   /* Light neutral background */
+	--background: #F1F0F5;   /* Light neutral background */
 	--foreground: #112D4E;   /* Text */
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);

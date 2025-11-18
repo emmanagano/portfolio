@@ -29,5 +29,33 @@
 	<loc>https://emmanagano.com/gallery</loc>
 	<changefreq>weekly</changefreq>
 	<priority>0.7</priority>
+	<url>
+	<loc>https://emmanagano.com/gallery</loc>
+	<changefreq>weekly</changefreq>
+	<priority>0.7</priority>
+	<!-- Images -->
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-badass.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-black-jacket-mirror-selfie.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-black-tank-top.png</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-blue-dress-hanoi-night.png</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-blurry-motion-portrait.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-car-selfie.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-car-sunglasses-blue-top.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-cinematic-gaze.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-city-night-view.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-dark-eyeshadow.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-floral-top-portrait.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-hand-on-chin-glasses.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-headphones-natural-look.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-marina-walkway-night.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-mirror-gym-selfie.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-mirror-portrait-bathroom.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-rainbow-road-photo.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-rooftop-photo-night.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-serious-look-glasses.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-smiling-glasses.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-sunglasses-outdoor.jpg</image:loc></image:image>
+	<image:image><image:loc>https://emmanagano.com/images/emma-nagano/emma-nagano-talking-expression.jpg</image:loc></image:image>
+</url>
 </url>
 </urlset>
