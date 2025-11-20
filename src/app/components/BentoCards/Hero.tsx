@@ -21,19 +21,20 @@ export default function Hero() {
 				<h1 className="text-3xl">Emma Nagano</h1>
 				<p>Frontend Developer</p>
 				<p>
-					Front-end developer with 3 years of experience building
-					websites from scratch. Previously worked as a Web Support
-					Specialist at a digital marketing agency. Earned a coding
-					certificate from Fullstack Academy.
+					Hi. I&apos;m Emma, a web developer, who got a coding
+					certificate from Fullstack Academy. I&apos;m passionate
+					about bringing ideas to life. Right now I&apos;m looking for
+					my next project. If you need someone to design and develop
+					your website, I might know someone. Hehe
 				</p>
 			</div>
-			<div className="flex justify-end w-full gap-3 mt-2 group">
+			<div className="flex flex-row flex-wrap justify-end items-center w-full gap-3 mt-2 overflow-hidden">
 				<a
 					href="https://drive.google.com/file/d/15JRmX7tRtsxxt9aLgUFo5NpDwAOjF7D_/view?usp=sharing"
 					aria-label="Resume"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--secondary)] transition-transform duration-300 group-hover:scale-110 hover:scale-125"
+					className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--secondary)] transition-transform duration-300 group-hover:scale-110 hover:scale-125 shrink-0"
 				>
 					<IoDocumentText size={20} />
 				</a>
@@ -43,7 +44,7 @@ export default function Hero() {
 					aria-label="GitHub"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--secondary)] transition-transform duration-300 group-hover:scale-110 hover:scale-125"
+					className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--secondary)] transition-transform duration-300 group-hover:scale-110 hover:scale-125 shrink-0"
 				>
 					<FaGithub size={20} />
 				</a>
@@ -53,7 +54,7 @@ export default function Hero() {
 					aria-label="LinkedIn"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--secondary)] transition-transform duration-300 group-hover:scale-110 hover:scale-125"
+					className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--secondary)] transition-transform duration-300 group-hover:scale-110 hover:scale-125 shrink-0"
 				>
 					<FaLinkedin size={20} />
 				</a>
@@ -63,7 +64,7 @@ export default function Hero() {
 					aria-label="Email"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--secondary)] transition-transform duration-300 group-hover:scale-110 hover:scale-125"
+					className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--secondary)] transition-transform duration-300 group-hover:scale-110 hover:scale-125 shrink-0"
 				>
 					<MdEmail size={20} />
 				</a>

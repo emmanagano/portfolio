@@ -16,6 +16,9 @@ export default function Message() {
 
 	const messageEndRef = useRef<HTMLDivElement | null>(null);
 
+	const [sendError, setSendError] = useState(false);
+	const [isSending, setIsSending] = useState(false);
+
 	function scrollToBottom() {
 		if (messageEndRef.current) {
 			messageEndRef.current.scrollIntoView({ behavior: "smooth" });
@@ -39,20 +42,46 @@ export default function Message() {
 	}, [messages]);
 
 	async function sendMessage() {
-		if (!text.trim()) return;
+		if (!text.trim() || isSending) return;
 
-		await fetch("/api/messages", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ message: text }),
-		});
+		setIsSending(true);
+		setSendError(false);
 
-		setText("");
-		fetchMessages();
+		try {
+			const attemptSend = async () => {
+				const res = await fetch("/api/messages", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ message: text }),
+				});
+
+				if (!res.ok) throw new Error("Failed");
+			};
+
+			let success = false;
+			try {
+				await attemptSend();
+				success = true;
+			} catch {}
+
+			if (!success) {
+				setSendError(true);
+				setIsSending(false);
+				return; // Do NOT clear text
+			}
+
+			// Success
+			setText("");
+			fetchMessages();
+		} catch {
+			setSendError(true);
+		} finally {
+			setIsSending(false);
+		}
 	}
 
 	return (
-		<div className="p-4 rounded-lg bg-[var(--card)] flex flex-col h-full max-h-[60vh] md:max-h-full">
+		<div className="p-4 rounded-lg bg-[var(--card)] flex flex-col h-full max-h-[60vh] md:max-h-full min-w-0">
 			{/* messages */}
 			<div className="flex-1 overflow-y-auto flex flex-col gap-2 pr-1">
 				{loading && (
@@ -95,18 +124,21 @@ export default function Message() {
 			</div>
 
 			{/* input and button */}
-			<div className="flex items-center gap-2 w-full mt-3">
+			<div className="flex items-center gap-2 w-full mt-3 min-w-0 overflow-hidden">
 				<input
 					type="text"
 					placeholder="Type your message..."
-					className="flex-1 px-3 py-2 rounded-md bg-[var(--input)]"
+					className={`flex-1 min-w-0 w-full px-3 py-2 rounded-md bg-[var(--input)] transition-all duration-200
+	${sendError ? "border border-red-500" : ""}
+`}
 					value={text}
 					onChange={(e) => setText(e.target.value)}
 				/>
 
 				<button
 					onClick={sendMessage}
-					className="flex items-center justify-center px-3 py-2 rounded-md bg-[var(--primary)] text-white"
+					disabled={isSending}
+					className="flex items-center justify-center flex-shrink-0 w-10 h-10 rounded-full bg-[var(--primary)] text-white shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
 				>
 					<IoMdSend />
 				</button>

@@ -63,6 +63,9 @@ export default function Home() {
 						bg-[var(--secondary)]
 						rounded-3xl
 						p-6
+						flex
+						justify-center
+						items-center
 						col-start-1
 						col-span-6
 						row-start-9
