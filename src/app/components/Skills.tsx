@@ -3,28 +3,40 @@
 import Image from "next/image";
 
 const logos = [
+	// Languages
+	"javascript.png",
+	"typescript.png",
+
+	// Frontend
+	"html-5.png",
 	"css.png",
+	"react.png",
+	"next.js.png",
+	"tailwindcss.png",
+
+	// Backend
+	"node.js.png",
 	"express-js.png",
+	"postgresql.png",
+	"supabase.png",
+
+	// SEO Tools
 	"ga.png",
-	"github.png",
 	"google-search-console.png",
 	"google-tag-manager.png",
-	"html-5.png",
-	"jira.png",
-	"monday.png",
+
+	// Platforms / Tools
+	"github.png",
 	"netlify.png",
-	"next.js.png",
-	"node.js.png",
-	"postgresql.png",
 	"pressable.png",
 	"railway.png",
-	"react.png",
-	"slack.png",
-	"tailwindcss.png",
-	"typescript.png",
 	"wix.png",
 	"wordpress.png",
 	"wpengine.png",
+	"monday.png",
+	"slack.png",
+	"jira.png",
+	"chatgpt.png",
 ];
 
 export default function Skills() {
@@ -60,6 +72,9 @@ export default function Skills() {
 			.animate-scrollSkills {
 			animation: scrollSkills 50s linear infinite;
 			}
+				.relative:hover .animate-scrollSkills {
+		animation-duration: 12s;
+	}
 			`}</style>
 		</div>
 	);

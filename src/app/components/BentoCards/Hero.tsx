@@ -30,7 +30,7 @@ export default function Hero() {
 			</div>
 			<div className="flex flex-row flex-wrap justify-end items-center w-full gap-3 mt-2 overflow-hidden">
 				<a
-					href="https://drive.google.com/file/d/15JRmX7tRtsxxt9aLgUFo5NpDwAOjF7D_/view?usp=sharing"
+					href="https://drive.google.com/file/d/1SYFvtyDy8xBNMLjx_WJlNBR9mddAfkBt/view?usp=sharing"
 					aria-label="Resume"
 					target="_blank"
 					rel="noopener noreferrer"

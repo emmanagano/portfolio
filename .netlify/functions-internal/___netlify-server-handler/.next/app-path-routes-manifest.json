@@ -1,10 +1,10 @@
 {
-  "/api/messages/route": "/api/messages",
   "/favicon.ico/route": "/favicon.ico",
   "/_not-found/page": "/_not-found",
+  "/api/messages/route": "/api/messages",
   "/about/page": "/about",
-  "/page": "/",
   "/gallery/page": "/gallery",
   "/blogs/page": "/blogs",
+  "/page": "/",
   "/blogs/[slug]/page": "/blogs/[slug]"
 }
