@@ -1,10 +1,11 @@
 {
+  "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/api/messages/route": "app/api/messages/route.js",
   "/about/page": "app/about/page.js",
-  "/page": "app/page.js",
+  "/api/messages/route": "app/api/messages/route.js",
+  "/blogs/[slug]/page": "app/blogs/[slug]/page.js",
   "/blogs/page": "app/blogs/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/gallery/page": "app/gallery/page.js",
-  "/blogs/[slug]/page": "app/blogs/[slug]/page.js"
+  "/page": "app/page.js"
 }

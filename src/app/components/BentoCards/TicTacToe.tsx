@@ -6,6 +6,7 @@ export function TicTacToe() {
 	const [board, setBoard] = useState<(string | null)[]>(Array(9).fill(null));
 	const [isXTurn, setIsXTurn] = useState(true);
 	const [vsAI, setVsAI] = useState(false);
+	const [mounted, setMounted] = useState(false);
 
 	const result = calculateWinner(board);
 	const winner = result?.player;
@@ -28,6 +29,12 @@ export function TicTacToe() {
 			return () => clearTimeout(timeout);
 		}
 	}, [board, isXTurn, vsAI, winner]);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	if (!mounted) return null;
 
 	function handleClick(index: number) {
 		if (board[index] || winner) return;
@@ -70,7 +77,7 @@ export function TicTacToe() {
 				<span>AI</span>
 			</div>
 			<div
-				className={`w-full flex flex-col items-center border border-white/5 rounded-2xl p-2`}
+				className={`w-full flex flex-col items-center rounded-2xl p-2`}
 			>
 				<div className="text-sm opacity-80 mb-1">
 					{winner
