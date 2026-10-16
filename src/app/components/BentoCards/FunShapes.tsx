@@ -196,23 +196,17 @@ export default function FunShapes() {
 				const maxW = rect?.width ?? 0;
 				const maxH = rect?.height ?? 0;
 
-				if (maxW && maxH) {
-					for (const s of next) {
-						const halfW = s.w / 2;
-						const halfH = s.type === "triangle" ? s.h : s.h / 2;
+				// Final clamp to keep shapes inside container
+				for (let i = 0; i < next.length; i++) {
+					const s = next[i];
+					const halfW = s.w / 2;
+					const halfH = s.h / 2;
 
-						s.x = Math.max(halfW, Math.min(maxW - halfW, s.x));
-						s.y = Math.max(
-							halfH,
-							Math.min(
-								maxH - (s.type === "triangle" ? 0 : halfH),
-								s.y,
-							),
-						);
-					}
+					s.x = Math.max(halfW, Math.min(maxW - halfW, s.x));
+					s.y = Math.max(halfH, Math.min(maxH - halfH, s.y));
 				}
 
-				return [...next];
+				return next;
 			});
 
 			frame = requestAnimationFrame(update);

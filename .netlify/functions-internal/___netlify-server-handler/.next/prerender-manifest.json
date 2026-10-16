@@ -98,54 +98,6 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/blogs": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/blogs",
-      "dataRoute": "/blogs.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/blogs/how-i-made-my-first-million": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/blogs/[slug]",
-      "dataRoute": "/blogs/how-i-made-my-first-million.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/favicon.ico": {
       "initialHeaders": {
         "cache-control": "public, max-age=0, must-revalidate",
@@ -200,40 +152,11 @@
       ]
     }
   },
-  "dynamicRoutes": {
-    "/blogs/[slug]": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "routeRegex": "^/blogs/([^/]+?)(?:/)?$",
-      "dataRoute": "/blogs/[slug].rsc",
-      "fallback": null,
-      "fallbackRootParams": [],
-      "fallbackRouteParams": [],
-      "dataRouteRegex": "^/blogs/([^/]+?)\\.rsc$",
-      "prefetchDataRoute": null,
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    }
-  },
+  "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "166a73db4cc780146e29cb1850c45a55",
-    "previewModeSigningKey": "9408387fa48da395d90879f9a0e0c3763caa6bba1a8afec9922d94289e211b82",
-    "previewModeEncryptionKey": "c5d3b02156a8606031ace32f223ab8a1d08de33ae05b9e15c24663ae1c4d8526"
+    "previewModeId": "a39c1e3786a4cdcf9e50ff67ecaef044",
+    "previewModeSigningKey": "4c871da3c7722b02322a9f510d85f13f32276ff5eaba7275738dd66d244299eb",
+    "previewModeEncryptionKey": "22d09cf191896f6ec9aea12b28296ece45f9cad3647a74b3d78c30a74bfefdc5"
   }
 }

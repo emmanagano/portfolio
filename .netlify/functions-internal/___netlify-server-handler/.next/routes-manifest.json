@@ -21,16 +21,7 @@
     "afterFiles": [],
     "fallback": []
   },
-  "dynamicRoutes": [
-    {
-      "page": "/blogs/[slug]",
-      "regex": "^/blogs/([^/]+?)(?:/)?$",
-      "routeKeys": {
-        "nxtPslug": "nxtPslug"
-      },
-      "namedRegex": "^/blogs/(?<nxtPslug>[^/]+?)(?:/)?$"
-    }
-  ],
+  "dynamicRoutes": [],
   "staticRoutes": [
     {
       "page": "/",
@@ -61,12 +52,6 @@
       "regex": "^/api/messages(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/messages(?:/)?$"
-    },
-    {
-      "page": "/blogs",
-      "regex": "^/blogs(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/blogs(?:/)?$"
     },
     {
       "page": "/favicon.ico",

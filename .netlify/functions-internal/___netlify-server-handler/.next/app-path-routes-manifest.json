@@ -3,8 +3,6 @@
   "/_not-found/page": "/_not-found",
   "/about/page": "/about",
   "/api/messages/route": "/api/messages",
-  "/blogs/[slug]/page": "/blogs/[slug]",
-  "/blogs/page": "/blogs",
   "/favicon.ico/route": "/favicon.ico",
   "/gallery/page": "/gallery",
   "/page": "/"
