@@ -1,65 +1,25 @@
-"use client";
-
-import React from "react";
-import Skills from "./components/Skills";
-import ThemeToggle from "./components/ThemeToggle";
-import Hero from "./components/BentoCards/Hero";
-import { Certification } from "./components/BentoCards/Certification";
-import Gallery from "./components/BentoCards/Gallery";
-import FunAnimation from "./components/BentoCards/FunAnimation";
-import IntroVideo from "./components/BentoCards/IntroVideo";
-import { ProjectDemo } from "./components/BentoCards/ProjectDemo";
-import Message from "./components/BentoCards/Message";
-import { TicTacToe } from "./components/BentoCards/TicTacToe";
-import { Snake } from "./components/BentoCards/Snake";
-import { BentoCard } from "./components/BentoCard";
-import { BentoSection } from "./components/BentoSection";
-import { bentoGrid } from "./components/BentoGrid";
-import NeonSign from "./components/BentoCards/FunShapes";
+import Sidebar from "./components/layout/Sidebar";
+import About from "./components/sections/About";
+import Experience from "./components/sections/Experience";
+import Footer from "./components/sections/Footer";
+import Projects from "./components/sections/Projects";
 
 export default function Home() {
 	return (
-		<main>
-			<BentoSection className="p-6">
-				<BentoCard className={bentoGrid.hero}>
-					<Hero />
-				</BentoCard>
-				<BentoCard className={bentoGrid.certification}>
-					<Certification />
-				</BentoCard>
-				<BentoCard className={bentoGrid.gallery}>
-					<Gallery />
-				</BentoCard>
-				<BentoCard className={bentoGrid.themeToggle}>
-					<ThemeToggle />
-				</BentoCard>
-				<BentoCard className={bentoGrid.introVideo}>
-					<IntroVideo />
-				</BentoCard>
-				<BentoCard className={bentoGrid.funAnimation}>
-					<FunAnimation />
-				</BentoCard>
-				<BentoCard className={bentoGrid.projectDemo}>
-					<ProjectDemo />
-				</BentoCard>
-				<BentoCard className={bentoGrid.skills}>
-					<Skills />
-				</BentoCard>
-				<BentoCard className={bentoGrid.message}>
-					<Message />
-				</BentoCard>
-			</BentoSection>
-			<BentoSection className="px-6 pb-6">
-				<BentoCard className={bentoGrid.funShapes}>
-					<NeonSign />
-				</BentoCard>
-				<BentoCard className={bentoGrid.ticTacToe}>
-					<TicTacToe />
-				</BentoCard>
-				<BentoCard className={bentoGrid.snake}>
-					<Snake />
-				</BentoCard>
-			</BentoSection>
-		</main>
+		<div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+			{/* THIS IS THE MAGIC LINE: lg:flex pushes them side-by-side! */}
+			<div className="lg:flex lg:justify-between lg:gap-4">
+				{/* Left Side */}
+				<Sidebar />
+
+				{/* Right Side */}
+				<main className="pt-24 lg:w-1/2 lg:py-24 space-y-24">
+					<About />
+					<Experience />
+					<Projects />
+					<Footer />
+				</main>
+			</div>
+		</div>
 	);
 }

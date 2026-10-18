@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ThemeToggle from "./ThemeToggle";
+import ThemeToggle from "../ui/ThemeToggle";
 // import { GoHomeFill } from "react-icons/go";
 
 export default function Navbar() {
@@ -29,9 +29,9 @@ export default function Navbar() {
 		<nav
 			className="
 				text-[var(--foreground)]
-				lg:col-start-11 
+				lg:col-start-11
 				lg:col-span-2
-				lg:row-start-1 
+				lg:row-start-1
 				lg:row-span-6
 				flex
 				flex-col

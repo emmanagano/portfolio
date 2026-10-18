@@ -7,7 +7,7 @@ import { TfiWrite } from "react-icons/tfi";
 import { CiCircleInfo, CiFolderOn } from "react-icons/ci";
 import { FaReact } from "react-icons/fa";
 import { HiArrowLeft, HiMenuAlt3, HiX } from "react-icons/hi";
-import ThemeToggle from "./ThemeToggle";
+import ThemeToggle from "../ui/ThemeToggle";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
 	const pathname = usePathname();

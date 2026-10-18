@@ -2,33 +2,31 @@
 @import "tailwindcss";
 
 :root {
-	--background: #F1F0F5;   /* Light neutral background */
-	--foreground: #112D4E;   /* Text */
+	--background: #F1F0F5;
+	--foreground: #112D4E;
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
 	--font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 	--font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
 	--font-mono: var(--font-geist-mono);
-	--primary: #3F72AF;      /* Blue CTA/accent */
-	--secondary: #FFFFFF;    /* Bento Box bg-color */
-	/* --tertiary: #112D4E;     
-	--quaternary: #3F72AF;   */
+	--primary: #3F72AF;
+	--secondary: #FFFFFF;
+    --hover-bg: rgba(255, 255, 255, 0.6);
 }
 
-
 .dark {
-	--background: #222831;   /* Dark charcoal background */
-	--foreground: #EEEEEE;   /* Light gray text */
-	--primary: #00ADB5;      /* Teal accent */
-	--secondary: #222831;    /* Bento Box bg-color */
-	/* --tertiary: #222831;   
-	--quaternary: #00ADB5;   */
+	--background: #222831;
+	--foreground: #EEEEEE;
+	--primary: #00ADB5;
+	--secondary: #222831;
+    --hover-bg: rgba(255, 255, 255, 0.04);
 }
 
 body {
 	background: var(--background);
 	color: var(--foreground);
 	font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Adds a smooth fade when toggling! */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,29 +34,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-	font-size: 1.75rem; /* larger size */
-	font-weight: 700;   /* bold */
+	font-size: 1.75rem;
+	font-weight: 700;
 	margin-top: 1.5rem;
 	margin-bottom: 0.75rem;
-}
-
-@keyframes point {
-	0%, 100% { transform: translateX(0); }
-	50% { transform: translateX(6px); }
-}
-
-
-.animate-point {
-	animation: point 1s infinite;
-}
-
-/* Dark mode border */
-.dark .bento-box {
-	border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-/* Hover effects */
-.bento-box:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
