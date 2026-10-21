@@ -8,7 +8,7 @@ export default function Projects() {
 			description:
 				"Built a custom blog system that loads article content from markdown files. Implemented category filtering, dynamic routing, and responsive layouts with integrated analytics.",
 			imagePath: "/images/demo-project.png",
-			link: "https://emmanagano.com/blogs",
+			link: "https://philippinestrategies.netlify.app",
 			techStack: ["Next.js", "Markdown", "SEO", "Google Analytics"],
 			inProgress: false,
 		},
