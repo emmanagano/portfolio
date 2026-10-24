@@ -6,16 +6,16 @@ export default function Projects() {
 		{
 			title: "Markdown-Based Blog Platform",
 			description:
-				"Built a custom blog system that loads article content from markdown files. Implemented category filtering, dynamic routing, and responsive layouts with integrated analytics.",
+				"A custom blog built from scratch that generates articles directly from Markdown files. It includes category filtering, clean page routing, and a responsive design with built-in analytics to track traffic.",
 			imagePath: "/images/demo-project.png",
 			link: "https://philippinestrategies.netlify.app",
 			techStack: ["Next.js", "Markdown", "SEO", "Google Analytics"],
 			inProgress: false,
 		},
 		{
-			title: "Creative Director Portfolio",
+			title: "Media Production & Photography Portfolio",
 			description:
-				"Developing a minimalist, editorial-style portfolio for a creative director. Designed around a robust component architecture focusing on advanced CSS grid layouts, semantic structure, and custom design tokens.",
+				"A sleek, magazine-style portfolio for a creative studio. I focused heavily on clean typography, smooth scroll animations, and using advanced CSS grids to properly showcase their high-resolution photography and video work.",
 			imagePath: "/images/dan-portfolio.png",
 			link: "https://jdgallery.netlify.app/",
 			techStack: ["Astro", "TypeScript", "Tailwind CSS"],
@@ -24,7 +24,7 @@ export default function Projects() {
 		{
 			title: "Boutique Jewelry E-Commerce",
 			description:
-				"Architecting a modern, front-end-focused mock fine jewelry store. Features a luxury minimalist aesthetic, high-resolution product galleries, and an interactive slide-over cart drawer powered by global state management.",
+				"A fast, modern frontend for a fine jewelry brand. The main goal here is creating a premium shopping experience, featuring clean product galleries and a slide-out shopping cart that updates instantly without reloading the page.",
 			imagePath: "", // Leaving this empty triggers the "Coming Soon" box!
 			link: "#",
 			techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand"],
