@@ -11,63 +11,24 @@ export default function About() {
 			{/* We use your global foreground color and drop the opacity to 80% for the paragraphs */}
 			<div className="text-[var(--foreground)] opacity-80 leading-relaxed space-y-6">
 				<p>
-					My journey into tech was driven by a deep desire to build. I
-					quickly realized that{" "}
-					<strong className="font-semibold text-[var(--primary)]">
-						web development
-					</strong>{" "}
-					perfectly combined everything I naturally gravitated toward:
-					the visual balance of{" "}
-					<strong className="font-semibold text-[var(--primary)]">
-						design
-					</strong>
-					, the expression of{" "}
-					<strong className="font-semibold text-[var(--primary)]">
-						writing
-					</strong>
-					, and the deep, focused logic of{" "}
-					<strong className="font-semibold text-[var(--primary)]">
-						problem-solving
-					</strong>
-					.
+					I found my way into tech through a simple love for making
+					things. I quickly realized that building websites was the
+					perfect mix of everything I enjoy: the creativity of design,
+					the flow of writing, and the quiet puzzle-solving of writing
+					code.
 				</p>
 				<p>
-					Today, I specialize in{" "}
-					<strong className="font-semibold text-[var(--primary)]">
-						modern frontend technologies
-					</strong>{" "}
-					and the{" "}
-					<strong className="font-semibold text-[var(--primary)]">
-						PERN stack
-					</strong>
-					, focusing on creating clean, functional, and user-centered
-					digital experiences. Whether I&apos;m architecting a robust{" "}
-					<strong className="font-semibold text-[var(--primary)]">
-						database schema
-					</strong>{" "}
-					under the hood or polishing a{" "}
-					<strong className="font-semibold text-[var(--primary)]">
-						responsive CSS grid
-					</strong>{" "}
-					on the frontend, I take pride in crafting seamless
-					applications from end to end.
+					Today, I focus on full-stack web development. I like to keep
+					things simple and user-friendly, making sure a website looks
+					just as good on the screen as it works behind the scenes.
 				</p>
 				<p>
-					Currently based in the Philippines, I&apos;ve had the
-					opportunity to provide technical support for{" "}
-					<strong className="font-semibold text-[var(--primary)]">
-						digital agencies
-					</strong>{" "}
-					and develop{" "}
-					<strong className="font-semibold text-[var(--primary)]">
-						full-stack platforms
-					</strong>{" "}
-					for freelance clients. I thrive in the space where{" "}
-					<strong className="font-semibold text-[var(--primary)]">
-						aesthetics meet engineering
-					</strong>
-					, and I&apos;m always eager to tackle new challenges that
-					allow me to bring great ideas to life on the web.
+					I&apos;m based in the Philippines, and I&apos;ve been lucky
+					enough to help agencies and freelance clients bring their
+					ideas to the web. At the end of the day, I just really enjoy
+					coding and building things that people can use. If you have
+					a great idea you&apos;d like to bring to life, I&apos;d love
+					to help you build it.
 				</p>
 			</div>
 		</section>
