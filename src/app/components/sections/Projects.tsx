@@ -26,7 +26,7 @@ export default function Projects() {
 			description:
 				"A fast, modern frontend for a fine jewelry brand. The main goal here is creating a premium shopping experience, featuring clean product galleries and a slide-out shopping cart that updates instantly without reloading the page.",
 			imagePath: "", // Leaving this empty triggers the "Coming Soon" box!
-			link: "#",
+			link: "https://mock-jewelry-ecommerce.netlify.app/",
 			techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand"],
 			inProgress: true,
 		},
