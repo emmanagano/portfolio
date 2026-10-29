@@ -1,23 +1,73 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css"; // Ensure styles are loaded
-import { ThemeProvider } from "@/context/ThemeContext";
+import { Bricolage_Grotesque, Geist_Mono, Inter } from "next/font/google";
 import Script from "next/script";
+import "./globals.css";
+import Providers from "./components/Providers";
+import SiteNav from "./components/layout/SiteNav";
+import Footer from "./components/layout/Footer";
+import { site, socials } from "@/data/site";
+import { gallery } from "@/data/gallery";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const bricolage = Bricolage_Grotesque({
+	variable: "--font-bricolage",
 	subsets: ["latin"],
 });
-
 const geistMono = Geist_Mono({
 	variable: "--font-geist-mono",
 	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-	title: "Emma Nagano",
-	description: "Front-end Web Development",
+	metadataBase: new URL(site.url),
+	title: {
+		default: `${site.name} | ${site.role}`,
+		template: `%s | ${site.name}`,
+	},
+	description: site.pitch,
+	icons: { icon: "/images/logo.png" },
+	openGraph: {
+		type: "website",
+		siteName: site.name,
+		url: site.url,
+		images: ["/images/profile-picture.png"],
+	},
+	twitter: { card: "summary", creator: "@emsnagano" },
 };
+
+// Runs before paint so the saved theme applies without a flash.
+const themeScript = `(function(){try{var t=localStorage.getItem("theme");var d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d)}catch(e){}})()`;
+
+const jsonLd = [
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		name: site.name,
+		givenName: "Emma",
+		familyName: "Nagano",
+		alternateName: "Emma Ruth Nagano",
+		description: `${site.name} is a web developer and writer based in the Philippines.`,
+		jobTitle: "Web Developer",
+		url: site.url,
+		sameAs: [
+			site.url,
+			...socials.filter((s) => s.name !== "Email").map((s) => s.url),
+			"https://www.instagram.com/xxo.emmy/",
+			"https://x.com/emsnagano",
+		],
+		image: gallery.slice(0, 5).map((g) => site.url + g.src),
+		gender: "Female",
+		nationality: "Filipino",
+		alumniOf: "University of North Florida Coding Bootcamp",
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		name: site.name,
+		url: site.url,
+		publisher: { "@type": "Person", name: site.name },
+	},
+];
 
 export default function RootLayout({
 	children,
@@ -25,8 +75,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<head>
+				<script dangerouslySetInnerHTML={{ __html: themeScript }} />
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
 				<Script id="gtm-init" strategy="afterInteractive">
 					{`
 						(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -36,186 +91,9 @@ export default function RootLayout({
 						})(window,document,'script','dataLayer','GTM-PWM3QWPW');
 					`}
 				</Script>
-				<Script
-					id="schema-person"
-					type="application/ld+json"
-					strategy="afterInteractive"
-					dangerouslySetInnerHTML={{
-						__html: `
-						{
-						"@context": "https://schema.org",
-						"@type": "Person",
-						"name": "Emma Nagano",
-						"givenName": "Emma",
-						"familyName": "Nagano",
-						"alternateName": "Emma Ruth Nagano",
-						"description": "Emma Nagano is a web developer and writer based in the Philippines.",
-						"jobTitle": "Web Developer",
-						"url": "https://emmanagano.com",
-						"sameAs": [
-							"https://emmanagano.com",
-							"https://www.linkedin.com/in/emma-nagano",
-							"https://github.com/emmanagano",
-							"https://www.instagram.com/xxo.emmy/",
-							"https://x.com/emsnagano"
-						],
-						"image": [
-							"https://emmanagano.com/images/emma-nagano/emma-nagano-badass.jpg",
-							"https://emmanagano.com/images/emma-nagano/emma-nagano-black-jacket-mirror-selfie.jpg",
-							"https://emmanagano.com/images/emma-nagano/emma-nagano-black-tank-top.png",
-							"https://emmanagano.com/images/emma-nagano/emma-nagano-blue-dress-hanoi-night.png",
-							"https://emmanagano.com/images/emma-nagano/emma-nagano-blurry-motion-portrait.jpg"
-						],
-						"gender": "Female",
-						"nationality": "Filipino",
-						"alumniOf": "University of North Florida Coding Bootcamp"
-						}
-						`,
-					}}
-				/>
-
-				<Script
-					id="schema-website"
-					type="application/ld+json"
-					strategy="afterInteractive"
-					dangerouslySetInnerHTML={{
-						__html: `
-						{
-						"@context": "https://schema.org",
-						"@type": "WebSite",
-						"name": "Emma Nagano",
-						"url": "https://emmanagano.com",
-						"publisher": {
-							"@type": "Person",
-							"name": "Emma Nagano"
-						}
-						}
-						`,
-					}}
-				/>
-
-				<Script
-					id="schema-webpage"
-					type="application/ld+json"
-					strategy="afterInteractive"
-					dangerouslySetInnerHTML={{
-						__html: `
-						{
-						"@context": "https://schema.org",
-						"@type": "WebPage",
-						"name": "Emma Nagano — Web Developer",
-						"url": "https://emmanagano.com"
-						}
-						`,
-					}}
-				/>
-
-				<Script
-					id="schema-images"
-					type="application/ld+json"
-					strategy="afterInteractive"
-					dangerouslySetInnerHTML={{
-						__html: `
-						{
-						"@context": "https://schema.org",
-						"@type": "ItemList",
-						"itemListElement": [
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-badass.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-black-jacket-mirror-selfie.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-black-tank-top.png"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-blue-dress-hanoi-night.png"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-blurry-motion-portrait.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-car-selfie.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-car-sunglasses-blue-top.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-cinematic-gaze.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-city-night-view.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-dark-eyeshadow.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-floral-top-portrait.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-hand-on-chin-glasses.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-headphones-natural-look.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-marina-walkway-night.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-mirror-gym-selfie.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-mirror-portrait-bathroom.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-rainbow-road-photo.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-rooftop-photo-night.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-serious-look-glasses.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-smiling-glasses.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-sunglasses-outdoor.jpg"
-							},
-							{
-							"@type": "ImageObject",
-							"contentUrl": "https://emmanagano.com/images/emma-nagano/emma-nagano-talking-expression.jpg"
-							}
-						]
-						}
-						`,
-					}}
-				/>
 			</head>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${inter.variable} ${bricolage.variable} ${geistMono.variable} antialiased`}
 			>
 				<noscript>
 					<iframe
@@ -225,11 +103,17 @@ export default function RootLayout({
 						style={{ display: "none", visibility: "hidden" }}
 					></iframe>
 				</noscript>
-				<ThemeProvider>
-					{" "}
-					{/* ✅ This ensures the Navbar & Footer are on all pages */}
-					{children}
-				</ThemeProvider>
+				<a
+					href="#main"
+					className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
+				>
+					Skip to content
+				</a>
+				<Providers>
+					<SiteNav />
+					<main id="main">{children}</main>
+					<Footer />
+				</Providers>
 			</body>
 		</html>
 	);

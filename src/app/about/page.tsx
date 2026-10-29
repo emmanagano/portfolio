@@ -1,253 +1,190 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Reveal from "../components/motion/Reveal";
+import { site } from "@/data/site";
+
+export const metadata: Metadata = {
+	title: "About",
+	description:
+		"Frontend developer in the Philippines. Former pilot trainee, bootcamp grad, and builder of fast, good-looking websites.",
+};
+
+const facts = [
+	{ label: "Based in", value: "Pampanga, Philippines" },
+	{ label: "I build with", value: "Next.js, React, TypeScript, Tailwind CSS, Astro" },
+	{ label: "Experience", value: "Freelance web developer · Web Support Specialist at ollyolly.com" },
+	{ label: "Trained at", value: "UNF Coding Bootcamp (full-stack JavaScript)" },
+	{ label: "Looking for", value: "A frontend developer role" },
+];
+
+const path = [
+	{ year: "Before code", emoji: "✈️", title: "Pilot training, USA", text: "Made it halfway. Then money and the pandemic grounded me." },
+	{ year: "2021–2022", emoji: "🎓", title: "Coding bootcamp", text: "Full-stack JavaScript. Capstone: an e-commerce site." },
+	{ year: "2024–2025", emoji: "🛠️", title: "Web Support Specialist", text: "Site launches, DNS, migrations, and fixes for a U.S. agency." },
+	{ year: "2025–now", emoji: "💻", title: "Freelance developer", text: "Designing and shipping client sites end to end." },
+];
+
+const strengths = [
+	{ title: "I design", text: "Layout, color, and type come first, so what I ship looks intentional.", color: "bg-sun" },
+	{ title: "I write", text: "Clear copy and clear code. Both should be easy to read.", color: "bg-primary" },
+	{ title: "I don't quit", text: "I rebuilt my career from zero once. Hard bugs don't scare me.", color: "bg-lilac" },
+];
+
+const photos = [
+	{ src: "/images/about/in-my-pilot-uniform.png", alt: "Emma in her pilot uniform", rotate: "-rotate-3" },
+	{ src: "/images/about/flying-me-in-the-plane.png", alt: "Emma flying a small plane during flight training", rotate: "rotate-2" },
+	{ src: "/images/about/in-class-coding-bootcamp.png", alt: "Emma in class at the coding bootcamp", rotate: "-rotate-1" },
+];
+
 export default function AboutPage() {
 	return (
-		<main className="max-w-3xl mx-auto px-6 py-16 text-[var(--foreground)] space-y-12">
-			<div className="w-full max-w-3xl mx-auto mb-8 aspect-video">
-				<iframe
-					src="https://www.youtube.com/embed/JYvZPA22zwE"
-					title="Emma Nagano's Intro"
-					frameBorder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					referrerPolicy="strict-origin-when-cross-origin"
-					allowFullScreen
-					className="w-full h-full rounded-lg shadow-md object-cover"
-				></iframe>
-			</div>
-			<section className="space-y-4">
-				<h1 className="text-4xl font-bold">Introduction</h1>
-				<p>
-					Hi, I’m Emma, 26 years old, based in Pampanga, Philippines.
-					I took a coding bootcamp while I was living in the States
-					and specialized in the PERN stack. For our capstone, we
-					built an e-commerce site.
-				</p>
-				<div className="pt-4">
-					<img
-						src="/images/coding-bootcamp-certificate.png"
-						alt="University of North Florida Coding Bootcamp Certificate"
-						className="rounded-lg shadow-md w-full h-auto mx-auto"
-					/>
+		<article className="mx-auto max-w-5xl px-4 pb-10 pt-12 sm:px-6 md:pt-16">
+			{/* The 10-second version */}
+			<header className="grid items-center gap-10 md:grid-cols-[1.3fr_1fr]">
+				<div>
+					<p className="mb-3 font-mono text-sm font-bold uppercase tracking-widest text-muted">
+						<span className="text-primary-ink" aria-hidden="true">✦</span> About me
+					</p>
+					<h1 className="font-display text-5xl font-extrabold leading-[0.95] sm:text-7xl">
+						From the cockpit to the{" "}
+						<span className="text-primary-ink">codebase</span>.
+					</h1>
+					<p className="mt-6 max-w-xl text-xl leading-relaxed text-muted">
+						I&apos;m Emma, a frontend developer in the Philippines. I
+						trained as a pilot, switched to code, and now design and
+						build fast, polished websites from first sketch to launch.
+					</p>
 				</div>
-			</section>
-			<section className="space-y-4">
-				<h2 className="text-2xl sm:text-3xl font-semibold">
-					Before I Learned to Code
-				</h2>
-				<p>
-					I went to the States when I was 19 and lived there for
-					almost five years. Back then, my dad wanted me to become a
-					pilot. I made it halfway through the training process… until
-					financial problems, the pandemic, and rising expenses made
-					it impossible to continue.
-				</p>
-				<p>
-					These were dark days. I had no backup plans. I had invested
-					years of my life thinking I’d become a pilot. I watched my
-					co-pilots earn their licenses, helped them study, flew with
-					them, and hyped them up for their flight exams. Deep down, I
-					wished I was also achieving their milestones.
-				</p>
-				<p>
-					It was heavy. It took a long time to accept that I wasn’t
-					going to make a career out of flying. But I knew, at some
-					point, I needed to stop wallowing and start over.
-				</p>
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-					<img
-						src="/images/about/flying-me-in-the-plane.png"
-						alt="Emma flying a small plane during flight training"
-						className="rounded-lg shadow-md w-full h-auto mx-auto"
-					/>
-					<img
-						src="/images/about/flying-me-with-flight-instructor.png"
-						alt="Emma with flight instructor inside cockpit"
-						className="rounded-lg shadow-md w-full h-auto mx-auto"
-					/>
-					<img
-						src="/images/about/in-my-pilot-uniform.png"
-						alt="Emma wearing her pilot uniform smiling"
-						className="rounded-lg shadow-md w-full h-auto mx-auto"
-					/>
-					<img
-						src="/images/about/passing-flight-exam.png"
-						alt="Emma posing after passing a flight exam"
-						className="rounded-lg shadow-md w-full h-auto mx-auto"
-					/>
-				</div>
+				<ul className="flex justify-center gap-0 md:justify-end" aria-label="Photos">
+					{photos.map((p, i) => (
+						<li
+							key={p.src}
+							className={`w-32 shrink-0 rounded-xl border-2 border-foreground bg-surface p-1.5 shadow-[4px_4px_0_var(--foreground)] transition-transform hover:z-10 hover:scale-110 hover:rotate-0 sm:w-40 ${p.rotate} ${i > 0 ? "-ml-8" : ""}`}
+						>
+							<img src={p.src} alt={p.alt} className="aspect-[4/5] w-full rounded-lg object-cover" />
+						</li>
+					))}
+				</ul>
+			</header>
+
+			{/* Quick facts */}
+			<Reveal className="mt-14">
+				<dl className="grid overflow-hidden rounded-3xl border-2 border-foreground bg-surface sm:grid-cols-2 lg:grid-cols-5">
+					{facts.map((f) => (
+						<div key={f.label} className="border-b border-line p-5 last:border-b-0 sm:border-r lg:border-b-0 lg:last:border-r-0">
+							<dt className="font-mono text-xs font-bold uppercase tracking-widest text-muted">{f.label}</dt>
+							<dd className="mt-2 font-semibold leading-snug">{f.value}</dd>
+						</div>
+					))}
+				</dl>
+			</Reveal>
+
+			{/* Path */}
+			<section className="mt-20" aria-labelledby="path-heading">
+				<Reveal>
+					<h2 id="path-heading" className="font-display text-3xl font-extrabold sm:text-4xl">
+						How I got here
+					</h2>
+				</Reveal>
+				<ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+					{path.map((step, i) => (
+						<Reveal as="li" key={step.title} delay={i * 0.08} className="relative rounded-2xl border-2 border-foreground bg-surface p-5">
+							<span aria-hidden="true" className="text-3xl">{step.emoji}</span>
+							<p className="mt-3 font-mono text-xs font-bold uppercase tracking-widest text-muted">{step.year}</p>
+							<h3 className="mt-1 font-display text-xl font-extrabold">{step.title}</h3>
+							<p className="mt-2 text-muted">{step.text}</p>
+						</Reveal>
+					))}
+				</ol>
 			</section>
 
-			<section className="space-y-4">
-				<h2 className="text-2xl sm:text-3xl font-semibold">
-					How I Discovered My Passion for Coding
-				</h2>
-				<p>
-					Coding gave me a way forward. I loved that I could sit in
-					front of my computer and make things happen.
-				</p>
-				<p>
-					There’s room for error, for creativity, and for flow. I
-					could get lost in it for hours and not feel drained.
-				</p>
-				<div className="pl-6">
-					<p>
-						<em>
-							Coding is everything that becoming a pilot is not.
-						</em>
-					</p>
-				</div>
-				<p>
-					In learning to code better, I also learned so much about
-					myself.
-				</p>
-				<div className="pl-6">
-					<p>
-						<strong>I love designing:</strong> playing with colors
-						and grids. Learning to balance between functionality,
-						aesthetic, and what I can actually code.
-					</p>
-				</div>
-				<div className="pl-6">
-					<p>
-						<strong>I love writing:</strong> expressing myself
-						through well-thought words. I have so many stories to
-						tell, lessons to share, and love to give. I want them
-						all in writing.
-					</p>
-				</div>
-				<div className="pl-6">
-					<p>
-						<strong>I’m an introvert:</strong> I’m good with people,
-						but at the end of the day, being alone with my thoughts
-						is how I bring ideas to life.
-					</p>
-				</div>
-				<div className="pl-6">
-					<p>
-						<strong>
-							designing + writing + coding = web developer
-						</strong>
-					</p>
-				</div>
-				<p>
-					Learning how to code in order to build websites became a
-					gateway to putting myself out there, letting people in, and
-					helping them get to know me better.
-				</p>
-				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-					<img
-						src="/images/about/coding-journey.png"
-						alt="Coding journey timeline collage"
-						className="rounded-lg shadow-md w-full h-auto mx-auto"
-					/>
-					<img
-						src="/images/about/coding-school-starts.png"
-						alt="First day of coding school screenshot"
-						className="rounded-lg shadow-md w-full h-auto mx-auto"
-					/>
-					<img
-						src="/images/about/in-class-coding-bootcamp.png"
-						alt="In-class bootcamp coding session"
-						className="rounded-lg shadow-md w-full h-auto mx-auto"
-					/>
-					<img
-						src="/images/about/my-git-hub-account.png"
-						alt="My github account with Fullstack"
-						className="rounded-lg shadow-md w-full h-auto mx-auto"
-					/>
-				</div>
+			{/* What I bring */}
+			<section className="mt-20" aria-labelledby="strengths-heading">
+				<Reveal>
+					<h2 id="strengths-heading" className="font-display text-3xl font-extrabold sm:text-4xl">
+						What I bring
+					</h2>
+				</Reveal>
+				<ul className="mt-8 grid gap-5 md:grid-cols-3">
+					{strengths.map((s, i) => (
+						<Reveal
+							as="li"
+							key={s.title}
+							delay={i * 0.08}
+							className={`rounded-2xl border-2 border-foreground p-6 text-[#1a1423] shadow-[6px_6px_0_var(--foreground)] ${s.color}`}
+						>
+							<h3 className="font-display text-2xl font-extrabold">{s.title}</h3>
+							<p className="mt-2 font-medium">{s.text}</p>
+						</Reveal>
+					))}
+				</ul>
 			</section>
 
-			<section className="space-y-4">
-				<h2 className="text-2xl sm:text-3xl font-semibold">
-					It Wasn’t Instant Success
-				</h2>
-				<p>
-					I thought graduating from a bootcamp would make things
-					easier. I was wrong.
-				</p>
-				<p>
-					Freelancing through Upwork and Fiverr was hard. I didn’t
-					have real-life client experience or a solid portfolio. I had
-					to grind my way into establishing myself as a web developer.
-					And of course, a bootcamp doesn’t teach you everything.
-					There&apos;s still a lot of self-learning involved.
-				</p>
-				<div className="pt-4">
-					<img
-						src="/images/about/vicious-cycle.png"
-						alt="Visual diagram showing the cycle of study, code, build, find opportunities, feel inadequate, and improve"
-						className="rounded-lg shadow-md w-2/3 sm:w-1/2 h-auto mx-auto"
-					/>
-				</div>
-				<p>
-					It was a cycle I had to repeat over and over. I realized I
-					still had a long way to go. I realized I wasn’t special.
-				</p>
-				<p>
-					Looking back, I wasn’t hopeless. I was just focusing on the
-					wrong things. I wanted to freelance right away when I should
-					have been looking for a job to gain experience.
-				</p>
-			</section>
+			{/* Optional depth for anyone who wants it */}
+			<Reveal className="mt-20">
+				<details className="group rounded-3xl border-2 border-foreground bg-surface p-6 sm:p-8">
+					<summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-2xl font-extrabold [&::-webkit-details-marker]:hidden">
+						The longer story
+						<span aria-hidden="true" className="text-3xl transition-transform group-open:rotate-45">+</span>
+					</summary>
+					<div className="mt-6 space-y-5 text-lg leading-relaxed text-muted">
+						<p>
+							I moved to the States at 19 to become a pilot. Halfway
+							through training, financial problems and the pandemic
+							ended that plan. I had no backup.
+						</p>
+						<p>
+							Coding gave me a way forward. It had everything flying
+							didn&apos;t: room for error, creativity, and flow. I finished
+							a full-stack bootcamp, then learned the hard way that a
+							certificate isn&apos;t a job. On a student visa I couldn&apos;t
+							work in the U.S., so I came home to the Philippines and
+							started over.
+						</p>
+						<p>
+							My first tech job was web support for a U.S. digital
+							marketing agency: launches, DNS, migrations, and a lot of
+							troubleshooting. Then a client hired me to design and
+							build a site from scratch, and I&apos;ve been freelancing
+							since.
+						</p>
+						<div className="aspect-video overflow-hidden rounded-2xl border-2 border-foreground">
+							<iframe
+								src="https://www.youtube-nocookie.com/embed/JYvZPA22zwE"
+								title="Emma Nagano's Intro"
+								loading="lazy"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								referrerPolicy="strict-origin-when-cross-origin"
+								allowFullScreen
+								className="h-full w-full"
+							></iframe>
+						</div>
+					</div>
+				</details>
+			</Reveal>
 
-			<section className="space-y-4">
-				<h2 className="text-2xl sm:text-3xl font-semibold">
-					Why I Had to Come Home
-				</h2>
-				<p>
-					I wanted to work in the States, but I was on a student visa.
-					I wasn’t allowed to work, only study. That meant I had to
-					find a company willing to sponsor my work visa.
-				</p>
-				<p>
-					With little to no experience, and a highly competitive
-					field, I didn’t stand a chance.
-				</p>
-				<div className="pl-6">
-					<p>
-						<em>
-							Why would a company sponsor me over someone who was
-							already a citizen?
-						</em>
-					</p>
-				</div>
-				<div className="pl-6">
-					<p>
-						<em>I had nothing to prove… yet.</em>
-					</p>
-				</div>
-				<p>
-					It was one of the hardest decisions I’ve ever made. But I
-					needed to show how committed I was. So I flew home to the
-					Philippines to start over.
-				</p>
-			</section>
-			<section className="space-y-4">
-				<h2 className="text-2xl sm:text-3xl font-semibold">
-					Finally Breaking Into Tech
-				</h2>
-				<p>After everything, I finally landed two jobs in tech.</p>
-				<p>
-					My first was as a <strong>Web Support Specialist</strong> at
-					a digital marketing company in the U.S. It was my entry
-					point into the industry, a solid first job in my field. I
-					learned a lot about maintaining websites, troubleshooting
-					technical issues, and working with a team. It gave me the
-					validation I needed and motivated me to keep going.
-				</p>
-				<p>
-					Later, I worked as a{" "}
-					<strong>Freelance Web Developer</strong>. A client, hired me
-					to build a blog site. I had full control over the layout and
-					design. It was the first time I built a real website for a
-					real client. From start to finish, I got to bring something
-					to life. It was both challenging and deeply rewarding.
-				</p>
-				<p>
-					I’m still building, still growing. The journey hasn’t been
-					easy: frustrating, exhausting, and full of uncertainty.
-				</p>
-				<p>But I wouldn’t trade it for anything else.</p>
-			</section>
-		</main>
+			<Reveal className="mt-14 flex flex-wrap gap-4">
+				<Link
+					href="/#work"
+					className="rounded-full border-2 border-foreground bg-foreground px-6 py-3 font-bold text-background transition-transform hover:-translate-y-0.5"
+				>
+					See my work
+				</Link>
+				<a
+					href={site.resumeUrl}
+					target="_blank"
+					rel="noreferrer"
+					className="rounded-full border-2 border-foreground px-6 py-3 font-bold transition-all hover:-translate-y-0.5 hover:bg-sun hover:text-[#1a1423]"
+				>
+					Download résumé
+				</a>
+				<Link
+					href="/#contact"
+					className="rounded-full border-2 border-foreground px-6 py-3 font-bold transition-all hover:-translate-y-0.5 hover:bg-lilac hover:text-[#1a1423]"
+				>
+					Get in touch
+				</Link>
+			</Reveal>
+		</article>
 	);
 }

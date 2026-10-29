@@ -5,28 +5,20 @@ import { useTheme } from "@/context/ThemeContext";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 
 export default function ThemeToggle() {
-	const { theme, toggleTheme } = useTheme();
+	const { toggleTheme } = useTheme();
 
+	// Position and icon come from the `dark` class, not React state,
+	// so the toggle is correct on first paint.
 	return (
 		<button
 			onClick={toggleTheme}
-			aria-label="Toggle Dark Mode"
-			className="relative w-16 h-8 rounded-full transition-all duration-300 border border-[var(--foreground)]/20 flex items-center px-1 hover:border-[var(--primary)]/50"
+			aria-label="Toggle dark mode"
+			className="relative flex h-9 w-16 shrink-0 items-center rounded-full border-2 border-foreground bg-surface px-1 transition-colors hover:bg-sun dark:hover:bg-accent"
 		>
-			{/* Sliding knob */}
-			<div
-				className={`absolute top-1 h-6 w-6 rounded-full flex items-center justify-center transition-transform duration-300
-					/* Uses your global CSS variables for perfect contrast! */
-					bg-[var(--foreground)] text-[var(--background)]
-					${theme === "dark" ? "translate-x-0" : "translate-x-8"}
-				`}
-			>
-				{theme === "dark" ? (
-					<MdDarkMode size={14} />
-				) : (
-					<MdOutlineLightMode size={14} />
-				)}
-			</div>
+			<span className="flex h-6 w-6 translate-x-7 items-center justify-center rounded-full bg-foreground text-background transition-transform duration-300 dark:translate-x-0">
+				<MdOutlineLightMode size={14} className="dark:hidden" />
+				<MdDarkMode size={14} className="hidden dark:block" />
+			</span>
 		</button>
 	);
 }
