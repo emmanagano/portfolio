@@ -144,9 +144,9 @@ export default function AboutPage() {
 						<p>
 							My first tech job was web support for a U.S. digital
 							marketing agency: launches, DNS, migrations, and a lot of
-							troubleshooting. Then a client hired me to design and
-							build a site from scratch, and I&apos;ve been freelancing
-							since.
+							troubleshooting. Then a client hired me to build their
+							blog, with full control over the layout and design, and
+							I&apos;ve been freelancing since.
 						</p>
 						<div className="aspect-video overflow-hidden rounded-2xl border-2 border-foreground">
 							<iframe
