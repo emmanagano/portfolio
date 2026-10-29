@@ -46,8 +46,8 @@ const jsonLd = [
 		givenName: "Emma",
 		familyName: "Nagano",
 		alternateName: "Emma Ruth Nagano",
-		description: `${site.name} is a web developer and writer based in the Philippines.`,
-		jobTitle: "Web Developer",
+		description: `${site.name} is a frontend developer and writer based in the Philippines.`,
+		jobTitle: "Frontend Developer",
 		url: site.url,
 		sameAs: [
 			site.url,

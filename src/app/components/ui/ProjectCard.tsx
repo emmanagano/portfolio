@@ -47,7 +47,7 @@ export default function ProjectCard({
 					/>
 				) : (
 					<div className="flex h-full w-full items-center justify-center font-display text-2xl font-extrabold text-[#1a1423]/60">
-						Coming soon ✨
+						Coming soon
 					</div>
 				)}
 				{project.status === "in-progress" && (

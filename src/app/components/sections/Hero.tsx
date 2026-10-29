@@ -126,7 +126,7 @@ export default function Hero() {
 						/>
 					</div>
 					<span className="absolute -left-4 bottom-6 -rotate-12 rounded-full border-2 border-foreground bg-surface px-3 py-1 font-mono text-xs font-bold">
-						📍 Philippines
+						Philippines
 					</span>
 				</motion.div>
 			</div>

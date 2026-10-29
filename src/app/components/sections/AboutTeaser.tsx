@@ -3,9 +3,9 @@ import Reveal from "../motion/Reveal";
 import ArrowIcon from "../ui/ArrowIcon";
 
 const facts = [
-	{ emoji: "✈️", text: "Trained as a pilot before I wrote my first line of code" },
-	{ emoji: "🎓", text: "UNF full-stack coding bootcamp graduate (PERN stack)" },
-	{ emoji: "✍️", text: "I love writing as much as I love building" },
+	"UNF full-stack coding bootcamp graduate (PERN stack)",
+	"Freelancing now, designing and shipping client sites end to end",
+	"I love writing as much as I love building",
 ];
 
 export default function AboutTeaser() {
@@ -17,10 +17,10 @@ export default function AboutTeaser() {
 						✦ About me
 					</p>
 					<h2 className="font-display text-4xl font-extrabold leading-tight sm:text-5xl">
-						From the cockpit to the codebase.
+						Design-minded. Code-driven.
 					</h2>
 					<p className="mt-5 max-w-xl text-lg leading-relaxed">
-						Designing + writing + coding = web developer. Coding gave me
+						Designing + writing + coding = frontend developer. Coding gave me
 						a way forward when my plans changed, and I&apos;ve been
 						building ever since.
 					</p>
@@ -35,13 +35,10 @@ export default function AboutTeaser() {
 				<ul className="space-y-4">
 					{facts.map((f, i) => (
 						<li
-							key={f.text}
-							className={`flex items-start gap-3 rounded-2xl border-2 border-[#1a1423] bg-[#fbf7f0] p-4 font-semibold ${["-rotate-1", "rotate-1", "-rotate-[0.5deg]"][i]}`}
+							key={f}
+							className={`rounded-2xl border-2 border-[#1a1423] bg-[#fbf7f0] p-4 font-semibold ${["-rotate-1", "rotate-1", "-rotate-[0.5deg]"][i]}`}
 						>
-							<span aria-hidden="true" className="text-2xl">
-								{f.emoji}
-							</span>
-							{f.text}
+							{f}
 						</li>
 					))}
 				</ul>

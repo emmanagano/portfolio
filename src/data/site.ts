@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export const site = {
 	name: "Emma Nagano",
-	role: "Frontend Web Developer",
+	role: "Frontend Developer",
 	url: "https://emmanagano.com",
 	email: "emmaruthnagano@gmail.com",
 	location: "Pampanga, Philippines",
@@ -10,6 +10,12 @@ export const site = {
 	pitch: "I design, write, and code websites that feel good to use and are built to last.",
 	openToWork: true,
 	resumeUrl: "/Emma Nagano's Resume _ Web Dev.pdf",
+	// Contact form delivery via EmailJS (emailjs.com). These IDs are public by design.
+	emailjs: {
+		serviceId: "service_83fgk7i",
+		templateId: "template_rc0wjuf",
+		publicKey: "Tlb6mCKWYhrLye3tR",
+	},
 };
 
 export const socials = [

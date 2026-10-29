@@ -6,7 +6,7 @@ import { site } from "@/data/site";
 export const metadata: Metadata = {
 	title: "About",
 	description:
-		"Frontend developer in the Philippines. Former pilot trainee, bootcamp grad, and builder of fast, good-looking websites.",
+		"Frontend developer in the Philippines. Bootcamp grad, web support veteran, and builder of fast, good-looking websites.",
 };
 
 const facts = [
@@ -18,10 +18,9 @@ const facts = [
 ];
 
 const path = [
-	{ year: "Before code", emoji: "✈️", title: "Pilot training, USA", text: "Made it halfway. Then money and the pandemic grounded me." },
-	{ year: "2021–2022", emoji: "🎓", title: "Coding bootcamp", text: "Full-stack JavaScript. Capstone: an e-commerce site." },
-	{ year: "2024–2025", emoji: "🛠️", title: "Web Support Specialist", text: "Site launches, DNS, migrations, and fixes for a U.S. agency." },
-	{ year: "2025–now", emoji: "💻", title: "Freelance developer", text: "Designing and shipping client sites end to end." },
+	{ year: "2021–2022", title: "Coding bootcamp", text: "Full-stack JavaScript. Capstone: an e-commerce site." },
+	{ year: "2024–2025", title: "Web Support Specialist", text: "Site launches, DNS, migrations, and fixes for a U.S. agency." },
+	{ year: "2025–now", title: "Freelance developer", text: "Designing and shipping client sites end to end." },
 ];
 
 const strengths = [
@@ -31,9 +30,9 @@ const strengths = [
 ];
 
 const photos = [
-	{ src: "/images/about/in-my-pilot-uniform.png", alt: "Emma in her pilot uniform", rotate: "-rotate-3" },
-	{ src: "/images/about/flying-me-in-the-plane.png", alt: "Emma flying a small plane during flight training", rotate: "rotate-2" },
-	{ src: "/images/about/in-class-coding-bootcamp.png", alt: "Emma in class at the coding bootcamp", rotate: "-rotate-1" },
+	{ src: "/images/about/in-class-coding-bootcamp.png", alt: "Emma in class at the coding bootcamp", rotate: "-rotate-3" },
+	{ src: "/images/about/i-got-the-job-olly.png", alt: "Job offer email for the Junior Web Support Specialist role at Olly Olly", rotate: "rotate-2" },
+	{ src: "/images/about/meeting-at-work.png", alt: "Emma on a video call with her team at Olly Olly", rotate: "-rotate-1" },
 ];
 
 export default function AboutPage() {
@@ -46,13 +45,13 @@ export default function AboutPage() {
 						<span className="text-primary-ink" aria-hidden="true">✦</span> About me
 					</p>
 					<h1 className="font-display text-5xl font-extrabold leading-[0.95] sm:text-7xl">
-						From the cockpit to the{" "}
+						A designer&apos;s eye in the{" "}
 						<span className="text-primary-ink">codebase</span>.
 					</h1>
 					<p className="mt-6 max-w-xl text-xl leading-relaxed text-muted">
 						I&apos;m Emma, a frontend developer in the Philippines. I
-						trained as a pilot, switched to code, and now design and
-						build fast, polished websites from first sketch to launch.
+						design and build fast, polished websites from first sketch
+						to launch.
 					</p>
 				</div>
 				<ul className="flex justify-center gap-0 md:justify-end" aria-label="Photos">
@@ -86,11 +85,10 @@ export default function AboutPage() {
 						How I got here
 					</h2>
 				</Reveal>
-				<ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+				<ol className="mt-8 grid gap-4 md:grid-cols-3">
 					{path.map((step, i) => (
 						<Reveal as="li" key={step.title} delay={i * 0.08} className="relative rounded-2xl border-2 border-foreground bg-surface p-5">
-							<span aria-hidden="true" className="text-3xl">{step.emoji}</span>
-							<p className="mt-3 font-mono text-xs font-bold uppercase tracking-widest text-muted">{step.year}</p>
+							<p className="font-mono text-xs font-bold uppercase tracking-widest text-muted">{step.year}</p>
 							<h3 className="mt-1 font-display text-xl font-extrabold">{step.title}</h3>
 							<p className="mt-2 text-muted">{step.text}</p>
 						</Reveal>
@@ -119,49 +117,6 @@ export default function AboutPage() {
 					))}
 				</ul>
 			</section>
-
-			{/* Optional depth for anyone who wants it */}
-			<Reveal className="mt-20">
-				<details className="group rounded-3xl border-2 border-foreground bg-surface p-6 sm:p-8">
-					<summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-2xl font-extrabold [&::-webkit-details-marker]:hidden">
-						The longer story
-						<span aria-hidden="true" className="text-3xl transition-transform group-open:rotate-45">+</span>
-					</summary>
-					<div className="mt-6 space-y-5 text-lg leading-relaxed text-muted">
-						<p>
-							I moved to the States at 19 to become a pilot. Halfway
-							through training, financial problems and the pandemic
-							ended that plan. I had no backup.
-						</p>
-						<p>
-							Coding gave me a way forward. It had everything flying
-							didn&apos;t: room for error, creativity, and flow. I finished
-							a full-stack bootcamp, then learned the hard way that a
-							certificate isn&apos;t a job. On a student visa I couldn&apos;t
-							work in the U.S., so I came home to the Philippines and
-							started over.
-						</p>
-						<p>
-							My first tech job was web support for a U.S. digital
-							marketing agency: launches, DNS, migrations, and a lot of
-							troubleshooting. Then a client hired me to build their
-							blog, with full control over the layout and design, and
-							I&apos;ve been freelancing since.
-						</p>
-						<div className="aspect-video overflow-hidden rounded-2xl border-2 border-foreground">
-							<iframe
-								src="https://www.youtube-nocookie.com/embed/JYvZPA22zwE"
-								title="Emma Nagano's Intro"
-								loading="lazy"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-								referrerPolicy="strict-origin-when-cross-origin"
-								allowFullScreen
-								className="h-full w-full"
-							></iframe>
-						</div>
-					</div>
-				</details>
-			</Reveal>
 
 			<Reveal className="mt-14 flex flex-wrap gap-4">
 				<Link

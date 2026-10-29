@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { site } from "@/data/site";
 import Reveal from "../motion/Reveal";
 
@@ -12,24 +13,28 @@ const inputClass =
 export default function Contact() {
 	const [status, setStatus] = useState<Status>("idle");
 
-	// Netlify Forms: the static skeleton in public/__forms.html registers the
-	// "contact" form at build time; submissions are POSTed to it.
+	// EmailJS sends the form fields (name, email, message) to the template
+	// configured in site.emailjs. Bots that fill the hidden honeypot get a
+	// fake success and nothing is sent.
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const form = e.currentTarget;
-		setStatus("sending");
-		try {
-			const res = await fetch("/__forms.html", {
-				method: "POST",
-				headers: { "Content-Type": "application/x-www-form-urlencoded" },
-				body: new URLSearchParams(
-					new FormData(form) as unknown as Record<string, string>
-				).toString(),
-			});
-			if (!res.ok) throw new Error(`Form submit failed: ${res.status}`);
+		if (new FormData(form).get("bot-field")) {
 			form.reset();
 			setStatus("success");
-		} catch {
+			return;
+		}
+		setStatus("sending");
+		try {
+			const { serviceId, templateId, publicKey } = site.emailjs;
+			await emailjs.sendForm(serviceId, templateId, form, { publicKey });
+			form.reset();
+			setStatus("success");
+		} catch (err) {
+			// EmailJS rejects with { status, text }; log them explicitly since the
+			// Next.js dev overlay renders the raw object as {}.
+			const { status: code, text } = (err ?? {}) as { status?: number; text?: string };
+			console.error(`Contact form failed to send: ${code} ${text ?? String(err)}`);
 			setStatus("error");
 		}
 	};
@@ -67,7 +72,6 @@ export default function Contact() {
 							role="status"
 							className="flex h-full flex-col items-start justify-center gap-4 rounded-3xl border-2 border-foreground bg-sun p-8 text-[#1a1423] shadow-[8px_8px_0_var(--foreground)]"
 						>
-							<span className="text-5xl" aria-hidden="true">🎉</span>
 							<h3 className="font-display text-3xl font-extrabold">
 								Message sent!
 							</h3>
@@ -86,7 +90,6 @@ export default function Contact() {
 							onSubmit={onSubmit}
 							className="space-y-5 rounded-3xl border-2 border-foreground bg-surface p-6 shadow-[8px_8px_0_var(--foreground)] sm:p-8"
 						>
-							<input type="hidden" name="form-name" value="contact" />
 							<p className="hidden">
 								<label>
 									Don&apos;t fill this out: <input name="bot-field" />
