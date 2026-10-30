@@ -9,7 +9,7 @@ export const site = {
 	// TODO(emma): confirm pitch line and availability
 	pitch: "I design, write, and code websites that feel good to use and are built to last.",
 	openToWork: true,
-	resumeUrl: "/Emma Nagano's Resume _ Web Dev.pdf",
+	resumeUrl: "/Emma Nagano - Frontend Developer.pdf",
 	// Contact form delivery via EmailJS (emailjs.com). These IDs are public by design.
 	emailjs: {
 		serviceId: "service_83fgk7i",
