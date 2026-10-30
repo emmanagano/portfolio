@@ -130,11 +130,11 @@ export const projects: Project[] = [
 		gallery: [
 			{
 				src: "/images/projects/jewelry-store.jpg",
-				alt: "Jewelry store home page with collection hero and category tiles",
+				alt: "Jewelry store home page with a full-width collection hero, search, and category navigation",
 			},
 			{
 				src: "/images/projects/jewelry-store-product.jpg",
-				alt: "Product page with size selector and add to bag button",
+				alt: "Product page with an image gallery, a ring size selected, and the add to bag button",
 			},
 		],
 	},

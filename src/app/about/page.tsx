@@ -26,7 +26,7 @@ const path = [
 const strengths = [
 	{ title: "I design", text: "Layout, color, and type come first, so what I ship looks intentional.", color: "bg-sun" },
 	{ title: "I write", text: "Clear copy and clear code. Both should be easy to read.", color: "bg-primary" },
-	{ title: "I don't quit", text: "I rebuilt my career from zero once. Hard bugs don't scare me.", color: "bg-lilac" },
+	{ title: "I ship", text: "Launches, DNS, and migrations are part of the job. I take sites all the way to live.", color: "bg-lilac" },
 ];
 
 const photos = [
