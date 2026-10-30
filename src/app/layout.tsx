@@ -5,6 +5,7 @@ import "./globals.css";
 import Providers from "./components/Providers";
 import SiteNav from "./components/layout/SiteNav";
 import Footer from "./components/layout/Footer";
+import CursorEffect from "./components/ui/CursorEffect";
 import { site, socials } from "@/data/site";
 import { gallery } from "@/data/gallery";
 
@@ -110,7 +111,8 @@ export default function RootLayout({
 					Skip to content
 				</a>
 				<Providers>
-					<SiteNav />
+					<CursorEffect />
+			<SiteNav />
 					<main id="main">{children}</main>
 					<Footer />
 				</Providers>
