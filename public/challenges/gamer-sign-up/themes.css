@@ -1,0 +1,249 @@
+/* ==========================================================================
+   NEONCORE themes
+   --------------------------------------------------------------------------
+   ADDING A THEME (3 steps)
+   1. Copy the TEMPLATE block at the bottom of this file, rename the id, and
+      change the colors. Keep every token; none are optional.
+   2. Add an entry to themes.js (same id, swatch, fx list, backdrop, wipe,
+      copy). The dock picks it up automatically.
+   3. Run `npm run check:themes` from the repo root. It checks contrast for
+      every theme and fails if a pair is too low.
+
+   RULES
+   - Colors only here. Effects are switched on by the `fx` list in themes.js,
+     not by CSS in this file.
+   - Use hsl() or #hex for solid colors so the contrast script can read them.
+   - --accent must be light enough for a DARK tick on a checked checkbox.
+   - --on-bg-* are the colors used on the PAGE background (brand column,
+     footer, theme dock). They default to the panel colors, so a dark theme
+     can leave them out. A light page (like Yellow) must set them all.
+   ========================================================================== */
+
+/* Defaults that follow the panel colors unless a theme overrides them. */
+:root {
+	--on-bg: var(--text);
+	--on-bg-2: var(--text-2);
+	--on-bg-3: var(--text-3);
+	--on-bg-4: var(--text-4);
+	--on-bg-accent: var(--accent);
+	--on-bg-success: var(--success);
+	--on-bg-error: var(--error);
+	--on-bg-line: var(--line);
+	--on-bg-line-strong: var(--line-strong);
+
+	/* Derived glow colors. */
+	--accent-a15: color-mix(in srgb, var(--accent) 15%, transparent);
+	--accent-a40: color-mix(in srgb, var(--accent) 40%, transparent);
+	--accent-a60: color-mix(in srgb, var(--accent) 60%, transparent);
+	--success-a40: color-mix(in srgb, var(--success) 40%, transparent);
+	--success-a60: color-mix(in srgb, var(--success) 60%, transparent);
+}
+
+/* ---------- Cyberpunk Pink (default, also the no-JS fallback) ---------- */
+:root,
+[data-theme="cyberpunk-pink"] {
+	--bg: hsl(285 50% 3%);
+	--bg-glow-1: hsl(322 100% 50% / 0.16);
+	--bg-glow-2: hsl(180 100% 50% / 0.06);
+	--surface: hsl(285 40% 7%);
+	--surface-2: hsl(285 32% 13%);
+	--line: hsl(290 26% 24%);
+	--line-strong: hsl(290 18% 42%);
+	--text-4: hsl(290 14% 56%);
+	--text-3: hsl(290 15% 63%);
+	--text-2: hsl(290 20% 74%);
+	--text: hsl(300 50% 94%);
+	--text-hi: hsl(310 70% 98%);
+	--field: hsl(285 60% 2%);
+
+	--accent: hsl(322 100% 60%);
+	--accent-ink: hsl(285 60% 2%);
+	--success: hsl(180 100% 62%);
+	--error: hsl(12 100% 62%);
+	--warn: hsl(40 100% 65%);
+
+	--glitch-a: hsl(322 100% 60%);
+	--glitch-b: hsl(180 100% 62%);
+	--backdrop-line: #2b1030;
+	--vignette: hsl(285 60% 2% / 0.55);
+	--scan-opacity: 0.35;
+
+	--panel-border: var(--accent-a40);
+	--btn-hover-bg: var(--text-hi);
+	--shadow-panel: 0 0 40px var(--accent-a15), inset 0 0 48px color-mix(in srgb, var(--accent) 5%, transparent);
+	--shadow-focus: 0 0 18px var(--accent-a40);
+	--shadow-btn: 0 0 18px var(--accent-a40);
+	--shadow-btn-hover: 0 0 32px var(--accent), 0 0 8px var(--accent);
+	--shadow-btn-active: 0 0 12px var(--accent);
+	--shadow-stamp: 0 0 14px var(--success-a40), inset 0 0 10px var(--success-a40);
+	--tshadow-title: 0 0 18px var(--accent-a40);
+	--tshadow-accent: 0 0 16px var(--accent);
+	--tshadow-success: 0 0 12px var(--success-a40);
+	--tshadow-stamp: 0 0 10px var(--success-a40);
+	--tshadow-kana: 0 0 10px var(--accent-a40);
+	--bracket-filter: drop-shadow(0 0 6px var(--accent));
+}
+
+/* ---------- Cyberpunk Yellow: yellow page, black panel, flat poster look ---------- */
+[data-theme="cyberpunk-yellow"] {
+	--bg: hsl(50 100% 50%);
+	--bg-glow-1: transparent;
+	--bg-glow-2: hsl(28 100% 50% / 0.35);
+	--surface: hsl(0 0% 5%);
+	--surface-2: hsl(0 0% 13%);
+	--line: hsl(0 0% 24%);
+	--line-strong: hsl(0 0% 42%);
+	--text-4: hsl(0 0% 56%);
+	--text-3: hsl(0 0% 64%);
+	--text-2: hsl(48 10% 76%);
+	--text: hsl(48 25% 94%);
+	--text-hi: hsl(0 0% 100%);
+	--field: hsl(0 0% 0%);
+
+	--accent: hsl(50 100% 52%);
+	--accent-ink: hsl(0 0% 4%);
+	--success: hsl(100 100% 56%);
+	--error: hsl(352 100% 64%);
+	--warn: hsl(28 100% 58%);
+
+	/* On the yellow page: near-black text, dark semantic colors. */
+	--on-bg: hsl(0 0% 6%);
+	--on-bg-2: hsl(0 0% 12%);
+	--on-bg-3: hsl(0 0% 17%);
+	--on-bg-4: hsl(0 0% 21%);
+	--on-bg-accent: hsl(0 0% 4%);
+	--on-bg-success: hsl(140 100% 15%);
+	--on-bg-error: hsl(350 100% 32%);
+	--on-bg-line: hsl(40 100% 22%);
+	--on-bg-line-strong: hsl(40 100% 26%);
+
+	--glitch-a: hsl(352 100% 50%);
+	--glitch-b: hsl(210 100% 45%);
+	--backdrop-line: hsl(40 100% 38%);
+	--vignette: transparent;
+	--scan-opacity: 0;
+
+	--panel-border: var(--accent);
+	--btn-hover-bg: var(--text-hi);
+	--shadow-panel: 10px 10px 0 hsl(0 0% 4%);
+	--shadow-focus: none;
+	--shadow-btn: 4px 4px 0 hsl(40 100% 30%);
+	--shadow-btn-hover: 6px 6px 0 hsl(40 100% 30%);
+	--shadow-btn-active: 1px 1px 0 hsl(40 100% 30%);
+	--shadow-stamp: 3px 3px 0 hsl(0 0% 0% / 0.6);
+	--tshadow-title: none;
+	--tshadow-accent: none;
+	--tshadow-success: none;
+	--tshadow-stamp: none;
+	--tshadow-kana: none;
+	--bracket-filter: none;
+}
+
+/* ---------- Cyberpunk Blue: electric blue on navy ---------- */
+[data-theme="cyberpunk-blue"] {
+	--bg: hsl(222 70% 4%);
+	--bg-glow-1: hsl(215 100% 50% / 0.18);
+	--bg-glow-2: hsl(190 100% 50% / 0.08);
+	--surface: hsl(222 55% 8%);
+	--surface-2: hsl(222 45% 14%);
+	--line: hsl(220 40% 26%);
+	--line-strong: hsl(220 25% 44%);
+	--text-4: hsl(218 22% 62%);
+	--text-3: hsl(218 25% 69%);
+	--text-2: hsl(215 35% 79%);
+	--text: hsl(210 70% 95%);
+	--text-hi: hsl(200 100% 98%);
+	--field: hsl(224 70% 3%);
+
+	--accent: hsl(210 100% 65%);
+	--accent-ink: hsl(224 70% 4%);
+	--success: hsl(165 100% 58%);
+	--error: hsl(350 100% 68%);
+	--warn: hsl(38 100% 62%);
+
+	--glitch-a: hsl(210 100% 65%);
+	--glitch-b: hsl(165 100% 58%);
+	--backdrop-line: hsl(222 50% 14%);
+	--vignette: hsl(224 70% 2% / 0.6);
+	--scan-opacity: 0.35;
+
+	--panel-border: var(--accent-a40);
+	--btn-hover-bg: var(--text-hi);
+	--shadow-panel: 0 0 44px var(--accent-a15), inset 0 0 48px color-mix(in srgb, var(--accent) 5%, transparent);
+	--shadow-focus: 0 0 18px var(--accent-a40);
+	--shadow-btn: 0 0 18px var(--accent-a40);
+	--shadow-btn-hover: 0 0 32px var(--accent), 0 0 8px var(--accent);
+	--shadow-btn-active: 0 0 12px var(--accent);
+	--shadow-stamp: 0 0 14px var(--success-a40), inset 0 0 10px var(--success-a40);
+	--tshadow-title: 0 0 18px var(--accent-a40);
+	--tshadow-accent: 0 0 16px var(--accent);
+	--tshadow-success: 0 0 12px var(--success-a40);
+	--tshadow-stamp: 0 0 10px var(--success-a40);
+	--tshadow-kana: 0 0 10px var(--accent-a40);
+	--bracket-filter: drop-shadow(0 0 6px var(--accent));
+}
+
+/* ---------- Bond: black, ivory, blood red and gold. Film poster, not neon. ---------- */
+[data-theme="bond"] {
+	--bg: hsl(0 0% 4%);
+	--bg-glow-1: transparent;
+	--bg-glow-2: transparent;
+	--surface: hsl(0 0% 7%);
+	--surface-2: hsl(0 0% 13%);
+	--line: hsl(0 0% 24%);
+	--line-strong: hsl(0 0% 40%);
+	--text-4: hsl(40 6% 58%);
+	--text-3: hsl(40 8% 66%);
+	--text-2: hsl(40 12% 78%);
+	--text: hsl(40 30% 93%);
+	--text-hi: hsl(40 40% 98%);
+	--field: hsl(0 0% 3%);
+
+	--accent: hsl(40 35% 92%);
+	--accent-ink: hsl(0 0% 6%);
+	--success: hsl(43 70% 58%);
+	--error: hsl(3 90% 60%);
+	--warn: hsl(30 100% 58%);
+
+	--glitch-a: hsl(3 90% 55%);
+	--glitch-b: hsl(40 35% 92%);
+	--backdrop-line: hsl(40 10% 24%);
+	--vignette: hsl(0 0% 0% / 0.8);
+	--scan-opacity: 0.4; /* overlays sit on top of the form, so keep them gentle */
+
+	--panel-border: hsl(40 12% 30%);
+	--btn-hover-bg: var(--success);
+	--shadow-panel: 0 28px 70px hsl(0 0% 0% / 0.7);
+	--shadow-focus: none;
+	--shadow-btn: none;
+	--shadow-btn-hover: 0 0 0 1px var(--success);
+	--shadow-btn-active: none;
+	--shadow-stamp: none;
+	--tshadow-title: none;
+	--tshadow-accent: none;
+	--tshadow-success: none;
+	--tshadow-stamp: none;
+	--tshadow-kana: none;
+	--bracket-filter: none;
+
+	--font-display: "Didot", "Bodoni 72", "Bodoni MT", "Playfair Display", "Times New Roman", serif;
+	--font-mono: "Futura", "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* ---------- TEMPLATE: copy me ----------
+[data-theme="my-theme"] {
+	--bg: ;  --bg-glow-1: ;  --bg-glow-2: ;
+	--surface: ;  --surface-2: ;  --line: ;  --line-strong: ;
+	--text-4: ;  --text-3: ;  --text-2: ;  --text: ;  --text-hi: ;  --field: ;
+	--accent: ;  --accent-ink: ;  --success: ;  --error: ;  --warn: ;
+	--glitch-a: ;  --glitch-b: ;  --backdrop-line: ;  --vignette: ;  --scan-opacity: ;
+	--panel-border: ;  --btn-hover-bg: ;
+	--shadow-panel: ;  --shadow-focus: ;  --shadow-btn: ;  --shadow-btn-hover: ;
+	--shadow-btn-active: ;  --shadow-stamp: ;
+	--tshadow-title: ;  --tshadow-accent: ;  --tshadow-success: ;  --tshadow-stamp: ;
+	--tshadow-kana: ;  --bracket-filter: ;
+	// Light page? Also set --on-bg, --on-bg-2/3/4, --on-bg-accent, --on-bg-success,
+	// --on-bg-error, --on-bg-line, --on-bg-line-strong.
+	// Optional: --font-display, --font-mono.
+}
+*/

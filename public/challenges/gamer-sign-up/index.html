@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="color-scheme" content="dark">
+	<meta name="theme-color" content="#08010a">
+	<meta name="description" content="A sign-up form for NEONCORE, a competitive-gaming network, restyled as cyberpunk pink. A Frontend Mentor challenge built with plain HTML, CSS and JavaScript.">
+
+	<!-- Absolute paths on purpose: this page is served at /challenges/gamer-sign-up (no trailing slash),
+	     so relative URLs would resolve one level up. Change the prefix if the page moves. -->
+	<link rel="icon" type="image/svg+xml" href="/challenges/gamer-sign-up/assets/images/favicon.svg">
+	<link rel="preload" href="/challenges/gamer-sign-up/assets/fonts/orbitron/static/orbitron-800.ttf" as="font" type="font/ttf" crossorigin>
+	<link rel="stylesheet" href="/challenges/gamer-sign-up/style.css">
+	<link rel="stylesheet" href="/challenges/gamer-sign-up/themes.css">
+	<!-- Synchronous on purpose: applies the saved theme before first paint (no flash). -->
+	<script src="/challenges/gamer-sign-up/themes.js"></script>
+	<script src="/challenges/gamer-sign-up/theme.js"></script>
+
+	<title>NEONCORE | Gamer sign-up form</title>
+</head>
+<body>
+
+	<a class="skip-link" href="#signup">Skip to the sign-up form</a>
+
+	<!-- Effect layers: shown or hidden by <html data-fx="..."> (see themes.js) -->
+	<div class="fx fx-tape" aria-hidden="true">
+		<div class="tape__stripe"></div>
+		<div class="tape__text"><span>// CAUTION // NEW OPERATOR // PROCEED WITH CARE // // CAUTION // NEW OPERATOR // PROCEED WITH CARE // // CAUTION // NEW OPERATOR // PROCEED WITH CARE // // CAUTION // NEW OPERATOR // PROCEED WITH CARE // // CAUTION // NEW OPERATOR // PROCEED WITH CARE // </span><span>// CAUTION // NEW OPERATOR // PROCEED WITH CARE // // CAUTION // NEW OPERATOR // PROCEED WITH CARE // // CAUTION // NEW OPERATOR // PROCEED WITH CARE // // CAUTION // NEW OPERATOR // PROCEED WITH CARE // // CAUTION // NEW OPERATOR // PROCEED WITH CARE // </span></div>
+	</div>
+
+	<div class="clip">
+		<div class="fx fx-grid" aria-hidden="true"></div>
+		<div class="fx fx-spot" aria-hidden="true"></div>
+		<div class="fx fx-rain" aria-hidden="true"><span style="left:4.0%;--dur:16s;animation-delay:-7s">101000100001100010000100001100100010000111111100001111100101101000100001100010000100001100100010000111111100001111100101</span><span style="left:14.5%;--dur:23s;animation-delay:-9s">100111110011001111101100100100111001110111110000000010110011100111110011001111101100100100111001110111110000000010110011</span><span style="left:25.0%;--dur:22s;animation-delay:-8s">100111110110000100100000100010111100111110001110001001011010100111110110000100100000100010111100111110001110001001011010</span><span style="left:35.5%;--dur:17s;animation-delay:-3s">100010011001110111100001010101100101011011100000010110000001100010011001110111100001010101100101011011100000010110000001</span><span style="left:46.0%;--dur:16s;animation-delay:-11s">010101110011100010000010011000010010011011101010101110010010010101110011100010000010011000010010011011101010101110010010</span><span style="left:56.5%;--dur:15s;animation-delay:-7s">101010011000111101101011101110000011001011101101001010010001101010011000111101101011101110000011001011101101001010010001</span><span style="left:67.0%;--dur:21s;animation-delay:-0s">011100000100011011011010000101011110010011000011000110101001011100000100011011011010000101011110010011000011000110101001</span><span style="left:77.5%;--dur:24s;animation-delay:-8s">111100101001101100001001010110001110100100000001011000110100111100101001101100001001010110001110100100000001011000110100</span><span style="left:88.0%;--dur:21s;animation-delay:-6s">011010001110110000111001011001111110010101101110000011010101011010001110110000111001011001111110010101101110000011010101</span></div>
+	<div class="page">
+
+		<!-- Brand column -->
+		<div class="brand">
+			<!-- Decorative: "NEONCORE // CYBERPUNK" in katakana -->
+			<p class="brand__kana" lang="ja" aria-hidden="true">ネオンコア // サイバーパンク</p>
+			<div class="brand__top">
+				<svg class="brand__logo" role="img" aria-label="NEONCORE" xmlns="http://www.w3.org/2000/svg" width="169" height="32" fill="none" viewBox="0 0 169 32"><path class="logo-ring" stroke-width="1.5" d="m30 16-7 12.12H9L2 16 9 3.88h14z"/><path class="logo-dot" d="m21 16-2.5 4.33h-5L11 16l2.5-4.33h5z"/><path class="logo-text" d="M44.896 22V10.48h2.448l6.736 8.032V10.48h2.336V22h-2.448L47.2 13.936V22zM60.8 22V10.48h10.624v2.32h-8.288v2.272h6.672v2.336h-6.672v2.272h8.288V22zm16.738 0q-.64 0-1.168-.304a2.6 2.6 0 0 1-.832-.832 2.3 2.3 0 0 1-.304-1.168v-6.912q0-.64.304-1.152.32-.528.832-.832a2.2 2.2 0 0 1 1.168-.32h6.912a2.1 2.1 0 0 1 1.136.32q.528.304.848.832.32.511.32 1.152v6.912q0 .64-.32 1.168a2.5 2.5 0 0 1-.848.832Q85.074 22 84.45 22zm.096-2.32h6.688q.048 0 .064-.016a.1.1 0 0 0 .032-.08v-6.688q0-.048-.032-.064-.016-.032-.064-.032h-6.688a.1.1 0 0 0-.08.032q-.016.015-.016.064v6.688q0 .048.016.08.032.015.08.016M91.076 22V10.48h2.448l6.736 8.032V10.48h2.336V22h-2.448l-6.768-8.064V22zm18.176 0a2.3 2.3 0 0 1-1.168-.304 2.6 2.6 0 0 1-.832-.832 2.3 2.3 0 0 1-.304-1.168v-6.912q0-.64.304-1.152.32-.528.832-.832.528-.32 1.168-.32h9.184v2.32h-8.64a.54.54 0 0 0-.4.144q-.144.128-.144.4v5.792q0 .256.144.4.145.144.4.144h8.64V22zm15.685 0q-.64 0-1.168-.304a2.6 2.6 0 0 1-.832-.832 2.3 2.3 0 0 1-.304-1.168v-6.912q0-.64.304-1.152.32-.528.832-.832a2.2 2.2 0 0 1 1.168-.32h6.912q.623 0 1.136.32.527.304.848.832.32.511.32 1.152v6.912q0 .64-.32 1.168a2.54 2.54 0 0 1-.848.832q-.513.304-1.136.304zm.096-2.32h6.688q.048 0 .064-.016a.1.1 0 0 0 .032-.08v-6.688q0-.048-.032-.064-.016-.032-.064-.032h-6.688a.1.1 0 0 0-.08.032q-.016.015-.016.064v6.688q0 .048.016.08.032.015.08.016M147.531 22l-3.408-4.064h3.024l2.816 3.344V22zm-9.056 0V10.496h9.2q.639 0 1.152.32.527.304.848.832t.32 1.152v3.04q0 .624-.32 1.152a2.54 2.54 0 0 1-.848.832 2.2 2.2 0 0 1-1.152.304l-6.896.016V22zm2.4-6.192h6.688q.048 0 .064-.016.032-.032.032-.064v-2.832q0-.048-.032-.064-.016-.032-.064-.032h-6.688a.1.1 0 0 0-.08.032q-.016.015-.016.064v2.832q0 .032.016.064.032.015.08.016M154.27 22V10.48h10.624v2.32h-8.288v2.272h6.672v2.336h-6.672v2.272h8.288V22z"/></svg>
+				<!-- Mobile only: mirrors the readout's ready count -->
+				<p class="brand__ready" data-ready aria-hidden="true">0/5 ready</p>
+			</div>
+
+			<h1 class="brand__title"><span class="brand__slashes" aria-hidden="true">//</span>Join the nexus</h1>
+			<p class="brand__tagline">Initialize your NEONCORE identity</p>
+
+			<!-- Decorative mirror of the form's state. The form announces its own messages. -->
+			<div class="readout" aria-hidden="true">
+				<p class="readout__label">Operator ID</p>
+				<p class="readout__ready" data-ready>0/5 ready</p>
+				<p class="readout__name is-unassigned" id="operator-name">Unassigned</p>
+				<ul class="readout__rows">
+					<li data-row="callsign"><span>Callsign</span><i></i><b>Pending</b></li>
+					<li data-row="email"><span>Email</span><i></i><b>Pending</b></li>
+					<li data-row="password"><span>Password</span><i></i><b>Pending</b></li>
+					<li data-row="confirm"><span>Confirm</span><i></i><b>Pending</b></li>
+					<li data-row="terms"><span>Terms</span><i></i><b>Required</b></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Panel: sign-up form, then success view in the same box -->
+		<div class="panel-wrap">
+			<svg class="backdrop backdrop--hex" aria-hidden="true" width="960" height="960" fill="none" viewBox="0 0 960 960">
+				<path class="bd-line" d="M950.4 480 715.2 887.376H244.8L9.6 480 244.8 72.624h470.4z"/>
+				<path class="bd-line" d="M806.4 480 643.2 762.672H316.8L153.6 480l163.2-282.672h326.4z"/>
+				<path class="bd-accent" opacity=".56" d="m662.4 480-91.2 157.968H388.8L297.6 480l91.2-157.968h182.4z"/>
+			</svg>
+			<svg class="backdrop backdrop--barrel" aria-hidden="true" width="960" height="960" fill="none" viewBox="0 0 960 960">
+				<g class="bd-line"><circle cx="480" cy="480" r="450"/><circle cx="480" cy="480" r="408"/><circle cx="480" cy="480" r="350"/><circle cx="480" cy="480" r="290"/></g>
+				<circle class="bd-accent" cx="480" cy="480" r="212" stroke-width="2" opacity=".7"/>
+				<g class="bd-accent" opacity=".5"><path d="M480 270C520 300 520 350 480 392" transform="rotate(0 480 480)"/><path d="M480 270C520 300 520 350 480 392" transform="rotate(30 480 480)"/><path d="M480 270C520 300 520 350 480 392" transform="rotate(60 480 480)"/><path d="M480 270C520 300 520 350 480 392" transform="rotate(90 480 480)"/><path d="M480 270C520 300 520 350 480 392" transform="rotate(120 480 480)"/><path d="M480 270C520 300 520 350 480 392" transform="rotate(150 480 480)"/><path d="M480 270C520 300 520 350 480 392" transform="rotate(180 480 480)"/><path d="M480 270C520 300 520 350 480 392" transform="rotate(210 480 480)"/><path d="M480 270C520 300 520 350 480 392" transform="rotate(240 480 480)"/><path d="M480 270C520 300 520 350 480 392" transform="rotate(270 480 480)"/><path d="M480 270C520 300 520 350 480 392" transform="rotate(300 480 480)"/><path d="M480 270C520 300 520 350 480 392" transform="rotate(330 480 480)"/></g>
+				<circle class="bd-accent" cx="480" cy="480" r="14" opacity=".8"/>
+			</svg>
+			<main class="panel" id="panel">
+
+				<form class="form" id="signup" novalidate aria-labelledby="form-title">
+					<div class="form__head">
+						<h2 class="form__title" id="form-title">New operator</h2>
+						<p class="form__note"><span class="desktop-only">All fields required</span><span class="mobile-only">All required</span></p>
+					</div>
+
+					<div class="field" data-field="callsign">
+						<label class="label" for="callsign"><span aria-hidden="true">&gt;</span> Callsign</label>
+						<div class="control">
+							<input id="callsign" name="callsign" type="text" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="e.g. Vortex_07" aria-required="true" aria-describedby="callsign-hint">
+							<i class="tick" aria-hidden="true" hidden></i>
+						</div>
+						<p class="hint" id="callsign-hint">3–20 characters: letters, numbers, _ or -</p>
+						<p class="error" id="callsign-error" hidden><i class="ico-alert" aria-hidden="true"></i><span></span></p>
+					</div>
+
+					<div class="field" data-field="email">
+						<label class="label" for="email"><span aria-hidden="true">&gt;</span> Email</label>
+						<div class="control">
+							<input id="email" name="email" type="email" autocomplete="email" spellcheck="false" placeholder="you@example.com" aria-required="true">
+							<i class="tick" aria-hidden="true" hidden></i>
+						</div>
+						<p class="error" id="email-error" hidden><i class="ico-alert" aria-hidden="true"></i><span></span></p>
+					</div>
+
+					<div class="field" data-field="password">
+						<label class="label" for="password"><span aria-hidden="true">&gt;</span> Password</label>
+						<div class="control control--password">
+							<input id="password" name="password" type="password" autocomplete="new-password" aria-required="true" aria-describedby="password-hint">
+							<i class="tick" aria-hidden="true" hidden></i>
+							<button class="eye" type="button" aria-controls="password" aria-pressed="false" aria-label="Show password">
+								<i aria-hidden="true"></i>
+							</button>
+						</div>
+						<div class="meter" id="meter" data-level="0" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+						<div class="meta">
+							<div class="meta__msg">
+								<p class="hint" id="password-hint">At least 8 characters</p>
+								<p class="error" id="password-error" hidden><i class="ico-alert" aria-hidden="true"></i><span></span></p>
+							</div>
+							<p class="strength" id="strength" aria-live="polite"></p>
+						</div>
+					</div>
+
+					<div class="field" data-field="confirm">
+						<label class="label" for="confirm"><span aria-hidden="true">&gt;</span> Confirm password</label>
+						<div class="control control--password">
+							<input id="confirm" name="confirm" type="password" autocomplete="new-password" aria-required="true">
+							<i class="tick" aria-hidden="true" hidden></i>
+							<button class="eye" type="button" aria-controls="confirm" aria-pressed="false" aria-label="Show confirm password">
+								<i aria-hidden="true"></i>
+							</button>
+						</div>
+						<p class="error" id="confirm-error" hidden><i class="ico-alert" aria-hidden="true"></i><span></span></p>
+					</div>
+
+					<div class="field field--terms" data-field="terms">
+						<div class="terms">
+							<input id="terms" name="terms" type="checkbox" aria-required="true">
+							<label for="terms">I accept the <a href="#" data-stub>Terms</a> and <a href="#" data-stub>Privacy Policy</a>.</label>
+						</div>
+						<p class="error" id="terms-error" hidden><i class="ico-alert" aria-hidden="true"></i><span></span></p>
+					</div>
+
+					<button class="btn" id="submit" type="submit"><span id="submit-text">Initialize account</span></button>
+
+					<p class="form__foot">Already an operator? <a href="#" data-stub>Log in</a></p>
+				</form>
+
+				<!-- Success view -->
+				<section class="success" id="success" hidden aria-labelledby="success-title">
+					<svg class="success__icon" xmlns="http://www.w3.org/2000/svg" width="78" height="72" fill="none" viewBox="0 0 78 72" aria-hidden="true"><g stroke-linecap="square" stroke-width="1.5"><path d="m60.866 35.8-11 19.05h-22l-11-19.05 11-19.05h22z"/><path d="m30.866 35.8 6 6 11-12"/></g></svg>
+					<p class="success__stamp" aria-hidden="true">Access granted</p>
+					<h2 class="success__title" id="success-title" tabindex="-1"><span aria-hidden="true">//</span> Handshake complete</h2>
+					<p class="success__text">Operator <strong id="success-name"></strong> provisioned. Your account is ready.</p>
+					<ul class="success__log" aria-hidden="true">
+						<li style="--i:0"><span class="gt">&gt;</span> handshake ... <span class="ok">OK</span></li>
+						<li style="--i:1"><span class="gt">&gt;</span> identity ... <span class="ok">PROVISIONED</span></li>
+						<li style="--i:2"><span class="gt">&gt;</span> welcome to the nexus_</li>
+					</ul>
+					<a class="btn btn--link" href="#" data-stub>Continue to log in</a>
+				</section>
+
+			</main>
+		</div>
+	</div>
+	</div>
+
+	<div class="fx fx-scan" aria-hidden="true"></div>
+	<div class="fx fx-grain" aria-hidden="true"></div>
+	<div class="fx fx-flicker" aria-hidden="true"></div>
+
+	<!-- Announces "N fields need attention" and the submitting state -->
+	<p class="sr-only" id="status" role="status" aria-live="polite"></p>
+
+	<footer class="attribution">
+		<p>
+			Challenge by <a href="https://www.frontendmentor.io/challenges/gamer-sign-up-form?ref=challenge">Frontend Mentor</a>.
+			Coded by <a href="https://emmanagano.com">Emma Nagano</a>.
+			<a href="/challenges">&larr; More challenges</a>
+		</p>
+	</footer>
+
+	<script src="/challenges/gamer-sign-up/script.js"></script>
+</body>
+</html>
