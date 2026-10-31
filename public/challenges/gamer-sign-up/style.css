@@ -828,6 +828,27 @@ a:hover {
 	margin-left: 4px;
 }
 
+/* ---------- Back to main site ---------- */
+
+.back {
+	--text: var(--on-bg);
+	--accent: var(--on-bg-accent);
+	justify-self: start;
+	padding: 8px 14px;
+	border: 1px solid var(--on-bg-line-strong);
+	background: color-mix(in srgb, var(--bg) 75%, transparent);
+	color: var(--on-bg);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.back:hover {
+	border-color: var(--on-bg-accent);
+	color: var(--on-bg-accent);
+}
+
 /* ---------- Theme dock ---------- */
 
 .dock {
@@ -1374,6 +1395,15 @@ html[data-fx~="holo"] .panel {
 	/* Theme dock floats above the panel (below the caution tape when it is showing) */
 	html[data-fx~="tape"] .dock {
 		top: 52px;
+	}
+	html[data-fx~="tape"] .back {
+		top: 52px;
+	}
+	.back {
+		position: fixed;
+		top: 16px;
+		left: 16px;
+		z-index: 55;
 	}
 	.dock {
 		position: fixed;
