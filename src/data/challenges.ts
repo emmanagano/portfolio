@@ -5,7 +5,7 @@ export type Challenge = {
 	href?: string;
 	title: string;
 	summary: string;
-	twist: string; // what I added on top of the original brief
+	twist?: string; // optional: only set if I added something on top of the original brief
 	source: string; // original challenge brief
 	difficulty: "Newbie" | "Junior" | "Intermediate";
 	stack: string[];
@@ -20,9 +20,9 @@ export const challenges: Challenge[] = [
 		href: "/challenges/gamer-sign-up",
 		title: "Gamer Sign-Up Form",
 		summary:
-			"A sign-up form for NEONCORE, a competitive-gaming network, with live validation, a password strength meter, and loading and success states.",
+			"A sign-up form for NEONCORE, a made-up competitive-gaming network, with live validation, a password strength meter, and loading and success states.",
 		twist:
-			"Four switchable themes: Cyberpunk Pink, Yellow and Blue, plus a Bond wild card. Each has its own effects, transition and success sequence, remembered between visits.",
+			"I went a bit overboard and added four switchable themes (Cyberpunk Pink, Yellow, Blue and a Bond wild card).",
 		source: "https://www.frontendmentor.io/challenges/gamer-sign-up-form",
 		difficulty: "Junior",
 		stack: ["HTML", "CSS", "JavaScript"],

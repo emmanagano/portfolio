@@ -13,7 +13,7 @@ export default function ChallengeCard({ challenge }: { challenge: Challenge }) {
 					{challenge.difficulty}
 				</span>
 				<span className="font-mono text-xs font-bold uppercase tracking-widest text-muted">
-					Code challenge
+					Mini project
 				</span>
 			</div>
 			<h3 className="font-display text-2xl font-extrabold sm:text-3xl">
@@ -35,20 +35,19 @@ export default function ChallengeCard({ challenge }: { challenge: Challenge }) {
 				)}
 			</h3>
 			<p className="leading-relaxed text-muted">{challenge.summary}</p>
-			<p className="rounded-2xl border border-line bg-hover p-4 text-sm leading-relaxed">
-				<span className="font-mono text-xs font-bold uppercase tracking-widest text-primary-ink">
-					My twist
-				</span>
-				<br />
-				{challenge.twist}
-			</p>
+			{challenge.twist && (
+				<p className="text-sm leading-relaxed text-muted">
+					<span className="font-bold text-foreground">Bonus:</span>{" "}
+					{challenge.twist}
+				</p>
+			)}
 			<ul className="mt-auto flex flex-wrap gap-2" aria-label="Tech stack">
 				{challenge.stack.map((t) => (
 					<Tag key={t}>{t}</Tag>
 				))}
 			</ul>
 			<span className="inline-flex items-center gap-2 font-bold">
-				Play it
+				Try it
 				<ArrowIcon className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-1" />
 			</span>
 		</article>

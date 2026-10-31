@@ -8,13 +8,13 @@ export default function Challenges() {
 	return (
 		<section id="challenges" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
 			<SectionHeading
-				eyebrow="Code challenges"
+				eyebrow="Side projects"
 				title={
 					<>
-						Practice, with a <span className="text-primary-ink">twist</span>
+						Mini projects, just for <span className="text-primary-ink">fun</span>
 					</>
 				}
-				intro="I take frontend challenges and add something of my own to each one. They're small, single-page builds."
+				intro="Small builds I make for practice and for the fun of it, usually from frontend challenge briefs. Each one is a single page."
 			/>
 			<ul className="grid gap-8 md:grid-cols-2">
 				{challenges.map((c, i) => (
@@ -30,7 +30,7 @@ export default function Challenges() {
 					href="/challenges"
 					className="inline-block rounded-full border-2 border-foreground px-6 py-3 font-bold transition-all hover:-translate-y-0.5 hover:bg-lilac hover:text-[#1a1423]"
 				>
-					All challenges
+					All mini projects
 				</Link>
 			</Reveal>
 		</section>

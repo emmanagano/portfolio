@@ -6,7 +6,7 @@ import ChallengeCard from "../components/ui/ChallengeCard";
 export const metadata: Metadata = {
 	title: "Code challenges",
 	description:
-		"Frontend challenges I rebuild with a twist of my own. Each one is a small, single-page build.",
+		"Small frontend mini projects I build for practice and for fun, usually from challenge briefs.",
 };
 
 export default function ChallengesPage() {
@@ -14,15 +14,15 @@ export default function ChallengesPage() {
 		<div className="mx-auto max-w-6xl px-4 pb-10 pt-12 sm:px-6 md:pt-16">
 			<header className="mb-12 max-w-3xl">
 				<p className="mb-3 font-mono text-sm font-bold uppercase tracking-widest text-muted">
-					<span className="text-primary-ink" aria-hidden="true">✦</span> Code challenges
+					<span className="text-primary-ink" aria-hidden="true">✦</span> Side projects
 				</p>
 				<h1 className="font-display text-5xl font-extrabold leading-[0.95] sm:text-7xl">
-					Practice, with a <span className="text-primary-ink">twist</span>.
+					Mini projects, just for <span className="text-primary-ink">fun</span>.
 				</h1>
 				<p className="mt-6 text-xl leading-relaxed text-muted">
-					I pick up frontend challenges and push each one past the brief.
-					Small builds are single pages here; a bigger one may become its
-					own site.
+					Little builds I make to practice and have fun, usually from
+					frontend challenge briefs. Nothing serious, just things I wanted
+					to try.
 				</p>
 			</header>
 			<ul className="grid gap-8 md:grid-cols-2">
