@@ -21,6 +21,8 @@ export default function ChallengeCard({ challenge }: { challenge: Challenge }) {
 				{challenge.href ? (
 					<a
 						href={challenge.href}
+						target="_blank"
+						rel="noopener noreferrer"
 						className="after:absolute after:inset-0 after:content-['']"
 					>
 						{challenge.title}
@@ -28,6 +30,8 @@ export default function ChallengeCard({ challenge }: { challenge: Challenge }) {
 				) : (
 					<Link
 						href={`/challenges/${challenge.slug}`}
+						target="_blank"
+						rel="noopener noreferrer"
 						className="after:absolute after:inset-0 after:content-['']"
 					>
 						{challenge.title}
