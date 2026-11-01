@@ -18,6 +18,49 @@ export type Project = {
 // Content verified against the live sites (Oct 2026). Screenshots in public/images/projects/.
 export const projects: Project[] = [
 	{
+		slug: "jewelry-store",
+		title: "Fine Jewelry E-Commerce Store",
+		summary:
+			"A concept storefront for a fine jewelry brand, with a real product database, user accounts, and a cart and wishlist that stay in sync across tabs.",
+		image: "/images/projects/jewelry-store.jpg",
+		liveUrl: "https://mock-jewelry-ecommerce.netlify.app/",
+		repoUrl: "https://github.com/emmanagano/jewelry-ecommerce",
+		stack: [
+			"Next.js",
+			"React",
+			"TypeScript",
+			"Tailwind CSS",
+			"Supabase",
+			"Lucide Icons",
+			"Netlify",
+		],
+		status: "in-progress",
+		role: "Personal project: design and full-stack development",
+		problem:
+			"I wanted to build a store that feels premium and works like a real one: browsing by category, choosing a size, saving favorites, and signing in.",
+		approach:
+			"Products live in a Supabase database and load into category and product pages. Supabase Auth handles sign up, sign in, and sessions. I built the cart and wishlist with React context and useSyncExternalStore on top of localStorage, so they survive a refresh and stay in sync between open tabs, without a state library.",
+		highlights: [
+			"Product catalog served from Supabase (Postgres)",
+			"Sign up, sign in, and sessions with Supabase Auth",
+			"Cart and wishlist synced across tabs with useSyncExternalStore",
+			"Product pages with size selection and add to bag",
+			"Category pages for rings, necklaces, earrings, and bracelets",
+		],
+		outcome:
+			"In progress. Shopping, cart, wishlist, and accounts work; checkout and the remaining content pages are next.",
+		gallery: [
+			{
+				src: "/images/projects/jewelry-store.jpg",
+				alt: "Jewelry store home page with a full-width collection hero, search, and category navigation",
+			},
+			{
+				src: "/images/projects/jewelry-store-product.jpg",
+				alt: "Product page with an image gallery, a ring size selected, and the add to bag button",
+			},
+		],
+	},
+	{
 		slug: "phil-strats",
 		title: "Phil Strats: Travel Blog Showcase",
 		summary:
@@ -69,6 +112,7 @@ export const projects: Project[] = [
 			"A clean, editorial portfolio for a photographer and videographer, built to put sports, wedding, real estate, and aerial work front and center.",
 		image: "/images/projects/jd-gallery.jpg",
 		liveUrl: "https://jdgallery.netlify.app/",
+		repoUrl: "https://github.com/emmanagano/photographer-portfolio",
 		stack: ["Astro", "TypeScript", "Tailwind CSS", "Netlify"],
 		status: "live",
 		role: "Designer and developer",
@@ -93,48 +137,6 @@ export const projects: Project[] = [
 			{
 				src: "/images/projects/jd-gallery-album.jpg",
 				alt: "Real Estate gallery page with a grid of interior and exterior photos",
-			},
-		],
-	},
-	{
-		slug: "jewelry-store",
-		title: "Fine Jewelry E-Commerce Store",
-		summary:
-			"A concept storefront for a fine jewelry brand, with a real product database, user accounts, and a cart and wishlist that stay in sync across tabs.",
-		image: "/images/projects/jewelry-store.jpg",
-		liveUrl: "https://mock-jewelry-ecommerce.netlify.app/",
-		stack: [
-			"Next.js",
-			"React",
-			"TypeScript",
-			"Tailwind CSS",
-			"Supabase",
-			"Lucide Icons",
-			"Netlify",
-		],
-		status: "in-progress",
-		role: "Personal project: design and full-stack development",
-		problem:
-			"I wanted to build a store that feels premium and works like a real one: browsing by category, choosing a size, saving favorites, and signing in.",
-		approach:
-			"Products live in a Supabase database and load into category and product pages. Supabase Auth handles sign up, sign in, and sessions. I built the cart and wishlist with React context and useSyncExternalStore on top of localStorage, so they survive a refresh and stay in sync between open tabs, without a state library.",
-		highlights: [
-			"Product catalog served from Supabase (Postgres)",
-			"Sign up, sign in, and sessions with Supabase Auth",
-			"Cart and wishlist synced across tabs with useSyncExternalStore",
-			"Product pages with size selection and add to bag",
-			"Category pages for rings, necklaces, earrings, and bracelets",
-		],
-		outcome:
-			"In progress. Shopping, cart, wishlist, and accounts work; checkout and the remaining content pages are next.",
-		gallery: [
-			{
-				src: "/images/projects/jewelry-store.jpg",
-				alt: "Jewelry store home page with a full-width collection hero, search, and category navigation",
-			},
-			{
-				src: "/images/projects/jewelry-store-product.jpg",
-				alt: "Product page with an image gallery, a ring size selected, and the add to bag button",
 			},
 		],
 	},

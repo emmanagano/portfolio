@@ -73,10 +73,24 @@ export default function ProjectCard({
 						<Tag key={t}>{t}</Tag>
 					))}
 				</ul>
-				<span className="inline-flex items-center gap-2 font-bold">
-					Read case study
-					<ArrowIcon className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-1" />
-				</span>
+				<div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+					<span className="inline-flex items-center gap-2 font-bold">
+						Read case study
+						<ArrowIcon className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-1" />
+					</span>
+					{project.repoUrl && (
+						<a
+							href={project.repoUrl}
+							target="_blank"
+							rel="noreferrer"
+							aria-label={`${project.title} source code on GitHub`}
+							className="relative z-10 inline-flex items-center gap-1.5 font-bold text-muted underline-offset-4 hover:text-foreground hover:underline"
+						>
+							Code
+							<ArrowIcon className="h-3.5 w-3.5" />
+						</a>
+					)}
+				</div>
 			</div>
 		</motion.article>
 	);
