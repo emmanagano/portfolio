@@ -6,7 +6,7 @@ export type Challenge = {
 	title: string;
 	summary: string;
 	twist?: string; // optional: only set if I added something on top of the original brief
-	source: string; // original challenge brief
+	source?: string; // original challenge brief, if there was one
 	difficulty: "Newbie" | "Junior" | "Intermediate";
 	stack: string[];
 	accent: "bg-primary" | "bg-sun" | "bg-lilac" | "bg-accent" | "bg-[#ff33b4]";
@@ -27,6 +27,16 @@ export const challenges: Challenge[] = [
 		difficulty: "Junior",
 		stack: ["HTML", "CSS", "JavaScript"],
 		accent: "bg-[#ff33b4]",
+	},
+	{
+		slug: "flatline",
+		href: "https://interactive-story-flatline.netlify.app/",
+		title: "Flatline",
+		summary:
+			"A cyberpunk survival story that runs in the browser. You have six hours to live and a stolen chip in your spine, and the game remembers every death.",
+		difficulty: "Intermediate",
+		stack: ["React", "Vite", "JavaScript", "CSS"],
+		accent: "bg-primary",
 	},
 ];
 
