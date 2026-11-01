@@ -67,6 +67,7 @@ export const projects: Project[] = [
 			"A demo travel blog I built to show the kind of blog platform I make for clients: searchable guides, a newsletter, analytics, and SEO built in from day one.",
 		image: "/images/projects/phil-strats.jpg",
 		liveUrl: "https://philippinestrategies.netlify.app",
+		repoUrl: "https://github.com/emmanagano/phil-strats",
 		stack: [
 			"Next.js",
 			"React",
