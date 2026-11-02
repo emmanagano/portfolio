@@ -10,11 +10,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		{ url: site.url, changeFrequency: "weekly", priority: 1 },
 		{ url: `${site.url}/about`, changeFrequency: "monthly", priority: 0.9 },
 		{ url: `${site.url}/challenges`, changeFrequency: "monthly", priority: 0.7 },
-		...challenges.map((c) => ({
-			url: `${site.url}/challenges/${c.slug}`,
-			changeFrequency: "monthly" as const,
-			priority: 0.6,
-		})),
+		...challenges
+			.filter((c) => !c.href || c.href.startsWith("/"))
+			.map((c) => ({
+				url: `${site.url}/challenges/${c.slug}`,
+				changeFrequency: "monthly" as const,
+				priority: 0.6,
+			})),
 		...projects.map((p) => ({
 			url: `${site.url}/projects/${p.slug}`,
 			changeFrequency: "monthly" as const,
