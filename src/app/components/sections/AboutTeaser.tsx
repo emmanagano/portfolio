@@ -11,7 +11,7 @@ const facts = [
 export default function AboutTeaser() {
 	return (
 		<section id="about" className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-			<Reveal className="grid items-center gap-10 rounded-[2rem] border-2 border-foreground bg-lilac p-8 text-[#1a1423] shadow-[8px_8px_0_var(--foreground)] sm:p-12 md:grid-cols-[1.2fr_1fr]">
+			<Reveal className="grid items-center gap-10 rounded-4xl border-2 border-foreground bg-lilac p-8 text-[#1a1423] shadow-[8px_8px_0_var(--foreground)] sm:p-12 md:grid-cols-[1.2fr_1fr]">
 				<div>
 					<p className="mb-3 font-mono text-sm font-bold uppercase tracking-widest">
 						✦ About me
@@ -20,9 +20,9 @@ export default function AboutTeaser() {
 						Design-minded. Code-driven.
 					</h2>
 					<p className="mt-5 max-w-xl text-lg leading-relaxed">
-						Designing + writing + coding = frontend developer. Coding gave me
-						a way forward when my plans changed, and I&apos;ve been
-						building ever since.
+						Designing + writing + coding = frontend developer.
+						Coding gave me a way forward when my plans changed, and
+						I&apos;ve been building ever since.
 					</p>
 					<Link
 						href="/about"
