@@ -62,15 +62,16 @@ export const projects: Project[] = [
 	},
 	{
 		slug: "phil-strats",
-		title: "Phil Strats: Travel Blog Showcase",
+		title: "Phil Strats: Philippines Travel Guide",
 		summary:
-			"A demo travel blog I built to show the kind of blog platform I make for clients: searchable guides, a newsletter, analytics, and SEO built in from day one.",
+			"A Philippines travel site with 37 interactive destination guides that work as trip planners, plus sourced news briefs, Filipino pop culture stories, and a shelf of books by Filipino authors.",
 		image: "/images/projects/phil-strats.jpg",
 		liveUrl: "https://philippinestrategies.netlify.app",
 		repoUrl: "https://github.com/emmanagano/phil-strats",
 		stack: [
 			"Next.js",
 			"React",
+			"TypeScript",
 			"Tailwind CSS",
 			"Markdown",
 			"EmailJS",
@@ -82,27 +83,27 @@ export const projects: Project[] = [
 		status: "live",
 		role: "Showcase project: design, development, and deployment",
 		problem:
-			"The blog I built for a freelance client isn't mine to share publicly, so I built Phil Strats to show the same skills in the open: a blog that's easy to keep publishing to, easy for readers to browse, and easy for Google to find.",
+			"The blog I built for a freelance client isn't mine to share publicly, so I started Phil Strats to show that work in the open. It grew from a blog into a full travel site, built around one question: can a single page answer everything someone needs to plan a trip?",
 		approach:
-			"I built it with Next.js and Tailwind CSS, with guides written in Markdown so a new destination is just a new file. Readers can search guides and filter them by experience (beaches, nature, heritage) or island group (Luzon, Visayas, Mindanao, Palawan). Every guide follows the same structure: quick facts, a table of contents, top attractions, how to get there, where to stay, and a suggested itinerary.",
+			"Each destination is one Markdown file whose frontmatter holds a structured guide, and the build validates every field, so a missing month, image, or card blurb fails the build instead of reaching readers. That data drives an interactive guide page: a month picker rated by season, route tabs, a budget calculator in pesos and dollars, filterable things to do you can save, itineraries by trip length, and a packing checklist. Choices are saved in localStorage and gathered into a \"Your plan\" summary. Every tab panel still renders in the HTML, so search engines see the whole guide. The site exports fully static to Netlify.",
 		highlights: [
-			"Search plus experience and region filters across 9 destination guides",
-			"Article pages with table of contents, reading time, and author byline",
-			"Structured data (Article, FAQ, Breadcrumb), Open Graph cards, canonical URLs, sitemap",
-			"Weekly newsletter signup through Buttondown",
-			"Contact form powered by EmailJS, with no backend needed",
-			"Traffic tracking with Google Analytics via Tag Manager",
+			"37 guides with search plus experience and island group filters kept in the URL",
+			"Interactive trip planner on every guide: season picker, budget calculator, saved spots, checklist",
+			"News briefs and Showbiz stories, each citing its sources, with topic filters",
+			"Books shelf of Filipino authors with era and language filters, linked to the guides they're set in",
+			"Structured data (Article, FAQ, Breadcrumb, NewsArticle, Book), Open Graph cards, sitemap",
+			"Newsletter through Buttondown, contact form through EmailJS, analytics via Tag Manager",
 		],
 		outcome:
-			"A live, public example of my blog work: fast, SEO-ready, and deployed on Netlify, with analytics and a newsletter wired up the way I'd ship them for a client.",
+			"A live, public example of my content-site work: a consistent brand and design system, data-driven pages that are easy to keep adding to, and SEO and analytics wired up the way I'd ship them for a client.",
 		gallery: [
 			{
 				src: "/images/projects/phil-strats.jpg",
-				alt: "Phil Strats home page featuring the Banaue Rice Terraces guide",
+				alt: "Phil Strats home page featuring the Sabtang Island, Batanes day-trip guide over a photo of a stone village",
 			},
 			{
-				src: "/images/projects/phil-strats-articles.jpg",
-				alt: "Destinations page with search and experience and region filters",
+				src: "/images/projects/phil-strats-guide.jpg",
+				alt: "Batanes guide page with section tabs for when to go, budget, itinerary, and a saved plan counter",
 			},
 		],
 	},
