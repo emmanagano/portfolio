@@ -1,21 +1,18 @@
-import Hero from "./components/sections/Hero";
-import SelectedWork from "./components/sections/SelectedWork";
-import Challenges from "./components/sections/Challenges";
-import Skills from "./components/sections/Skills";
-import Experience from "./components/sections/Experience";
-import AboutTeaser from "./components/sections/AboutTeaser";
-import Contact from "./components/sections/Contact";
+import PosterHero from "./components/home/PosterHero";
+import WorkIndex from "./components/home/WorkIndex";
+import ExperiencePath from "./components/home/ExperiencePath";
+import PhotoWord from "./components/home/PhotoWord";
+import ContactLetter from "./components/home/ContactLetter";
 
+// Poster-editorial homepage. Content lives in src/data/home.ts.
 export default function Home() {
 	return (
 		<>
-			<Hero />
-			<SelectedWork />
-			<Challenges />
-			<Skills />
-			<Experience />
-			<AboutTeaser />
-			<Contact />
+			<PosterHero />
+			<WorkIndex />
+			<ExperiencePath />
+			<PhotoWord />
+			<ContactLetter />
 		</>
 	);
 }

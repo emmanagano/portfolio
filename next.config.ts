@@ -1,18 +1,23 @@
 import type { NextConfig } from "next";
+import { projects } from "./src/data/projects";
 
 const nextConfig: NextConfig = {
 //   output: 'export',
 	images: {
 		unoptimized: true,
 	},
-	// Standalone challenge pages live in public/challenges/<slug>/index.html.
-	// Next does not serve a folder's index.html on its own, so map each URL to it.
-	async rewrites() {
+	// Case-study pages were retired in the poster-editorial redesign: each
+	// project tile now links straight to its live site. Old /projects/<slug>
+	// links (résumé, LinkedIn) redirect there too.
+	// The challenges pages were removed too; send old links home.
+	async redirects() {
 		return [
-			{
-				source: "/challenges/gamer-sign-up",
-				destination: "/challenges/gamer-sign-up/index.html",
-			},
+			...projects.map((p) => ({
+				source: `/projects/${p.slug}`,
+				destination: p.liveUrl,
+				permanent: true,
+			})),
+			{ source: "/challenges/:path*", destination: "/", permanent: true },
 		];
 	},
 };
