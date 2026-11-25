@@ -2,32 +2,37 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Poster-editorial palette (see the minimal-editorial-taste skill).
+   The older token names are kept and remapped so /about and /gallery keep
+   working on the new palette. */
 :root {
-	--background: #fbf7f0;
-	--foreground: #1a1423;
-	--surface: #ffffff;
-	--muted: #5d5566;
-	--primary: #ff5a36;
-	--primary-ink: #d63d1c;
-	--accent: #7c5cff;
-	--sun: #ffd23f;
-	--lilac: #c4b5ff;
-	--border: rgba(26, 20, 35, 0.12);
-	--hover-bg: rgba(26, 20, 35, 0.04);
+	--paper: #f7f3ec;
+	--linen: #ede5d8;
+	--nude: #d9c3ab;
+	--hairline: #ddd3c4;
+	--ghost: #e3d8c8;
+	--taupe: #6e6358;
+	--ink: #161412;
+	--red: #d2241c;
+	--oxblood: #9e1b17;
+
+	--background: var(--paper);
+	--foreground: var(--ink);
+	--surface: var(--linen);
+	--muted: var(--taupe);
+	--primary: var(--red);
+	--primary-ink: var(--oxblood);
+	--accent: var(--ink);
+	--sun: var(--linen);
+	--lilac: var(--nude);
+	--border: rgba(22, 20, 18, 0.12);
+	--hover-bg: rgba(22, 20, 18, 0.04);
 }
 
+/* The redesign is light-only; .dark is kept as an alias so old dark:
+   variants resolve to the same palette instead of breaking. */
 .dark {
-	--background: #141018;
-	--foreground: #f4efe6;
-	--surface: #1f1a26;
-	--muted: #b3aabd;
-	--primary: #ff7a59;
-	--primary-ink: #ff7a59;
-	--accent: #a48bff;
-	--sun: #ffd23f;
-	--lilac: #c4b5ff;
-	--border: rgba(244, 239, 230, 0.14);
-	--hover-bg: rgba(244, 239, 230, 0.05);
+	color-scheme: light;
 }
 
 @theme inline {
@@ -42,9 +47,21 @@
 	--color-lilac: var(--lilac);
 	--color-line: var(--border);
 	--color-hover: var(--hover-bg);
-	--font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-	--font-display: var(--font-bricolage), var(--font-inter), sans-serif;
-	--font-mono: var(--font-geist-mono), ui-monospace, monospace;
+	--color-paper: var(--paper);
+	--color-linen: var(--linen);
+	--color-nude: var(--nude);
+	--color-hairline: var(--hairline);
+	--color-ghost: var(--ghost);
+	--color-taupe: var(--taupe);
+	--color-ink: var(--ink);
+	--color-red: var(--red);
+	--color-oxblood: var(--oxblood);
+	--font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+	--font-display: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+	--font-serif: var(--font-instrument), Georgia, serif;
+	--font-mono: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+	--font-mono-cyber: var(--font-share-tech), ui-monospace, monospace;
+	--color-red-hair: #ebc3bc;
 }
 
 @theme {
@@ -81,13 +98,17 @@ h4 {
 	letter-spacing: -0.02em;
 }
 
+.font-serif {
+	font-synthesis: none;
+}
+
 ::selection {
-	background: var(--sun);
-	color: #1a1423;
+	background: var(--ink);
+	color: var(--paper);
 }
 
 :focus-visible {
-	outline: 3px solid var(--accent);
+	outline: 2px solid var(--ink);
 	outline-offset: 3px;
 	border-radius: 4px;
 }
@@ -102,5 +123,158 @@ h4 {
 		animation-duration: 0.01ms !important;
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
+	}
+}
+
+/* Hero: hairline trace of the letters hidden behind the photo, clipped to
+   the photo (27vw wide, 3:4, min 200px), barely visible. */
+.hero-trace {
+	color: transparent;
+	-webkit-text-stroke: 0.12vw var(--paper);
+	opacity: 0.35;
+	clip-path: inset(calc(50% - max(18vw, 133.33px)) calc(50% - max(13.5vw, 100px)));
+}
+
+/* Work: its own room, faint red scanlines and two soft ink washes that fade
+   out at the top and bottom. Screenshots stay black and white until hover. */
+.work-room {
+	background-image:
+		linear-gradient(var(--paper), rgba(247, 243, 236, 0) 18%, rgba(247, 243, 236, 0) 82%, var(--paper)),
+		repeating-linear-gradient(0deg, rgba(210, 36, 28, 0.05) 0 1px, transparent 1px 4px),
+		radial-gradient(ellipse 38% 55% at 12% 30%, rgba(210, 36, 28, 0.07), transparent 70%),
+		radial-gradient(ellipse 30% 45% at 90% 78%, rgba(210, 36, 28, 0.06), transparent 70%);
+	font-synthesis: none;
+}
+.work-panel {
+	display: none;
+}
+.work-panel.is-open {
+	display: block;
+}
+.work-shot img {
+	filter: grayscale(1) contrast(1.05);
+	transition:
+		transform 0.5s ease-out,
+		filter 0.4s ease-out;
+}
+.work-shot:hover img {
+	filter: none;
+	transform: scale(1.03);
+}
+@media (hover: none) {
+	.work-panel {
+		display: block;
+	}
+}
+
+/* CTAs (serif italic) turn red on hover. */
+.cta {
+	transition: color 0.25s ease-out;
+}
+.cta:hover {
+	color: var(--red);
+}
+
+/* Experience path: details show on hover/focus, the hovered title turns red. */
+.xp-detail {
+	opacity: 0;
+	transform: translateY(-6px);
+	transition:
+		opacity 0.3s ease-out,
+		transform 0.3s ease-out;
+}
+.xp-title,
+.xp-year {
+	transition:
+		color 0.25s ease-out,
+		opacity 0.25s ease-out;
+}
+.xp li:hover .xp-detail,
+.xp li:focus-within .xp-detail {
+	opacity: 1;
+	transform: none;
+}
+.xp li:hover .xp-title,
+.xp li:focus-within .xp-title,
+.xp li:hover .xp-year,
+.xp li:focus-within .xp-year {
+	color: var(--red);
+}
+.xp:hover li:not(:hover) .xp-title {
+	opacity: 0.3;
+}
+/* A small + after each title rotates into × on hover. The first entry starts
+   open so visitors learn that titles hide details. */
+.xp-plus {
+	display: inline-block;
+	color: #c9bcab;
+	font-weight: 500;
+	transition:
+		transform 0.25s ease-out,
+		color 0.25s ease-out;
+}
+.xp li:hover .xp-plus,
+.xp li:focus-within .xp-plus {
+	transform: rotate(45deg);
+	color: var(--red);
+}
+.xp:not(:hover):not(:focus-within) li:first-child .xp-detail {
+	opacity: 1;
+	transform: none;
+}
+.xp:not(:hover):not(:focus-within) li:first-child .xp-plus {
+	transform: rotate(45deg);
+}
+@media (hover: none) {
+	.xp-detail {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+/* Contact letter: soft cream placeholders inside the red section. */
+.blank::placeholder {
+	color: rgba(247, 243, 236, 0.75);
+	font-weight: 500;
+}
+
+/* Contact badge (the period of SAY HI.): dives off the top of the I once,
+   tumbles down beside the S, bounces, rolls to the right edge, then spins
+   slowly. Started by the .play class when the section scrolls into view. */
+.badge {
+	transform: translate(-56%, -22%) rotate(172deg);
+}
+.badge .hop,
+.badge .spin {
+	transform-box: fill-box;
+	transform-origin: 50% 50%;
+}
+.badge.play .hop {
+	animation: badge-hop 5.2s linear 0.4s 1 forwards;
+}
+.badge.play .spin {
+	animation: badge-spin 6s linear 5.6s infinite;
+}
+@keyframes badge-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+@keyframes badge-hop {
+	0% { transform: none; animation-timing-function: ease-out; }
+	6.8% { transform: scale(1.12, 0.86); animation-timing-function: ease-out; }
+	16.7% { transform: translate(45px, -48px) rotate(25deg) scale(0.95, 1.06); animation-timing-function: ease-in; }
+	22.3% { transform: translate(75px, -30px) rotate(70deg); animation-timing-function: ease-in; }
+	42.8% { transform: translate(88px, 560px) rotate(320deg); animation-timing-function: ease-out; }
+	46.5% { transform: translate(88px, 575px) rotate(360deg) scale(1.18, 0.82); animation-timing-function: ease-out; }
+	52.7% { transform: translate(88px, 530px) rotate(360deg); animation-timing-function: ease-in; }
+	58.3% { transform: translate(88px, 575px) rotate(360deg) scale(1.06, 0.94); animation-timing-function: ease-out; }
+	64% { transform: translate(88px, 575px) rotate(360deg); animation-timing-function: cubic-bezier(0.45, 0, 0.3, 1); }
+	100% { transform: translate(925px, 575px) rotate(1200deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+	.badge.play .hop,
+	.badge.play .spin {
+		animation: none;
 	}
 }

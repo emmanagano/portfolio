@@ -1,22 +1,34 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Geist_Mono, Inter } from "next/font/google";
+import { Instrument_Serif, Inter_Tight, Share_Tech_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Providers from "./components/Providers";
 import SiteNav from "./components/layout/SiteNav";
 import Footer from "./components/layout/Footer";
-import CursorEffect from "./components/ui/CursorEffect";
 import { site, socials } from "@/data/site";
 import { gallery } from "@/data/gallery";
 
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
-const bricolage = Bricolage_Grotesque({
-	variable: "--font-bricolage",
+// Inter Tight does almost everything (400 body, 500 labels, 900 poster type).
+// Instrument Serif italic is the CTA voice and a rare accent.
+const interTight = Inter_Tight({
+	variable: "--font-inter-tight",
 	subsets: ["latin"],
+	display: "swap",
 });
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
+const instrumentSerif = Instrument_Serif({
+	variable: "--font-instrument",
+	weight: "400",
+	style: ["normal", "italic"],
 	subsets: ["latin"],
+	display: "swap",
+});
+
+// Share Tech Mono is used only in the projects section (its own "room").
+const shareTechMono = Share_Tech_Mono({
+	variable: "--font-share-tech",
+	weight: "400",
+	subsets: ["latin"],
+	display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -36,8 +48,9 @@ export const metadata: Metadata = {
 	twitter: { card: "summary", creator: "@emsnagano" },
 };
 
-// Runs before paint so the saved theme applies without a flash.
-const themeScript = `(function(){try{var t=localStorage.getItem("theme");var d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d)}catch(e){}})()`;
+// The poster-editorial redesign is light-only. This runs before paint and
+// clears any dark class a visitor saved under the old theme toggle.
+const themeScript = `(function(){try{document.documentElement.classList.remove("dark")}catch(e){}})()`;
 
 const jsonLd = [
 	{
@@ -94,7 +107,7 @@ export default function RootLayout({
 				</Script>
 			</head>
 			<body
-				className={`${inter.variable} ${bricolage.variable} ${geistMono.variable} antialiased`}
+				className={`${interTight.variable} ${instrumentSerif.variable} ${shareTechMono.variable} antialiased`}
 			>
 				<noscript>
 					<iframe
@@ -111,8 +124,7 @@ export default function RootLayout({
 					Skip to content
 				</a>
 				<Providers>
-					<CursorEffect />
-			<SiteNav />
+					<SiteNav />
 					<main id="main">{children}</main>
 					<Footer />
 				</Providers>
